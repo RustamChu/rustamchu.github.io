@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0a0d1a">
 <title>РУСТАМ ЧУЧУЕВ — игровое меню · 10 игр с ИИ</title>
 <meta name="description" content="Портфолио-меню: 10 игр в 10 жанрах, все десять созданы в паре с ИИ за два часа. Ноль ассетов, решатели-доказательства, открытый код.">
 <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="%230a0d1a"/><path d="M11 8l14 8-14 8z" fill="%234de3e3"/></svg>'>
@@ -42,7 +43,7 @@
 
   /* ---------- HUD ---------- */
   #hud{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;gap:18px;
-    padding:10px 20px;background:rgba(8,11,22,.82);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    padding:10px 20px;background:rgba(8,11,22,.82);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
   #hud .lg{font-family:var(--disp);font-size:17px;color:#fff;letter-spacing:.05em}
   #hud .lg span{color:var(--cyan)}
   #hud nav{display:flex;gap:4px;margin-left:8px}
@@ -58,10 +59,21 @@
   .tgl:hover{color:var(--text);border-color:#3a4a7a}
   .tgl.on{color:var(--cyan);border-color:rgba(77,227,227,.6);box-shadow:0 0 10px rgba(77,227,227,.25)}
 
+  #burger{display:none;align-items:center;justify-content:center;width:40px;height:36px;
+    font-size:18px;color:var(--cyan);background:rgba(18,23,43,.8);border:1px solid var(--line);
+    border-radius:6px;cursor:pointer;user-select:none}
+  #mnav{position:fixed;top:51px;left:0;right:0;z-index:49;display:none;flex-direction:column;
+    background:rgba(8,11,22,.97);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line)}
+  #mnav.open{display:flex}
+  #mnav a{font-family:var(--mono);letter-spacing:.18em;font-size:14px;color:#cfd8ee;
+    padding:15px 24px;border-top:1px solid #141b33}
+  #mnav a:active{color:var(--cyan);background:rgba(77,227,227,.08)}
+
   /* ---------- HERO ---------- */
   #hero{position:relative;min-height:100svh;display:flex;flex-direction:column;align-items:center;
     justify-content:center;text-align:center;padding:90px 20px 60px}
-  #stars{position:absolute;inset:0;z-index:0}
+  #hero #stars{position:absolute;inset:0;z-index:0;width:100%;height:100%}
   #hero>*{position:relative;z-index:2}
   #hero .over{font-family:var(--mono);font-size:13px;letter-spacing:.5em;color:var(--gold)}
   #hero h1{font-family:var(--disp);font-size:clamp(38px,8vw,84px);color:#fff;letter-spacing:.04em;
@@ -100,10 +112,15 @@
 
   /* game grid */
   #grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
-  .card{--ac:var(--cyan);position:relative;display:block;border:1px solid color-mix(in srgb,var(--ac) 50%,#202848);
+  .card{--ac:var(--cyan);position:relative;display:block;border:1px solid #2a3560;
+    box-shadow:0 0 18px rgba(60,80,160,.18);
+    border-color:color-mix(in srgb,var(--ac) 50%,#202848);
     border-radius:14px;overflow:hidden;background:linear-gradient(180deg,#141a30,#10152a);
     box-shadow:0 0 18px color-mix(in srgb,var(--ac) 14%,transparent);
     transform-style:preserve-3d;will-change:transform;transition:box-shadow .25s}
+  @supports not (color: color-mix(in srgb, red 50%, blue)){
+    .card:hover{box-shadow:0 0 30px rgba(77,227,227,.3)}
+  }
   .card:hover{box-shadow:0 0 34px color-mix(in srgb,var(--ac) 38%,transparent)}
   .card .shot{position:relative;overflow:hidden;aspect-ratio:16/9}
   .card .shot img{width:100%;height:100%;object-fit:cover;display:block;
@@ -130,7 +147,8 @@
 
   /* bottle */
   #bottle-wrap{display:grid;grid-template-columns:minmax(280px,420px) 1fr;gap:38px;align-items:center}
-  @media (max-width:820px){#bottle-wrap{grid-template-columns:1fr}}
+  #bottle-wrap>div:first-child{width:100%;max-width:420px;margin:0 auto}
+  @media (max-width:820px){#bottle-wrap{grid-template-columns:1fr;gap:24px}}
   #table{position:relative;aspect-ratio:1;border-radius:22px;overflow:hidden;cursor:pointer;
     background:radial-gradient(circle at 50% 44%,#b5763a 0%,#96582a 45%,#7a441f 75%,#5f3316 100%);
     border:1px solid rgba(255,201,77,.4);box-shadow:0 0 30px rgba(255,150,60,.15)}
@@ -184,7 +202,9 @@
   .demo:hover{border-color:#3a4a7a}
   .demo .dt{font-family:var(--disp);font-size:15px;color:#fff;letter-spacing:.05em}
   .demo .dt span{display:block;font-family:var(--mono);font-size:10.5px;color:var(--dim);letter-spacing:.12em;margin-top:4px}
-  .demo canvas{width:100%;height:auto;border-radius:9px;background:#0c1020;border:1px solid #1d2547;cursor:crosshair;display:block;touch-action:none}
+  .demo canvas{width:100%;height:auto;border-radius:9px;background:#0c1020;border:1px solid #1d2547;cursor:crosshair;display:block}
+  #ray{touch-action:none}
+  #dun,#wave{touch-action:pan-y}
   .dc{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
   .dbtn{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:#081020;font-weight:700;
     background:linear-gradient(90deg,var(--cyan),#9ff0f0);border:none;border-radius:8px;padding:9px 14px;cursor:pointer;transition:.15s}
@@ -232,7 +252,31 @@
     *,*::before,*::after{animation-duration:.001s !important;transition-duration:.001s !important}
     html{scroll-behavior:auto}
   }
-  @media (max-width:700px){#hud nav{display:none}.xp .track{width:70px}}
+  @media (max-width:700px){
+    #hud{gap:9px;padding:8px 12px}
+    #hud nav{display:none}
+    #hud .lg{font-size:14.5px}
+    #burger{display:flex}
+    .xp{font-size:10.5px;gap:6px}
+    .xp .track{width:56px}
+    .tgl{padding:6px 8px;font-size:10.5px}
+    #menu{margin-top:26px;gap:6px}
+    .mi{font-size:17px;padding:10px 16px}
+    #hero .scrollhint{margin-top:30px}
+    section{padding:52px 16px;scroll-margin-top:50px}
+    .shead .tag{letter-spacing:.25em;font-size:11px}
+    #grid{gap:16px}
+    .toast{max-width:min(320px,calc(100vw - 32px))}
+  }
+  @media (max-width:520px){
+    .xp .track{display:none}
+    #crttgl{display:none}
+    #term{font-size:12.5px}
+    #tout{max-height:230px}
+    .stat .n{font-size:27px}
+    #stats{gap:10px}
+    .invit{font-size:13px}
+  }
 </style>
 </head>
 <body>
@@ -256,11 +300,19 @@
     <a href="#servers">СЕРВЕРЫ</a>
     <a href="#press">КОНТАКТЫ</a>
   </nav>
+  <button id="burger" aria-label="меню">☰</button>
   <div class="sp"></div>
   <div class="xp"><span id="xpn">0 XP</span><span class="track"><i id="xpbar"></i></span></div>
   <button class="tgl" id="sndtgl" title="звук синтезируется кодом, как в играх серии">🔇 ЗВУК</button>
   <button class="tgl" id="crttgl" title="режим старого монитора">CRT</button>
 </header>
+<nav id="mnav">
+  <a href="#games">▶ УРОВНИ</a>
+  <a href="#lab">▶ ЛАБОРАТОРИЯ</a>
+  <a href="#butylochka">▶ БУТЫЛОЧКА</a>
+  <a href="#servers">▶ СЕРВЕРЫ</a>
+  <a href="#press">▶ КОНТАКТЫ</a>
+</nav>
 
 <div id="hero">
   <canvas id="stars"></canvas>
@@ -390,6 +442,14 @@
 
 <script>
 "use strict";
+if (typeof CanvasRenderingContext2D !== "undefined" && !CanvasRenderingContext2D.prototype.roundRect) {
+  CanvasRenderingContext2D.prototype.roundRect = function(x, y, w, h, r) {
+    r = Math.min(r || 0, Math.abs(w) / 2, Math.abs(h) / 2);
+    this.moveTo(x + r, y); this.arcTo(x + w, y, x + w, y + h, r);
+    this.arcTo(x + w, y + h, x, y + h, r); this.arcTo(x, y + h, x, y, r);
+    this.arcTo(x, y, x + w, y, r); this.closePath(); return this;
+  };
+}
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -437,6 +497,7 @@ let booted=false;
   const off=()=>{ if(booted) return; booted=true; $("#boot").classList.add("off"); beep(660,.08); setTimeout(()=>$("#boot").remove(),600); };
   $("#boot").addEventListener("click",off);
   addEventListener("keydown",off,{once:false});
+  addEventListener("touchstart",off,{once:true,passive:true});
   setTimeout(off,2600);
 })();
 
@@ -473,6 +534,14 @@ function ach(id,title){
     cx.globalAlpha=1;
     if(!reduced) requestAnimationFrame(draw);
   })(0);
+})();
+
+/* ---------- бургер-меню ---------- */
+(function(){
+  const b=$("#burger"), m=$("#mnav"); if(!b) return;
+  b.addEventListener("click",()=>{ m.classList.toggle("open"); beep(520,.05); });
+  m.addEventListener("click",e=>{ if(e.target.tagName==="A"){ m.classList.remove("open"); beep(760,.06); } });
+  addEventListener("scroll",()=>m.classList.remove("open"),{passive:true});
 })();
 
 /* ---------- герой-меню ---------- */
@@ -949,7 +1018,7 @@ function labTouch(k){ if(labTouched.has(k)) return; labTouched.add(k); xpAdd(15)
     /* мобы */
     spawnIn-=dt*16.7;
     if(spawnIn<=0){ spawnIn=3500+Math.random()*5000;
-      if(mobs.length<3) spawnMob(); }
+      if(mobs.length<(innerWidth<700?2:3)) spawnMob(); }
     for(let i=mobs.length-1;i>=0;i--){ const m=mobs[i];
       if(m.dead){ mobs.splice(i,1); continue; }
       m.x+=m.speed*dt;
