@@ -1,0 +1,115 @@
+﻿# ==================================================================
+#  ИГРЫ -> БРАУЗЕР: сборка wasm-версий семи pygame-игр (pygbag)  v2
+#  Результат: site\play\<игра>\  — после publish_site.ps1 кнопки
+#  «ИГРАТЬ ПРЯМО ЗДЕСЬ» на сайте появятся у этих игр сами.
+# ==================================================================
+$ErrorActionPreference = "Continue"
+trap { Write-Host ""; Write-Host "ОШИБКА: $_" -ForegroundColor Red; Read-Host "Enter - закрыть"; exit 1 }
+
+if (-not $PSScriptRoot) { Write-Host "Запустите сам файл скрипта."; Read-Host; exit 1 }
+$root = Split-Path $PSScriptRoot -Parent   # ...\portfolio_plays
+$site = $PSScriptRoot                       # ...\portfolio_plays\site
+
+# --- python: сначала стабильные версии, 3.14 - в последнюю очередь ---
+$py = $null
+foreach ($cand in @("py -3.12", "py -3.11", "py -3.13", "py -3.10", "py -3", "python", "python3")) {
+    $v = & cmd /c "$cand --version" 2>&1
+    if ($LASTEXITCODE -eq 0) { $py = $cand; $pyver = ($v | Out-String).Trim(); break }
+}
+if (-not $py) {
+    Write-Host "Python не найден." -ForegroundColor Red
+    Read-Host "Enter - закрыть"; exit 1
+}
+Write-Host "Python: $py  ($pyver)" -ForegroundColor Cyan
+
+# --- pygbag: ставим при необходимости, проверяем через pip show + import ---
+$null = & cmd /c "$py -m pip show pygbag" 2>&1
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "Ставлю pygbag (конвертер pygame -> браузер)..." -ForegroundColor Cyan
+    $null = & cmd /c "$py -m pip install --user --no-warn-script-location -q pygbag" 2>&1
+    $null = & cmd /c "$py -m pip show pygbag" 2>&1
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "pip не смог поставить pygbag - пришлите вывод:" -ForegroundColor Red
+        & cmd /c "$py -m pip install --user pygbag"
+        Read-Host "Enter - закрыть"; exit 1
+    }
+}
+Write-Host "pygbag установлен." -ForegroundColor Green
+
+# --- совместимость: pygbag должен импортироваться этим Python ---
+$null = & cmd /c "$py -c `"import pygbag`"" 2>&1
+if ($LASTEXITCODE -ne 0) {
+    Write-Host ""
+    Write-Host "pygbag не подружился с этим Python ($pyver) - он слишком новый." -ForegroundColor Yellow
+    Write-Host "Решение: поставить рядом Python 3.12 (займёт минуту), скрипт сам его подхватит."
+    $a = Read-Host "Поставить Python 3.12 сейчас через winget? (Enter - да, N - нет)"
+    if ($a -ne "N" -and $a -ne "n") {
+        & winget install -e --id Python.Python.3.12 --accept-package-agreements --accept-source-agreements
+        Write-Host ""
+        Write-Host "Готово. Запустите этот скрипт ещё раз - он выберет py -3.12 сам." -ForegroundColor Green
+    }
+    Read-Host "Enter - закрыть"; exit 0
+}
+
+$games = @("neon-doom","ashen-depths","last-reactor","orbit-nine","bathysphere","zimnik","medvezhatnik")
+$wrapper = @'
+import asyncio
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import game_main
+
+
+async def _run():
+    game = game_main.Game()
+    while getattr(game, "running", True):
+        game.step()
+        await asyncio.sleep(0)
+
+
+asyncio.run(_run())
+'@
+
+$done = @(); $fail = @()
+foreach ($g in $games) {
+    $src = Join-Path $root $g
+    if (-not (Test-Path (Join-Path $src "main.py"))) {
+        Write-Host "[$g] пропуск: нет main.py в $src" -ForegroundColor Yellow
+        $fail += $g; continue
+    }
+    Write-Host ""
+    Write-Host "=== $g ===" -ForegroundColor Cyan
+    $tmp = Join-Path $site "_websrc\$g"
+    if (Test-Path $tmp) { Remove-Item $tmp -Recurse -Force }
+    New-Item -ItemType Directory -Path $tmp -Force | Out-Null
+    Copy-Item (Join-Path $src "*.py") $tmp
+    Rename-Item (Join-Path $tmp "main.py") "game_main.py"
+    Set-Content -Path (Join-Path $tmp "main.py") -Value $wrapper -Encoding UTF8
+
+    Write-Host "[$g] сборка wasm (первый раз докачает шаблон)..."
+    $out = & cmd /c "$py -m pygbag --build `"$tmp`"" 2>&1
+    $web = Join-Path $tmp "build\web"
+    if (Test-Path (Join-Path $web "index.html")) {
+        $dst = Join-Path $site "play\$g"
+        if (Test-Path $dst) { Remove-Item $dst -Recurse -Force }
+        New-Item -ItemType Directory -Path $dst -Force | Out-Null
+        Copy-Item (Join-Path $web "*") $dst -Recurse
+        Write-Host "[$g] ГОТОВО -> site\play\$g" -ForegroundColor Green
+        $done += $g
+    } else {
+        Write-Host "[$g] сборка не удалась, хвост вывода:" -ForegroundColor Red
+        Write-Host (($out | Select-Object -Last 15) | Out-String)
+        $fail += $g
+    }
+}
+
+Write-Host ""
+Write-Host ("Собрано: " + $done.Count + " из " + $games.Count) -ForegroundColor $(if ($fail.Count -eq 0) { "Green" } else { "Yellow" })
+if ($done.Count -gt 0) {
+    Write-Host "Дальше: publish_site.ps1 - и кнопки ИГРАТЬ появятся на сайте сами." -ForegroundColor Cyan
+}
+if ($fail.Count -gt 0) {
+    Write-Host ("Не собрались: " + ($fail -join ", ") + " - пришлите вывод, разберём.") -ForegroundColor Yellow
+}
+Read-Host "Enter - закрыть"
