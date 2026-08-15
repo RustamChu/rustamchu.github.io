@@ -51,6 +51,61 @@ if ($LASTEXITCODE -ne 0) {
     Read-Host "Enter - закрыть"; exit 0
 }
 
+
+# --- тач-геймпад: вставляется в wasm-страницу каждой игры ---
+$pad = @'
+<style>
+  #tpad{display:none;position:fixed;inset:auto 0 0 0;z-index:99;padding:10px 12px 14px;
+    pointer-events:none;user-select:none;-webkit-user-select:none}
+  @media (pointer:coarse){#tpad{display:flex;justify-content:space-between;align-items:flex-end}}
+  #tpad .grp{display:flex;gap:9px;align-items:flex-end;pointer-events:auto}
+  #tpad .dpad{display:grid;justify-items:center;gap:8px}
+  #tpad .dpad .row{display:flex;gap:8px}
+  #tpad button{min-width:54px;height:54px;border-radius:13px;border:1px solid rgba(140,160,220,.4);
+    background:rgba(16,20,36,.72);color:#dfe6f5;font:700 17px/1 system-ui;touch-action:none;
+    -webkit-tap-highlight-color:transparent}
+  #tpad button:active{background:rgba(70,90,160,.6)}
+  #tpad button.big{min-width:82px;height:66px;border-radius:16px}
+  #tpad .mini{position:fixed;top:8px;right:10px;display:flex;gap:7px;pointer-events:auto}
+  #tpad .mini button{min-width:44px;height:36px;font-size:11px;border-radius:8px}
+</style>
+<div id="tpad">
+  <div class="mini">
+    <button data-code="Enter">ENTER</button><button data-code="KeyR">R</button>
+    <button data-code="KeyH">H</button><button data-code="Escape">ESC</button>
+  </div>
+  <div class="grp dpad">
+    <button data-code="ArrowUp">&#9650;</button>
+    <div class="row">
+      <button data-code="ArrowLeft">&#9664;</button>
+      <button data-code="ArrowDown">&#9660;</button>
+      <button data-code="ArrowRight">&#9654;</button>
+    </div>
+  </div>
+  <div class="grp">
+    <button data-code="ShiftLeft">SHIFT</button>
+    <button data-code="KeyE">E</button>
+    <button class="big" data-code="Space">ПРОБЕЛ</button>
+  </div>
+</div>
+<script>
+(function(){
+  function fire(type,code){
+    try{ dispatchEvent(new KeyboardEvent(type,{code:code,key:code,bubbles:true})); }catch(e){}
+    try{ var c=document.querySelector("canvas");
+      if(c) c.dispatchEvent(new KeyboardEvent(type,{code:code,key:code,bubbles:true})); }catch(e){}
+  }
+  document.querySelectorAll("#tpad [data-code]").forEach(function(b){
+    var code=b.getAttribute("data-code");
+    b.addEventListener("pointerdown",function(e){ e.preventDefault(); b.setPointerCapture&&b.setPointerCapture(e.pointerId); fire("keydown",code); });
+    b.addEventListener("pointerup",function(e){ e.preventDefault(); fire("keyup",code); });
+    b.addEventListener("pointercancel",function(){ fire("keyup",code); });
+    b.addEventListener("contextmenu",function(e){ e.preventDefault(); });
+  });
+})();
+</script>
+'@
+
 $games = @("neon-doom","ashen-depths","last-reactor","orbit-nine","bathysphere","zimnik","medvezhatnik")
 $wrapper = @'
 import asyncio
@@ -95,7 +150,17 @@ foreach ($g in $games) {
         if (Test-Path $dst) { Remove-Item $dst -Recurse -Force }
         New-Item -ItemType Directory -Path $dst -Force | Out-Null
         Copy-Item (Join-Path $web "*") $dst -Recurse
-        Write-Host "[$g] ГОТОВО -> site\play\$g" -ForegroundColor Green
+        # тач-геймпад для телефонов
+        $idxPath = Join-Path $dst "index.html"
+        if (Test-Path $idxPath) {
+            $html = Get-Content $idxPath -Raw -Encoding UTF8
+            if ($html -notmatch "tpad") {
+                if ($html -match "</body>") { $html = $html -replace "</body>", ($pad + "`n</body>") }
+                else { $html = $html + $pad }
+                Set-Content -Path $idxPath -Value $html -Encoding UTF8
+            }
+        }
+        Write-Host "[$g] ГОТОВО (с тач-кнопками) -> site\play\$g" -ForegroundColor Green
         $done += $g
     } else {
         Write-Host "[$g] сборка не удалась, хвост вывода:" -ForegroundColor Red

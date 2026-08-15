@@ -302,6 +302,13 @@
     #grid{gap:16px}
     .toast{max-width:min(320px,calc(100vw - 32px))}
   }
+  @media (max-width:700px){
+    #arcade .bar{gap:9px;padding:8px 10px}
+    #arcade .bar .t{font-size:13.5px}
+    #arcade .bar .hint{display:none}
+    #arcade .x{width:46px;height:42px;font-size:17px}
+    #arcade .stage{padding:6px}
+  }
   @media (max-width:520px){
     .xp .track{display:none}
     #crttgl{display:none}
@@ -5044,6 +5051,43 @@ if (typeof document !== "undefined") {
 }
 
 </script>
+
+<style>
+  #tpad{display:none;position:fixed;inset:auto 0 0 0;z-index:9;padding:10px 14px 16px;
+    pointer-events:none;user-select:none;-webkit-user-select:none}
+  @media (pointer:coarse){#tpad{display:flex;justify-content:space-between;align-items:flex-end}}
+  #tpad .grp{display:flex;gap:10px;align-items:flex-end;pointer-events:auto}
+  #tpad button{min-width:58px;height:58px;border-radius:14px;border:1px solid rgba(140,160,220,.4);
+    background:rgba(16,20,36,.72);color:#dfe6f5;font:700 19px/1 system-ui;touch-action:none;
+    -webkit-tap-highlight-color:transparent}
+  #tpad button:active{background:rgba(70,90,160,.6)}
+  #tpad button.big{min-width:86px;height:72px;border-radius:18px}
+  #tpad .mini{position:fixed;top:8px;right:10px;display:flex;gap:8px;pointer-events:auto}
+  #tpad .mini button{min-width:46px;height:38px;font-size:12px;border-radius:9px}
+</style>
+<div id="tpad">
+  <div class="mini">
+    <button data-code="Enter">СТАРТ</button><button data-code="KeyR">R</button><button data-code="Escape">МЕНЮ</button>
+  </div>
+  <div class="grp"><button data-code="ArrowLeft">◀</button><button data-code="ArrowRight">▶</button></div>
+  <div class="grp"><button class="big" data-code="Space">ПРЫЖОК</button></div>
+
+</div>
+<script>
+(function(){
+  function fire(type,code){
+    try{ dispatchEvent(new KeyboardEvent(type,{code:code,key:code,bubbles:true})); }catch(e){}
+  }
+  document.querySelectorAll("#tpad [data-code]").forEach(function(b){
+    var code=b.getAttribute("data-code");
+    b.addEventListener("pointerdown",function(e){ e.preventDefault(); b.setPointerCapture&&b.setPointerCapture(e.pointerId); fire("keydown",code); });
+    b.addEventListener("pointerup",function(e){ e.preventDefault(); fire("keyup",code); });
+    b.addEventListener("pointercancel",function(){ fire("keyup",code); });
+    b.addEventListener("contextmenu",function(e){ e.preventDefault(); });
+  });
+})();
+</script>
+
 </body>
 </html>
 </template>
