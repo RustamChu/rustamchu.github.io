@@ -203,7 +203,8 @@
   #tin{flex:1;background:none;border:none;outline:none;color:#cfe8d6;font:inherit;caret-color:var(--green)}
 
   /* arcade overlay: playable games */
-  #arcade{position:fixed;inset:0;z-index:80;display:none;background:rgba(4,6,12,.94)}
+  #arcade{position:fixed;inset:0;z-index:80;display:none;background:#04060c;height:100dvh}
+  body.arc-open{position:fixed;inset:0;width:100%;overflow:hidden}
   #arcade.on{display:flex;flex-direction:column}
   #arcade .bar{display:flex;align-items:center;gap:16px;padding:10px 16px;border-bottom:1px solid var(--line);background:rgba(8,11,22,.9)}
   #arcade .bar .t{font-family:var(--disp);font-size:16px;color:#fff;letter-spacing:.05em}
@@ -303,9 +304,9 @@
     .toast{max-width:min(320px,calc(100vw - 32px))}
   }
   @media (max-width:700px){
-    #arcade .bar{gap:9px;padding:8px 10px}
-    #arcade .bar .t{font-size:13.5px}
-    #arcade .bar .hint{display:none}
+    #arcade .bar{gap:8px;padding:7px 10px;flex-wrap:wrap}
+    #arcade .bar .t{font-size:13px}
+    #arcade .bar .hint{font-size:9.5px;letter-spacing:.05em}
     #arcade .x{width:46px;height:42px;font-size:17px}
     #arcade .stage{padding:6px}
   }
@@ -719,7 +720,8 @@ $$("[data-count]").forEach(el=>io.observe(el));
             window.FX.hearts(r.left+r.width/2, r.top+r.height/2, 9); }
           verdict.innerHTML='Бутылочка выбрала: <b style="color:'+g.c+'">'+g.n+'</b> — '+g.g.split("·")[0].trim()+
             '. <a href="https://github.com/RustamChu/'+g.r+'" target="_blank" rel="noopener">Открыть уровень →</a>'+
-            (g.play?' · <a href="#" class="vplay" data-play="'+g.play+'">сыграть прямо здесь ▶</a>':'');
+            (g.play?' · <a href="#" class="vplay" data-play="'+g.play+'">сыграть прямо здесь ▶</a>'
+             :(window.URLPLAY&&window.URLPLAY.has(g.r)?' · <a href="#" class="vplay" data-play="url:'+g.r+'">сыграть прямо здесь ▶</a>':''));
           chord(); ach("spin","Бутылочка сделала выбор за вас");
           return;
         }
@@ -1190,16 +1192,25 @@ function labTouch(k){ if(labTouched.has(k)) return; labTouched.add(k); xpAdd(15)
     lamplighter:{t:"ФОНАРЩИК — платформер",h:"клавиатура: ← → идти · ПРОБЕЛ — прыжок"},
     polynya:{t:"ПОЛЫНЬЯ — головоломка во льду",h:"стрелки/WASD · Z — отмена · R — заново · на телефоне — кнопки"}
   };
+  let savedScroll=0;
   function openArcade(name){
     const inf=INFO[name]; if(!inf) return;
     if(name.indexOf("url:")===0){
-      ttl.textContent=inf.t; hint.textContent=inf.h;
+      ttl.textContent=inf.t;
+      let h=inf.h;
+      if(matchMedia("(pointer:coarse)").matches){
+        h="экранные кнопки · тапните по игре для запуска · первая загрузка ~20 МБ";
+        if(matchMedia("(orientation:portrait)").matches) h+=" · лучше повернуть горизонтально";
+      }
+      hint.textContent=h;
       fr.removeAttribute("srcdoc"); fr.src="play/"+name.slice(4)+"/index.html";
     } else {
       const tpl=document.getElementById("tpl-"+name); if(!tpl) return;
       ttl.textContent=inf.t; hint.textContent=inf.h;
       fr.removeAttribute("src"); fr.srcdoc="<!DOCTYPE html>"+tpl.innerHTML;
     }
+    savedScroll=scrollY; document.body.classList.add("arc-open");
+    document.body.style.top=(-savedScroll)+"px";
     ov.classList.add("on"); document.body.style.overflow="hidden";
     fr.addEventListener("load",()=>{ try{
       fr.contentWindow.focus();
@@ -1212,7 +1223,9 @@ function labTouch(k){ if(labTouched.has(k)) return; labTouched.add(k); xpAdd(15)
     }catch(e){} },{once:true});
     beep(700,.08); ach("arcade","Аркада: игра серии запущена прямо на сайте");
   }
-  function closeArcade(){ ov.classList.remove("on"); fr.srcdoc=""; fr.removeAttribute("src"); document.body.style.overflow=""; beep(320,.07); }
+  function closeArcade(){ ov.classList.remove("on"); fr.srcdoc=""; fr.removeAttribute("src");
+    document.body.classList.remove("arc-open"); document.body.style.top="";
+    scrollTo(0,savedScroll); document.body.style.overflow=""; beep(320,.07); }
   $("#arc-close").addEventListener("click",closeArcade);
   ov.addEventListener("click",e=>{ if(e.target===ov||e.target.classList.contains("stage")) closeArcade(); });
   addEventListener("keydown",e=>{ if(e.key==="Escape"&&ov.classList.contains("on")) closeArcade(); });
@@ -1220,23 +1233,26 @@ function labTouch(k){ if(labTouched.has(k)) return; labTouched.add(k); xpAdd(15)
     const b=e.target.closest&&e.target.closest("[data-play]"); if(!b) return;
     e.preventDefault(); e.stopPropagation(); openArcade(b.dataset.play);
   },true);
-  /* wasm-сборки pygame-игр: если рядом лежит play/<игра>/, карточка сама получает кнопку */
+  /* wasm-сборки pygame-игр: кнопки видны сразу, исчезают только если сборки нет */
+  window.URLPLAY=new Set();
   if(location.protocol.indexOf("http")===0){
     ["neon-doom","ashen-depths","last-reactor","orbit-nine","bathysphere","zimnik","medvezhatnik"]
     .forEach(r=>{
-      fetch("play/"+r+"/index.html",{method:"HEAD"}).then(res=>{
-        if(!res.ok) return;
-        const g=GAMES.find(x=>x.r===r); if(!g) return;
-        INFO["url:"+r]={t:g.n+" — "+g.g.split("·")[0].trim(),h:"управление — как в настольной версии · клавиатура"};
-        const card=[...document.querySelectorAll("#grid .card")].find(c=>(c.getAttribute("href")||"").endsWith("/"+r));
-        if(!card||card.querySelector(".playbtn")) return;
-        const shot=card.querySelector(".shot");
-        if(shot&&!shot.querySelector(".canplay")){
-          const s=document.createElement("span"); s.className="canplay"; s.textContent="▶ БРАУЗЕР"; shot.appendChild(s); }
-        const b=document.createElement("button"); b.type="button"; b.className="playbtn";
-        b.dataset.play="url:"+r; b.textContent="▶ ИГРАТЬ ПРЯМО ЗДЕСЬ";
-        card.querySelector(".meta").appendChild(b);
-      }).catch(()=>{});
+      const g=GAMES.find(x=>x.r===r); if(!g) return;
+      INFO["url:"+r]={t:g.n+" — "+g.g.split("·")[0].trim(),h:"клавиатура · на телефоне — экранные кнопки"};
+      const card=[...document.querySelectorAll("#grid .card")].find(c=>(c.getAttribute("href")||"").endsWith("/"+r));
+      if(!card||card.querySelector(".playbtn")) return;
+      const shot=card.querySelector(".shot");
+      let chip=null;
+      if(shot&&!shot.querySelector(".canplay")){
+        chip=document.createElement("span"); chip.className="canplay"; chip.textContent="▶ БРАУЗЕР"; shot.appendChild(chip); }
+      const b=document.createElement("button"); b.type="button"; b.className="playbtn";
+      b.dataset.play="url:"+r; b.textContent="▶ ИГРАТЬ ПРЯМО ЗДЕСЬ";
+      card.querySelector(".meta").appendChild(b);
+      window.URLPLAY.add(r);
+      fetch("play/"+r+"/index.html",{method:"HEAD"})
+        .then(res=>{ if(!res.ok) throw 0; })
+        .catch(()=>{ b.remove(); chip&&chip.remove(); window.URLPLAY.delete(r); });
     });
   }
 })();
@@ -5097,7 +5113,7 @@ if (typeof document !== "undefined") {
   html,body{margin:0;height:100%;background:#0a0e16;overflow:hidden;
     display:flex;flex-direction:column;align-items:center;justify-content:center}
   #scr{font-family:'JetBrains Mono','Consolas','DejaVu Sans Mono',monospace;
-    font-size:clamp(11px,2.2vh,19px);line-height:1.22;white-space:pre;user-select:none;margin:0}
+    font-size:clamp(11px,2.2vh,19px);line-height:1.22;white-space:pre;user-select:none;margin:0;max-width:100vw;overflow:hidden}
   .fr{color:#3fa7c4}.ti{color:#cfeaf4;font-weight:700}.w{color:#5a6a86}.pl{color:#ffe9a8}
   .bl{color:#c8d2e4}.h1{color:#3c82be}.h2{color:#28649e}.fz{color:#9fd4e8}.sn{color:#2a3550}
   .tx{color:#c8d2e4}.dm{color:#5f7090}.gd{color:#ffc94d}.ok{color:#7de08a}.bad{color:#ff7864}
@@ -5138,6 +5154,7 @@ const sWin  = () => [523, 659, 784, 1047].forEach((f, i) => setTimeout(() => snd
 
 /* -------- состояние -------- */
 let mode = "menu", cur = 0, tick = 0, S = null;
+const narrow = () => Math.min(innerWidth, document.documentElement.clientWidth) < 600;
 let progress = {};
 try { progress = JSON.parse(localStorage.getItem("polynya_web") || "{}"); } catch (e) {}
 function saveProgress() { try { localStorage.setItem("polynya_web", JSON.stringify(progress)); } catch (e) {} }
@@ -5212,7 +5229,7 @@ function drawPlay() {
   const innerW = Math.max(L.W * 2 + 2, t.length + 1);
   const bar = "═".repeat(innerW);
   t += " ".repeat(innerW - t.length);
-  const P = "   ";
+  const P = narrow() ? "" : "   ";
   let out = "\n";
   out += P + '<span class="fr">╔' + bar + '╗</span>\n';
   out += P + '<span class="fr">║</span><span class="ti">' + esc(t) + '</span><span class="fr">║</span>\n';
@@ -5226,21 +5243,40 @@ function drawPlay() {
   out += P + '<span class="fr">╚' + bar + '╝</span>\n\n';
   const st = stars(S.pushes, L.Par);
   const starTxt = "★".repeat(st) + "☆".repeat(3 - st);
-  out += P + '<span class="tx">толчков: ' + S.pushes + '</span><span class="dm">  наказ деда: ' + L.Par +
-    '  </span><span class="gd">' + starTxt + '</span><span class="dm">   осталось полыней: </span><span class="h1">' +
-    S.holes.size + '</span>\n\n';
+  if (narrow()) {
+    out += P + '<span class="tx">толчков ' + S.pushes + '</span><span class="dm"> · деда ' + L.Par +
+      ' </span><span class="gd">' + starTxt + '</span><span class="dm"> · полыней </span><span class="h1">' +
+      S.holes.size + '</span>\n\n';
+  } else {
+    out += P + '<span class="tx">толчков: ' + S.pushes + '</span><span class="dm">  наказ деда: ' + L.Par +
+      '  </span><span class="gd">' + starTxt + '</span><span class="dm">   осталось полыней: </span><span class="h1">' +
+      S.holes.size + '</span>\n\n';
+  }
   if (won()) {
     out += P + '<span class="ok">Полыньи замёрзли! </span><span class="gd">' + starTxt +
-      '</span><span class="tx">   Enter — дальше, R — переиграть</span>\n';
+      (narrow() ? '</span><span class="tx"> Enter — дальше</span>\n'
+                : '</span><span class="tx">   Enter — дальше, R — переиграть</span>\n');
   } else if (stuck()) {
-    out += P + '<span class="bad">Глыбы встали намертво. Z — отмотать, R — заново</span>\n';
+    out += P + '<span class="bad">' + (narrow() ? 'Тупик: Z — отмотать, R — заново'
+      : 'Глыбы встали намертво. Z — отмотать, R — заново') + '</span>\n';
   } else {
-    out += P + '<span class="dm">стрелки/WASD — идти и толкать · Z — отменить · R — заново · Esc — к реке</span>\n';
+    out += P + '<span class="dm">' + (narrow() ? '▲▼◀▶ идти · Z отмена · R заново'
+      : 'стрелки/WASD — идти и толкать · Z — отменить · R — заново · Esc — к реке') + '</span>\n';
   }
   scr.innerHTML = out;
+  autofit();
+}
+function autofit() {
+  scr.style.fontSize = "";
+  let fs = parseFloat(getComputedStyle(scr).fontSize);
+  const maxW = Math.min(innerWidth, document.documentElement.clientWidth) - 10;
+  let guard = 14;
+  while (scr.scrollWidth > maxW && fs > 7 && guard--) {
+    fs -= 1; scr.style.fontSize = fs + "px";
+  }
 }
 function drawMenu() {
-  const P = "   ";
+  const P = narrow() ? "" : "   ";
   let out = "\n" + P + '<span class="ti"> П О Л Ы Н Ь Я</span>\n';
   out += P + '<span class="dm"> зимняя головоломка: глыбы скользят, полыньи ждут</span>\n\n';
   out += P + '<span class="tx"> дед наказал заморозить все полыньи на реке —</span>\n';
@@ -5260,9 +5296,10 @@ function drawMenu() {
   const L = LEVELS[cur];
   out += "\n" + P + '<span class="dm"> уровень ' + L.N + ': лёд ' + L.W + "×" + L.H +
     " · полыней: " + L.Holes.length + " · наказ деда: " + L.Par + '</span>\n';
-  out += "\n" + P + '<span class="tx"> стрелки — выбрать · Enter — на лёд</span>\n';
-  out += P + '<span class="dm"> сыграно в браузере · движок портирован с PowerShell один в один</span>\n';
+  out += "\n" + P + '<span class="tx"> стрелки — выбрать · ' + (narrow() ? '«К РЕКЕ» — на лёд' : 'Enter — на лёд') + '</span>\n';
+  if (!narrow()) out += P + '<span class="dm"> сыграно в браузере · движок портирован с PowerShell один в один</span>\n';
   scr.innerHTML = out;
+  autofit();
 }
 function draw() { mode === "menu" ? drawMenu() : drawPlay(); }
 
@@ -5301,6 +5338,7 @@ function key(k) {
 const KEYS = { ArrowUp: "up", KeyW: "up", ArrowDown: "down", KeyS: "down",
   ArrowLeft: "left", KeyA: "left", ArrowRight: "right", KeyD: "right",
   KeyZ: "undo", KeyR: "rst", Enter: "enter", Escape: "esc" };
+addEventListener("resize", () => draw());
 addEventListener("keydown", e => {
   const k = KEYS[e.code]; if (!k) return;
   if (k !== "esc") e.preventDefault();
