@@ -291,6 +291,7 @@
     #hud{gap:9px;padding:8px 12px}
     #hud nav{display:none}
     #hud .lg{font-size:14.5px}
+    #bstamp{display:none}
     #burger{display:flex}
     .xp{font-size:10.5px;gap:6px}
     .xp .track{width:56px}
@@ -346,6 +347,7 @@
 
 <header id="hud">
   <div class="lg">RUSTAM<span>.CHU</span></div>
+  <span class="chip warm" id="bstamp" style="font-size:9px;padding:3px 7px" title="штамп сборки: если после публикации не сменился — у вас кэш">v16.08 14:08 МСК</span>
   <nav>
     <a href="#games">УРОВНИ</a>
     <a href="#lab">ЛАБА</a>
@@ -1203,7 +1205,12 @@ function labTouch(k){ if(labTouched.has(k)) return; labTouched.add(k); xpAdd(15)
         if(matchMedia("(orientation:portrait)").matches) h+=" · лучше повернуть горизонтально";
       }
       hint.textContent=h;
-      fr.removeAttribute("srcdoc"); fr.src="play/"+name.slice(4)+"/index.html";
+      const path="play/"+name.slice(4)+"/index.html";
+      fr.removeAttribute("srcdoc"); fr.src=path;
+      fetch(path,{method:"HEAD"}).then(res=>{ if(!res.ok) throw 0; }).catch(()=>{
+        fr.removeAttribute("src");
+        fr.srcdoc='<body style="margin:0;display:flex;align-items:center;justify-content:center;height:100vh;background:#0a0d1a;color:#c6cfe6;font:15px/1.7 system-ui;text-align:center"><div>Сборка этой игры ещё не выложена на сайт.<br><b style="color:#4de3e3">web_games_pipeline.ps1 → publish_site.ps1</b><br>— и кнопка оживёт.</div></body>';
+      });
     } else {
       const tpl=document.getElementById("tpl-"+name); if(!tpl) return;
       ttl.textContent=inf.t; hint.textContent=inf.h;
