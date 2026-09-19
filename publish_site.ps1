@@ -24,6 +24,19 @@ if ($LASTEXITCODE -ne 0) {
     Read-Host "Enter - закрыть"; exit 1
 }
 
+# ---------- СБОРКА: штамп, версия кэша, карточка соцсетей ----------
+Write-Host "Собираю..." -ForegroundColor Cyan
+$build = Join-Path $PSScriptRoot "build_site.ps1"
+if (Test-Path $build) {
+    & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $build
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "Сборка не прошла - публикация отменена." -ForegroundColor Red
+        Read-Host "Enter - закрыть"; exit 1
+    }
+} else {
+    Write-Host "build_site.ps1 рядом не найден - публикую как есть." -ForegroundColor Yellow
+}
+
 $repo = "rustamchu.github.io"
 $url  = "https://github.com/RustamChu/$repo.git"
 

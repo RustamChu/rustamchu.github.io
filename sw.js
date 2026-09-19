@@ -1,9 +1,9 @@
 /* RUSTAM.CHU service worker
    Стратегии:
    - навигация (index): network-first — публикации видны сразу, офлайн отдаём кэш;
-   - play/* и статика с этого origin: stale-while-revalidate — игры мгновенны
-     и тихо обновляются в фоне. Версия кэша = штамп сборки. */
-const VERSION = "19.09-2321";
+   - статика с этого origin: stale-while-revalidate — повторные заходы
+     мгновенны и тихо обновляются в фоне. Версия кэша = штамп сборки. */
+const VERSION = "20.09-0118";
 const CACHE = "rustamchu-" + VERSION;
 
 self.addEventListener("install", e => {
@@ -25,7 +25,7 @@ self.addEventListener("fetch", e => {
   const req = e.request;
   if (req.method !== "GET") return;
   const url = new URL(req.url);
-  if (url.origin !== location.origin) return; // CDN pygbag и прочее не трогаем
+  if (url.origin !== location.origin) return; // чужие домены не трогаем
 
   if (req.mode === "navigate") {
     e.respondWith(
