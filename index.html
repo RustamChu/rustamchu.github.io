@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0a0d1a">
-<title>РУСТАМ ЧУЧУЕВ — игровое меню · 10 игр с ИИ</title>
-<meta name="description" content="Портфолио-меню: 10 игр в 10 жанрах, все десять созданы в паре с ИИ за два часа. Ноль ассетов, решатели-доказательства, открытый код.">
+<title>РУСТАМ ЧУЧУЕВ — портфолио-игра · сайты, игры, ИИ</title>
+<meta name="description" content="Портфолио как живая игра: аркада собственных игр, полигон рабочих веб-демо — магазин, дашборд, канбан, чат — и четыре сменных мира оформления. Всё создано в паре с ИИ, графика и звук синтезируются кодом.">
 <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="%230a0d1a"/><path d="M11 8l14 8-14 8z" fill="%234de3e3"/></svg>'>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,17 +14,18 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:url" content="https://rustamchu.ru/">
-<meta property="og:title" content="РУСТАМ ЧУЧУЕВ — игровое меню · 10 игр с ИИ">
+<meta property="og:title" content="РУСТАМ ЧУЧУЕВ — портфолио-игра · сайты, игры, ИИ">
 <meta name="color-scheme" content="dark">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script>try{var _w=JSON.parse(localStorage.getItem("rustamchu_profile")||"{}").world;if(_w&&_w!=="neon")document.documentElement.dataset.world=_w;}catch(e){}</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
  {"@type":"Person","name":"Рустам Чучуев","alternateName":"RustamChu",
   "url":"https://rustamchu.ru/","email":"mailto:rustamchuchuev111@gmail.com",
   "sameAs":["https://github.com/RustamChu","https://t.me/rust_a_m"],
-  "jobTitle":"Разработчик игр в паре с ИИ"},
- {"@type":"ItemList","name":"Серия «10 жанров»","numberOfItems":10,"itemListElement":[
+  "jobTitle":"Разработчик сайтов и игр в паре с ИИ"},
+ {"@type":"ItemList","name":"Игровая серия","numberOfItems":10,"itemListElement":[
   {"@type":"VideoGame","position":1,"name":"NEON DOOM","genre":"шутер-рейкастер","url":"https://github.com/RustamChu/neon-doom"},
   {"@type":"VideoGame","position":2,"name":"ASHEN DEPTHS","genre":"пошаговый рогалик","url":"https://github.com/RustamChu/ashen-depths"},
   {"@type":"VideoGame","position":3,"name":"LAST REACTOR","genre":"tower defense","url":"https://github.com/RustamChu/last-reactor"},
@@ -36,7 +37,7 @@
   {"@type":"VideoGame","position":9,"name":"ФОНАРЩИК","genre":"платформер","url":"https://github.com/RustamChu/lamplighter"},
   {"@type":"VideoGame","position":10,"name":"МЕДВЕЖАТНИК","genre":"стелс","url":"https://github.com/RustamChu/medvezhatnik"}]}]}
 </script>
-<meta property="og:description" content="Портфолио-сайт как живое меню игры: 10 игр в 10 жанрах за два часа, лаборатория кода, «Бутылочка» и серверы. Всё рисуется и звучит кодом.">
+<meta property="og:description" content="Портфолио-сайт как живая игра: аркада, полигон работающих веб-демо и четыре мира оформления. Всё рисуется и звучит кодом.">
 <style>
   :root{
     --bg:#0a0d1a; --panel:#12172b; --panel2:#171d33; --line:#232b4a;
@@ -413,6 +414,128 @@
     #stats{gap:10px}
     .invit{font-size:13px}
   }
+
+  /* ---------- МИРЫ ОФОРМЛЕНИЯ ---------- */
+  body,#hud,section,.card,.demo,.dev,.stat,.wlc{transition:background .45s ease,background-color .45s ease,color .45s ease,border-color .45s ease}
+  html[data-world="fantasy"]{ --bg:#0c0709; --panel:#171013; --panel2:#1e1316; --line:#43242e;
+    --cyan:#e0a44f; --magenta:#b03040; --gold:#e8c06a; --green:#8aa050;
+    --text:#ecdfc8; --dim:#a08d78; --disp:Georgia,'Times New Roman',serif; }
+  html[data-world="fantasy"] body{ background:
+    radial-gradient(1100px 520px at 50% -8%, rgba(140,30,45,.26), transparent 62%),
+    radial-gradient(900px 480px at 88% 108%, rgba(120,80,25,.16), transparent 60%), var(--bg); }
+  html[data-world="fantasy"] h1,html[data-world="fantasy"] h2{ text-shadow:0 0 26px rgba(224,164,79,.28); }
+  html[data-world="frost"]{ --bg:#0a1119; --panel:#101c29; --panel2:#152332; --line:#28405a;
+    --cyan:#a8dcff; --magenta:#5f9fe8; --gold:#e8f2ff; --green:#9fd8c8; --text:#eef6fd; --dim:#8ea6bd; }
+  html[data-world="frost"] body{ background:
+    radial-gradient(1000px 520px at 50% -10%, rgba(100,160,230,.15), transparent 60%), var(--bg); }
+  html[data-world="retro"]{ --bg:#050904; --panel:#0a140a; --panel2:#0e1c0e; --line:#1e3d1e;
+    --cyan:#72e88e; --magenta:#c8e84d; --gold:#e8e06a; --green:#72e88e;
+    --text:#d9f4d9; --dim:#7fa07f; --disp:'JetBrains Mono','Consolas',monospace; }
+  html[data-world="retro"] body{ background:
+    linear-gradient(rgba(30,80,30,.10) 1px, transparent 1px) 0 0/100% 3px, var(--bg); }
+
+  /* ---------- ПОЛИГОН ---------- */
+  #wlgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:14px;margin-top:18px}
+  .wlc{position:relative;background:linear-gradient(160deg,var(--panel),var(--panel2));border:1px solid var(--line);
+    border-radius:14px;padding:16px 14px;cursor:pointer;text-align:left;color:var(--text);font-family:var(--body);
+    transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+  .wlc:hover{transform:translateY(-4px);border-color:var(--cyan);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  .wlc .ic{font-size:26px}
+  .wlc .nm{font-family:var(--disp);font-size:14px;margin-top:8px;color:var(--cyan);letter-spacing:.04em}
+  .wlc .sb{font-size:12px;color:var(--dim);margin-top:5px;line-height:1.45;min-height:34px}
+  .wlc .go{display:inline-block;margin-top:9px;font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--gold)}
+  .wlc .done{position:absolute;top:9px;right:10px;font-size:13px;color:var(--green)}
+  #wlm{position:fixed;inset:0;z-index:95;display:none;background:rgba(3,5,12,.74);backdrop-filter:blur(6px);padding:22px}
+  #wlm.on{display:flex;align-items:center;justify-content:center}
+  #wlm .box{width:min(860px,100%);max-height:min(88vh,100%);display:flex;flex-direction:column;background:var(--panel);
+    border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.6)}
+  #wlm .wbar{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--panel2);border-bottom:1px solid var(--line)}
+  #wlm .wbar .t{font-family:var(--disp);font-size:13px;color:var(--cyan);letter-spacing:.06em}
+  #wlm .wbar .sp{flex:1}
+  #wlm .wbar .x{background:none;border:1px solid var(--line);color:var(--dim);border-radius:8px;min-width:30px;height:30px;cursor:pointer;font-size:14px}
+  #wlm .wbar .x:hover{color:var(--text);border-color:var(--cyan)}
+  #wlm .wbody{padding:16px;overflow:auto;-webkit-overflow-scrolling:touch}
+  body.wl-open{position:fixed;inset:0;width:100%;overflow:hidden}
+  @media(max-width:640px){ #wlm{padding:0} #wlm .box{width:100%;max-height:100%;height:100%;border-radius:0} }
+  .wl-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+  .wl-btn{background:var(--panel2);border:1px solid var(--line);color:var(--text);font-family:var(--mono);font-size:12px;
+    padding:8px 12px;border-radius:9px;cursor:pointer}
+  .wl-btn:hover{border-color:var(--cyan);color:var(--cyan)}
+  .wl-btn.acc{border-color:var(--cyan);color:var(--cyan)}
+  .wl-in{background:#00000033;border:1px solid var(--line);color:var(--text);font-family:var(--body);font-size:13px;
+    padding:8px 10px;border-radius:9px;outline:none;min-width:0}
+  .wl-in:focus{border-color:var(--cyan)}
+  .wl-note{font-size:11px;color:var(--dim);font-family:var(--mono);margin-top:12px;line-height:1.55}
+  .wl-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(115px,1fr));gap:10px;margin-bottom:12px}
+  .wl-kpi{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px}
+  .wl-kpi .v{font-family:var(--disp);font-size:18px;color:var(--cyan)}
+  .wl-kpi .l{font-size:9px;color:var(--dim);font-family:var(--mono);letter-spacing:.08em;margin-top:3px}
+  .wl-kpi .d{font-size:10px;margin-top:2px;font-family:var(--mono)}
+  .wl-kpi .up{color:var(--green)} .wl-kpi .dn{color:var(--magenta)}
+  canvas.wl-cv{width:100%;border:1px solid var(--line);border-radius:10px;background:#00000033;display:block;touch-action:none}
+  .wl-grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}
+  @media(max-width:640px){.wl-grid2{grid-template-columns:1fr}}
+  .wl-tblwrap{overflow:auto;border:1px solid var(--line);border-radius:10px}
+  .wl-tbl{width:100%;border-collapse:collapse;font-size:12px;font-family:var(--mono)}
+  .wl-tbl th{color:var(--cyan);text-align:left;padding:7px 9px;border-bottom:1px solid var(--line);cursor:pointer;user-select:none;white-space:nowrap;background:var(--panel2)}
+  .wl-tbl td{padding:6px 9px;border-bottom:1px solid #ffffff10;color:var(--text);white-space:nowrap}
+  .wl-tag{display:inline-block;padding:2px 8px;border-radius:20px;font-size:10px;font-family:var(--mono)}
+  .wl-shop{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px}
+  .wl-prod{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px;text-align:center}
+  .wl-prod .pi{font-size:28px}
+  .wl-prod .pn{font-size:11.5px;margin:6px 0 2px;min-height:28px}
+  .wl-prod .pp{font-family:var(--mono);color:var(--gold);font-size:12px;margin-bottom:7px}
+  .wl-cart{background:#00000026;border:1px solid var(--line);border-radius:10px;padding:12px}
+  .wl-cart h4{margin:0 0 10px;font-family:var(--mono);font-size:11px;letter-spacing:.15em;color:var(--dim)}
+  .wl-crow{display:flex;align-items:center;gap:8px;font-size:12px;margin-bottom:7px}
+  .wl-crow b{flex:1;font-weight:500}
+  .wl-kan{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  @media(max-width:640px){.wl-kan{grid-template-columns:1fr}}
+  .wl-col{background:#00000026;border:1px solid var(--line);border-radius:10px;padding:9px;min-height:130px}
+  .wl-col.над{border-color:var(--cyan)}
+  .wl-col h4{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:.15em;margin:0 0 8px}
+  .wl-task{background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:8px;font-size:12px;margin-bottom:8px;display:flex;gap:6px;align-items:center;cursor:grab}
+  .wl-task b{flex:1;font-weight:500;word-break:break-word}
+  .wl-task button{background:none;border:none;color:var(--dim);cursor:pointer;font-size:12px;padding:2px 3px}
+  .wl-task button:hover{color:var(--cyan)}
+  .wl-chat{display:flex;flex-direction:column;gap:8px;height:280px;overflow:auto;padding:4px;border:1px solid var(--line);border-radius:10px;background:#00000022}
+  .wl-msg{max-width:80%;padding:8px 11px;border-radius:13px;font-size:13px;line-height:1.45}
+  .wl-msg.me{align-self:flex-end;background:var(--cyan);color:#04222a;border-bottom-right-radius:4px}
+  .wl-msg.bot{align-self:flex-start;background:var(--panel2);border:1px solid var(--line);border-bottom-left-radius:4px}
+  .wl-cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;font-family:var(--mono);font-size:11px;margin-top:10px}
+  .wl-cal .hd{color:var(--dim);text-align:center;padding:3px 0;font-size:9px;letter-spacing:.1em}
+  .wl-day{border:1px solid var(--line);border-radius:8px;min-height:46px;padding:4px;cursor:pointer;position:relative;overflow:hidden}
+  .wl-day:hover{border-color:var(--cyan)}
+  .wl-day.mute{opacity:.28;cursor:default}
+  .wl-day.today{border-color:var(--gold)}
+  .wl-day.sel{border-color:var(--cyan);background:#ffffff08}
+  .wl-day .dot{position:absolute;bottom:3px;left:4px;right:4px;font-size:8.5px;color:var(--green);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+  .wl-keys{display:flex;gap:4px;margin-top:12px}
+  .wl-key{flex:1;min-width:0;height:88px;border:1px solid var(--line);border-radius:0 0 8px 8px;background:linear-gradient(#e8ecf6,#c4c8d4);color:#333;font-family:var(--mono);font-size:9px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px;cursor:pointer;user-select:none;touch-action:none}
+  .wl-key.on,.wl-key:active{background:linear-gradient(var(--cyan),#7fb8c0)}
+  .wl-steps{display:flex;gap:6px;margin-bottom:14px}
+  .wl-step{flex:1;height:5px;border-radius:3px;background:var(--line)}
+  .wl-step.on{background:var(--cyan)}
+  .wl-fld{display:block;margin-bottom:11px}
+  .wl-fld label{display:block;font-size:10px;font-family:var(--mono);color:var(--dim);margin-bottom:5px;letter-spacing:.1em}
+  .wl-err{color:var(--magenta);font-size:11px;margin-top:4px;min-height:14px}
+  .wl-class{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .wl-class .wl-btn{text-align:left;line-height:1.4}
+  .wl-swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+  .wl-sw{border:1px solid var(--line);border-radius:10px;padding:8px;font-family:var(--mono);font-size:9px;color:var(--dim)}
+  .wl-sw i{display:block;height:34px;border-radius:7px;border:1px solid #ffffff22;margin-bottom:6px}
+  .wl-gal{position:relative;margin-top:4px}
+  .wl-gal canvas{width:100%;border-radius:12px;border:1px solid var(--line);background:#000;display:block}
+  .wl-gnav{position:absolute;top:50%;transform:translateY(-50%);background:#000a;border:1px solid var(--line);color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:14px}
+  .wl-ed{width:100%;min-height:180px;resize:vertical;background:#00000033;border:1px solid var(--line);border-radius:10px;color:var(--text);font-family:var(--mono);font-size:12.5px;padding:10px;outline:none;box-sizing:border-box}
+  .wl-md{border:1px solid var(--line);border-radius:10px;padding:12px;font-size:13.5px;line-height:1.6;overflow:auto;min-height:180px}
+  .wl-md h1,.wl-md h2,.wl-md h3{color:var(--cyan);margin:.5em 0 .3em;font-family:var(--disp);font-size:1.25em}
+  .wl-md h1{font-size:1.5em}
+  .wl-md code{background:#00000055;border:1px solid var(--line);padding:1px 5px;border-radius:5px;font-family:var(--mono);font-size:12px;color:var(--gold)}
+  .wl-md blockquote{border-left:3px solid var(--cyan);margin:.5em 0;padding:2px 12px;color:var(--dim)}
+  .wl-md a{color:var(--cyan)}
+  .wl-md ul{margin:.4em 0;padding-left:20px}
+  .wl-md hr{border:none;border-top:1px solid var(--line);margin:.8em 0}
 </style>
 </head>
 <body>
@@ -440,10 +563,11 @@
 
 <header id="hud">
   <div class="lg">RUSTAM<span>.CHU</span></div>
-  <span class="chip warm" id="bstamp" style="font-size:9px;padding:3px 7px" title="штамп сборки: если после публикации не сменился — у вас кэш">v18.09 12:08 МСК</span>
+  <span class="chip warm" id="bstamp" style="font-size:9px;padding:3px 7px" title="штамп сборки: если после публикации не сменился — у вас кэш">v19.09 16:57 МСК</span>
   <nav>
     <a href="#games">УРОВНИ</a>
     <a href="#lab">ЛАБА</a>
+    <a href="#weblab">ПОЛИГОН</a>
     <a href="#butylochka">БУТЫЛОЧКА</a>
     <a href="#servers">СЕРВЕРЫ</a>
     <a href="#studio">СТУДИЯ</a>
@@ -454,6 +578,7 @@
   <div class="xp"><span id="xpn">0 XP</span><span class="track"><i id="xpbar"></i></span></div>
   <button class="tgl" id="sndtgl" aria-pressed="false" title="звук синтезируется кодом, как в играх серии">🔇 ЗВУК</button>
   <button class="tgl" id="crttgl" aria-pressed="false" title="режим старого монитора">CRT</button>
+  <button class="tgl" id="worldtgl" title="сменить мир оформления: неон, тьма, зима, ретро">🌌 НЕОН</button>
 </header>
 <div id="tele" aria-label="телеметрия">
   <div class="th">▮ ТЕЛЕМЕТРИЯ · F3</div>
@@ -480,6 +605,7 @@
 <nav id="mnav">
   <a href="#games">▶ УРОВНИ</a>
   <a href="#lab">▶ ЛАБОРАТОРИЯ</a>
+  <a href="#weblab">▶ ПОЛИГОН</a>
   <a href="#butylochka">▶ БУТЫЛОЧКА</a>
   <a href="#servers">▶ СЕРВЕРЫ</a>
   <a href="#studio">▶ СТУДИЯ</a>
@@ -490,12 +616,14 @@
   <canvas id="stars"></canvas>
   <div class="over">— ИГРОК №1 —</div>
   <h1 id="title">ЧУЧУЕВ РУСТАМ</h1>
-  <p class="sub"><b>Разработчик игр в паре с ИИ</b> — 10 завершённых игр в 10 жанрах —
-    все вместе за два часа: от промтов до релизов с тестами и открытым кодом.</p>
+  <p class="sub"><b>Разработчик в паре с ИИ</b> — собираю игры, сайты и инструменты:
+    от идеи до релиза с тестами и открытым кодом. Этот сайт — само портфолио:
+    в него можно играть, менять миры оформления и трогать рабочие демо в полигоне.</p>
   <nav id="menu">
     <button class="mi" data-go="#games">НОВАЯ ИГРА</button>
     <button class="mi" data-go="#butylochka">ПРОДОЛЖИТЬ</button>
     <button class="mi" data-go="#lab">ЛАБОРАТОРИЯ</button>
+    <button class="mi" data-go="#weblab">ПОЛИГОН</button>
     <button class="mi" data-go="#servers">СЕРВЕРЫ</button>
     <button class="mi" data-go="#press">КОНТАКТЫ</button>
     <button class="mi" id="exitbtn">ВЫХОД</button>
@@ -506,17 +634,17 @@
 <div id="ticker" aria-hidden="true"><div class="trow" id="tickrow"></div></div>
 
 <section id="stats">
-  <div class="stat"><div class="n" data-count="10">0</div><div class="l">ИГР ЗАВЕРШЕНО</div></div>
-  <div class="stat"><div class="n" data-count="10">0</div><div class="l">ЖАНРОВ</div></div>
+  <div class="stat"><div class="n" data-count="10">0</div><div class="l">ИГР В АРКАДЕ</div></div>
+  <div class="stat"><div class="n" data-count="12">0</div><div class="l">ДЕМО-СТЕНДОВ</div></div>
+  <div class="stat"><div class="n" data-count="4">0</div><div class="l">МИРА ОФОРМЛЕНИЯ</div></div>
   <div class="stat"><div class="n" data-count="3">0</div><div class="l">СТЕКА: PY · JS · PS</div></div>
-  <div class="stat"><div class="n"><span data-count="2">0</span><em> ч</em></div><div class="l">НА ВСЮ СЕРИЮ</div></div>
   <div class="stat"><div class="n"><span data-count="3000">0</span><em>+</em></div><div class="l">ПРОВЕРОК В ТЕСТАХ</div></div>
 </section>
 
 <section id="games">
   <div class="shead"><span class="tag">ВЫБОР УРОВНЯ</span><span class="rule"></span></div>
-  <h2>СЕРИЯ «10 ЖАНРОВ»</h2>
-  <p class="slead">Каждая игра создана с одного развёрнутого промта. Ноль готовых ассетов — вся
+  <h2>АРКАДА: ИГРЫ ПРЯМО В БРАУЗЕРЕ</h2>
+  <p class="slead">Игры, собранные в паре с ИИ. Ноль готовых ассетов — вся
     графика и звук синтезируются кодом. Встроенный решатель доказывает проходимость,
     headless-тесты держат планку. НАВЬ, ПОЛЫНЬЯ и ФОНАРЩИК запускаются прямо
     на этой странице — ищите кнопку «ИГРАТЬ»; остальные подключаются
@@ -561,6 +689,23 @@
     </div>
   </div>
 </section>
+
+<section id="weblab">
+  <div class="shead"><span class="tag">ПОЛИГОН · РАБОЧИЕ ПРОТОТИПЫ</span><span class="rule"></span></div>
+  <h2>МИНИ-ВЕРСИИ НАСТОЯЩИХ САЙТОВ</h2>
+  <p class="slead">Что я собираю с помощью ИИ помимо игр. Каждый стенд — работающий прототип
+    без единой библиотеки: магазин с корзиной, дашборд с графиками, канбан, чат, формы…
+    Открывайте и трогайте — за каждый испытанный стенд идёт опыт.</p>
+  <div id="wlgrid"></div>
+</section>
+
+<div id="wlm" role="dialog" aria-modal="true" aria-label="демо-стенд">
+  <div class="box">
+    <div class="wbar"><span class="t" id="wlm-title">СТЕНД</span><span class="sp"></span>
+      <button class="x" id="wlm-close" aria-label="закрыть">✕</button></div>
+    <div class="wbody" id="wlm-body"></div>
+  </div>
+</div>
 
 <section id="butylochka">
   <div class="shead"><span class="tag">МОБИЛЬНЫЙ ПРОДУКТ · В РАЗРАБОТКЕ</span><span class="rule"></span></div>
@@ -630,7 +775,7 @@
       <div class="drl">ИИ-НАПАРНИК · ПРОМТ-ИНЖИНИРИНГ</div>
       <div class="dtx">Каждая игра серии — один развёрнутый промт и доведение до релиза.
         ИИ пишет черновик мира, человек решает, каким миру быть.</div>
-      <div class="dst">ВЫРАБОТКА: 10 ИГР / 2 ЧАСА</div>
+      <div class="dst">ВЫРАБОТКА: ИГРЫ · САЙТ · ПОЛИГОН ДЕМО</div>
     </div>
     <div class="dev">
       <div class="dico">🎨</div>
@@ -676,7 +821,7 @@
     <a class="cchip" href="https://t.me/rust_a_m" target="_blank" rel="noopener"><span class="ico">➤</span> t.me/<b>rust_a_m</b></a>
   </div>
   <div class="fine">САЙТ СДЕЛАН В ПАРЕ С ИИ · ВЕСЬ — ОДИН ФАЙЛ · ГРАФИКА И ЗВУК СИНТЕЗИРУЮТСЯ КОДОМ<br>
-    ЧУЧУЕВ РУСТАМ · СПЕЦПРОЕКТ «НЕЙРОИГРЫ» · 2026</div>
+    ЧУЧУЕВ РУСТАМ · ПОРТФОЛИО-ИГРА · 2026</div>
 </section>
 
 <script>
@@ -693,6 +838,8 @@
      лаборатория кода    — генератор+BFS-решатель, DDA-рейкастер, синтез SFX
      терминал            — help/wow/бутылочка/whoami/sudo
      FX-слой             — мобы-питомцы, слэш, выстрелы; авто-качество
+     полигон             — 12 демо-стендов: дашборд, магазин, канбан, чат…
+     миры                — 4 темы оформления (🌌), PROFILE.world
      аркада              — игры в iframe: srcdoc и play/ (wasm),
                            deep-link #play=, кнопка «назад» закрывает
      service worker      — офлайн + мгновенные повторные загрузки
@@ -705,7 +852,7 @@ try {
   console.log("%c РУСТАМ.CHU %c весь сайт — один файл, читайте на здоровье ",
     "background:#4de3e3;color:#061018;font-weight:900;padding:4px 8px;border-radius:4px 0 0 4px",
     "background:#12172b;color:#4de3e3;padding:4px 8px;border-radius:0 4px 4px 0");
-  console.log("10 игр · лаборатория · конами-код работает · t.me/rust_a_m");
+  console.log("аркада · полигон · 4 мира · конами-код работает · t.me/rust_a_m");
 } catch (e) {}
 if (typeof CanvasRenderingContext2D !== "undefined" && !CanvasRenderingContext2D.prototype.roundRect) {
   CanvasRenderingContext2D.prototype.roundRect = function(x, y, w, h, r) {
@@ -768,7 +915,7 @@ let booted=false;
 })();
 
 /* ---------- профиль игрока: XP, уровни, персист ---------- */
-const ACH_NAMES={go:"Первые шаги",end:"Пройдено до конца",exit:"Выхода нет",spin:"Крутанул бутылочку",
+const ACH_NAMES={wl:"Полигонщик: все стенды",world:"Между мирами",go:"Первые шаги",end:"Пройдено до конца",exit:"Выхода нет",spin:"Крутанул бутылочку",
   term:"Поговорил с сервером",lab:"Лаборант",crt:"Ламповый режим",konami:"GOD MODE",
   gun:"Стрелок",hunt:"Охотник на мобов",arcade:"Аркадчик",polynya:"Морозильщик"};
 let PROFILE={nick:"",xp:0,ach:[],visits:0,polyLevels:0};
@@ -805,13 +952,655 @@ function ach(id,title){
 /* ---------- тикер студийных новостей ---------- */
 (function(){
   const row=$("#tickrow"); if(!row) return;
-  const items=["<b>10/10</b> игр запускаются в браузере","вся серия — <b>за два часа</b>",
-    "ассетов нарисовано: <b>0</b>","аудиофайлов записано: <b>0</b>",
+  const items=["<b>полигон</b>: 12 работающих демо-стендов","<b>4 мира</b> оформления — кнопка 🌌 в шапке",
+    "все игры запускаются <b>в браузере</b>","ассетов нарисовано: <b>0</b>","аудиофайлов записано: <b>0</b>",
     "проверок в тестах: <b>3000+</b>","сайт работает <b>офлайн</b> (PWA)",
     "конами-код <b>работает</b>","мобов можно <b>лопать</b>",
     "исходник открыт: <b>Ctrl+U</b>","связь: <b>t.me/rust_a_m</b>"];
   const half=items.map(i=>"<span>"+i+"</span>").join('<span style="color:#3a4468">◆</span>');
   row.innerHTML=half+'<span style="color:#3a4468">◆</span>'+half+'<span style="color:#3a4468">◆</span>';
+})();
+
+
+/* ---------- миры оформления ---------- */
+const WORLDS=[["neon","НЕОН"],["fantasy","ТЬМА"],["frost","ЗИМА"],["retro","РЕТРО"]];
+function applyWorld(w,quiet){
+  if(w==="neon") delete document.documentElement.dataset.world;
+  else document.documentElement.dataset.world=w;
+  const meta=WORLDS.find(x=>x[0]===w)||WORLDS[0];
+  const b=$("#worldtgl"); if(b){ b.textContent="🌌 "+meta[1]; b.classList.toggle("on",w!=="neon"); }
+  PROFILE.world=w; saveProfile();
+  if(!quiet) beep(w==="fantasy"?196:w==="frost"?740:w==="retro"?330:520,.09,"triangle",.12);
+}
+(function(){
+  const b=$("#worldtgl"); if(!b) return;
+  const saved=WORLDS.some(x=>x[0]===PROFILE.world)?PROFILE.world:"neon";
+  applyWorld(saved,true);
+  const seen=new Set([saved]);
+  b.addEventListener("click",()=>{
+    const cur=document.documentElement.dataset.world||"neon";
+    const i=WORLDS.findIndex(x=>x[0]===cur);
+    const next=WORLDS[(i+1)%WORLDS.length][0];
+    applyWorld(next); seen.add(next);
+    if(seen.size===WORLDS.length) ach("world","Между мирами: все четыре оформления");
+    document.dispatchEvent(new CustomEvent("worldchange"));
+  });
+})();
+
+/* ---------- ПОЛИГОН: 12 демо-стендов ---------- */
+(function(){
+const grid=$("#wlgrid"); if(!grid) return;
+const wlm=$("#wlm"), wbody=$("#wlm-body"), wtitle=$("#wlm-title");
+PROFILE.wl=Array.isArray(PROFILE.wl)?PROFILE.wl:[];
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function ce(t,c,h){const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;}
+function cssv(n){return getComputedStyle(document.documentElement).getPropertyValue(n).trim()||"#4de3e3";}
+function fitCv(cv,hh){const w=Math.max(240,(cv.parentElement&&cv.parentElement.clientWidth)||560);
+  cv.width=w*2; cv.height=hh*2; cv.style.height=hh+"px"; const x=cv.getContext("2d"); x.scale(2,2); return [x,w,hh];}
+function store(k,v){ try{ if(v===undefined) return JSON.parse(localStorage.getItem(k)||"null"); localStorage.setItem(k,JSON.stringify(v)); }catch(e){ return null; } }
+
+/* === 1. дашборд === */
+function dDash(el){
+  const kp=ce("div","wl-kpis"); el.appendChild(kp);
+  const g=ce("div","wl-grid2"); el.appendChild(g);
+  const cv1=ce("canvas","wl-cv"), cv2=ce("canvas","wl-cv");
+  g.appendChild(cv1); g.appendChild(cv2);
+  const row=ce("div","wl-row"); const btn=ce("button","wl-btn acc","⟳ НОВЫЕ ДАННЫЕ");
+  row.appendChild(btn); el.appendChild(row);
+  el.appendChild(ce("div","wl-note","Линия — доход за 30 дней, столбцы — каналы за неделю. Всё нарисовано на чистом canvas без библиотек; цвета берутся из активного мира."));
+  let line=[],bars=[],kpis=[];
+  function gen(){
+    line=[]; let v=50+Math.random()*40;
+    for(let i=0;i<30;i++){ v=Math.max(12,v+(Math.random()-.46)*16); line.push(v); }
+    bars=Array.from({length:7},()=>10+Math.random()*90);
+    const conv=(1.5+Math.random()*4).toFixed(1), up=Math.random()>.4;
+    kpis=[["ПОСЕТИТЕЛИ",(8+Math.random()*90|0)+"K",(up?"+":"−")+(Math.random()*18|0)+"%",up],
+          ["КОНВЕРСИЯ",conv+"%","+"+(Math.random()*9|0)+"%",true],
+          ["ДОХОД",(Math.random()*900+100|0)+"К ₽",(Math.random()>.5?"+":"−")+(Math.random()*12|0)+"%",Math.random()>.5],
+          ["АПТАЙМ","99."+(90+Math.random()*9|0)+"%","SLA OK",true]];
+  }
+  function drawAll(){
+    kp.innerHTML=kpis.map(k=>'<div class="wl-kpi"><div class="v">'+k[1]+'</div><div class="l">'+k[0]+'</div><div class="d '+(k[3]?"up":"dn")+'">'+k[2]+"</div></div>").join("");
+    const C=cssv("--cyan"), M=cssv("--magenta"), L=cssv("--line"), D=cssv("--dim");
+    const [x1,w1,h1]=fitCv(cv1,190);
+    const t0=performance.now();
+    (function an(){
+      if(!cv1.isConnected) return;
+      const k=Math.min(1,(performance.now()-t0)/750);
+      x1.clearRect(0,0,w1,h1);
+      x1.strokeStyle=L; x1.lineWidth=1;
+      for(let i=1;i<4;i++){ x1.beginPath(); x1.moveTo(0,h1*i/4); x1.lineTo(w1,h1*i/4); x1.stroke(); }
+      const mx=Math.max(...line), n=Math.ceil(line.length*k);
+      const px=i=>8+i*(w1-16)/(line.length-1), py=v=>h1-12-(v/mx)*(h1-26);
+      x1.beginPath();
+      for(let i=0;i<n;i++){ const X=px(i),Y=py(line[i]); i?x1.lineTo(X,Y):x1.moveTo(X,Y); }
+      x1.strokeStyle=C; x1.lineWidth=2; x1.stroke();
+      if(n>1){ x1.lineTo(px(n-1),h1); x1.lineTo(px(0),h1); x1.closePath();
+        x1.fillStyle=C+"22"; x1.fill(); }
+      x1.fillStyle=D; x1.font="9px monospace"; x1.fillText("30 ДНЕЙ · ДОХОД",8,12);
+      if(k<1) requestAnimationFrame(an);
+    })();
+    const [x2,w2,h2]=fitCv(cv2,190);
+    const names=["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"], bmx=Math.max(...bars);
+    const t1=performance.now();
+    (function an2(){
+      if(!cv2.isConnected) return;
+      const k=Math.min(1,(performance.now()-t1)/750);
+      x2.clearRect(0,0,w2,h2);
+      const bw=(w2-24)/7;
+      bars.forEach((b,i)=>{
+        const bh=(b/bmx)*(h2-38)*k, X=12+i*bw;
+        x2.fillStyle=i===new Date().getDay()-1?M:C;
+        x2.fillRect(X+4,h2-18-bh,bw-8,bh);
+        x2.fillStyle=D; x2.font="9px monospace"; x2.textAlign="center";
+        x2.fillText(names[i],X+bw/2,h2-5);
+      });
+      x2.textAlign="left"; x2.fillStyle=D; x2.font="9px monospace"; x2.fillText("НЕДЕЛЯ · КАНАЛЫ",8,12);
+      if(k<1) requestAnimationFrame(an2);
+    })();
+  }
+  btn.addEventListener("click",()=>{ gen(); drawAll(); beep(700,.05,"triangle",.1); });
+  gen(); drawAll();
+}
+
+/* === 2. магазин === */
+function dShop(el){
+  const PRODS=[["🗡","Меч из неона",1290,"оружие"],["🛡","Щит рассвета",990,"броня"],
+    ["🧪","Зелье маны",240,"зелья"],["📜","Свиток кода",180,"артефакты"],
+    ["🪖","Шлем стража",760,"броня"],["🏹","Лук залпа",1150,"оружие"],
+    ["💍","Кольцо +60 FPS",2990,"артефакты"],["🧴","Эликсир дедлайна",420,"зелья"]];
+  const cart=new Map(); let promo=false;
+  const g=ce("div","wl-grid2"); el.appendChild(g);
+  const left=ce("div"), right=ce("div","wl-cart"); g.appendChild(left); g.appendChild(right);
+  const chips=ce("div","wl-row"); chips.style.marginTop="0"; left.appendChild(chips);
+  const shop=ce("div","wl-shop"); shop.style.marginTop="12px"; left.appendChild(shop);
+  let cat="всё";
+  ["всё","оружие","броня","зелья","артефакты"].forEach(c=>{
+    const b=ce("button","wl-btn"+(c===cat?" acc":""),c.toUpperCase());
+    b.addEventListener("click",()=>{ cat=c; chips.querySelectorAll(".wl-btn").forEach(x=>x.classList.remove("acc")); b.classList.add("acc"); renderShop(); });
+    chips.appendChild(b);
+  });
+  function renderShop(){
+    shop.innerHTML="";
+    PRODS.forEach((p,i)=>{
+      if(cat!=="всё"&&p[3]!==cat) return;
+      const d=ce("div","wl-prod",'<div class="pi">'+p[0]+'</div><div class="pn">'+p[1]+'</div><div class="pp">'+p[2]+' ₽</div>');
+      const b=ce("button","wl-btn","В КОРЗИНУ");
+      b.addEventListener("click",()=>{ cart.set(i,(cart.get(i)||0)+1); renderCart(); beep(880,.05,"triangle",.1); });
+      d.appendChild(b); shop.appendChild(d);
+    });
+  }
+  function renderCart(){
+    right.innerHTML='<h4>КОРЗИНА</h4>';
+    if(!cart.size){ right.appendChild(ce("div","wl-note","Пока пусто. Добавьте что-нибудь героическое.")); return; }
+    let sum=0;
+    cart.forEach((q,i)=>{
+      const p=PRODS[i]; sum+=p[2]*q;
+      const r=ce("div","wl-crow","<span>"+p[0]+"</span><b>"+p[1]+"</b><span>×"+q+"</span>");
+      const minus=ce("button","wl-btn","−"); minus.style.padding="2px 8px";
+      minus.addEventListener("click",()=>{ q>1?cart.set(i,q-1):cart.delete(i); renderCart(); });
+      r.appendChild(minus); right.appendChild(r);
+    });
+    const disc=promo?Math.round(sum*.2):0;
+    right.appendChild(ce("div","wl-crow","<b>ИТОГО</b><span style='font-family:var(--mono);color:var(--gold)'>"+(sum-disc)+" ₽</span>"));
+    if(promo) right.appendChild(ce("div","wl-note","Промокод RUSTAM: −20% ("+disc+" ₽)"));
+    const prow=ce("div","wl-row");
+    const pin=ce("input","wl-in"); pin.placeholder="промокод"; pin.style.width="110px";
+    const pbtn=ce("button","wl-btn","OK");
+    pbtn.addEventListener("click",()=>{ promo=pin.value.trim().toUpperCase()==="RUSTAM"; renderCart(); beep(promo?990:180,.09,"triangle",.12); });
+    prow.appendChild(pin); prow.appendChild(pbtn); right.appendChild(prow);
+    const buy=ce("button","wl-btn acc","ОФОРМИТЬ ЗАКАЗ");
+    buy.style.marginTop="10px";
+    buy.addEventListener("click",()=>{
+      right.innerHTML='<h4>КОРЗИНА</h4><div style="font-size:26px">✅</div><div class="wl-note">Заказ #'+(1000+Math.random()*9000|0)+' оформлен. Данные никуда не ушли — это демо, но так выглядит настоящий чекаут.</div>';
+      cart.clear(); chord&&chord();
+    });
+    right.appendChild(buy);
+  }
+  el.appendChild(ce("div","wl-note","Каталог, фильтры по категориям, корзина с пересчётом и промокод <b>RUSTAM</b> на скидку 20%."));
+  renderShop(); renderCart();
+}
+
+/* === 3. канбан === */
+function dKanban(el){
+  const KEY="rustamchu_kanban";
+  const DEF=[["Придумать игру","Выучить WebAudio"],["Сайт-портфолио"],["10 игр серии","Полигон демо"]];
+  let cols=store(KEY)||DEF.map(c=>c.slice());
+  const names=["ПЛАН","В РАБОТЕ","ГОТОВО"];
+  const addRow=ce("div","wl-row"); addRow.style.marginTop="0";
+  const inp=ce("input","wl-in"); inp.placeholder="новая задача…"; inp.style.flex="1"; inp.maxLength=60;
+  const add=ce("button","wl-btn acc","+ В ПЛАН");
+  addRow.appendChild(inp); addRow.appendChild(add); el.appendChild(addRow);
+  const kan=ce("div","wl-kan"); kan.style.marginTop="12px"; el.appendChild(kan);
+  const row=ce("div","wl-row");
+  const reset=ce("button","wl-btn","СБРОСИТЬ ДОСКУ"); row.appendChild(reset); el.appendChild(row);
+  el.appendChild(ce("div","wl-note","Карточки переносятся мышью (drag&drop) или стрелками ◀ ▶ на телефоне. Доска запоминается в браузере."));
+  function save(){ store(KEY,cols); }
+  function render(){
+    kan.innerHTML="";
+    cols.forEach((c,ci)=>{
+      const col=ce("div","wl-col","<h4>"+names[ci]+" · "+c.length+"</h4>");
+      col.addEventListener("dragover",e=>e.preventDefault());
+      col.addEventListener("drop",e=>{ e.preventDefault();
+        const [fc,fi]=(e.dataTransfer.getData("text")||"").split(":").map(Number);
+        if(isNaN(fc)||!cols[fc]||cols[fc][fi]===undefined) return;
+        col.classList.remove("над");
+        const t=cols[fc].splice(fi,1)[0]; cols[ci].push(t); save(); render(); });
+      col.addEventListener("dragenter",()=>col.classList.add("над"));
+      col.addEventListener("dragleave",()=>col.classList.remove("над"));
+      c.forEach((t,ti)=>{
+        const card=ce("div","wl-task"); card.draggable=true;
+        card.appendChild(ce("b",null,esc(t)));
+        card.addEventListener("dragstart",e=>e.dataTransfer.setData("text",ci+":"+ti));
+        const mk=(txt,fn)=>{ const b=ce("button",null,txt); b.addEventListener("click",fn); card.appendChild(b); };
+        if(ci>0) mk("◀",()=>{ cols[ci].splice(ti,1); cols[ci-1].push(t); save(); render(); });
+        if(ci<2) mk("▶",()=>{ cols[ci].splice(ti,1); cols[ci+1].push(t); save(); render(); beep(ci===1?900:600,.05,"triangle",.08); });
+        mk("✕",()=>{ cols[ci].splice(ti,1); save(); render(); });
+        col.appendChild(card);
+      });
+      kan.appendChild(col);
+    });
+  }
+  add.addEventListener("click",()=>{ const v=inp.value.trim(); if(!v) return; cols[0].push(v); inp.value=""; save(); render(); beep(700,.05,"triangle",.1); });
+  inp.addEventListener("keydown",e=>{ if(e.key==="Enter") add.click(); });
+  reset.addEventListener("click",()=>{ cols=DEF.map(c=>c.slice()); save(); render(); });
+  render();
+}
+
+/* === 4. чат-гид === */
+function dChat(el){
+  const log=ce("div","wl-chat"); el.appendChild(log);
+  const chips=ce("div","wl-row");
+  ["Что ты умеешь?","Какой стек?","Как связаться?"].forEach(q=>{
+    const b=ce("button","wl-btn",q); b.addEventListener("click",()=>send(q)); chips.appendChild(b);
+  });
+  el.appendChild(chips);
+  const row=ce("div","wl-row");
+  const inp=ce("input","wl-in"); inp.placeholder="спросите про игры, стек, миры…"; inp.style.flex="1"; inp.maxLength=200;
+  const btn=ce("button","wl-btn acc","➤");
+  row.appendChild(inp); row.appendChild(btn); el.appendChild(row);
+  el.appendChild(ce("div","wl-note","Интерфейс мессенджера + скриптовый гид на сотню строк: ключевые слова, «печатает…», автопрокрутка. Настоящий ИИ сюда подключается за один вечер."));
+  const RULES=[
+    [/привет|здравств|хай|ку\b/i,["Привет, путник! Я гид этого портфолио. Спросите про игры, полигон, стек или контакты."]],
+    [/игр|аркад/i,["Игры живут в разделе АРКАДА: НАВЬ, ПОЛЫНЬЯ и ФОНАРЩИК запускаются мгновенно, остальные — wasm-сборками. Все сделаны в паре с ИИ, без единого готового ассета."]],
+    [/стек|язык|техно|python|js|powershell/i,["Стек: Python (pygame), JavaScript (весь этот сайт — один файл без библиотек) и PowerShell для пайплайнов сборки."]],
+    [/сайт|полигон|демо|стенд/i,["Полигон — 12 работающих прототипов: магазин, дашборд, канбан, календарь… Каждый — на чистом JS. Это и есть ответ на вопрос «а что ты умеешь по сайтам?»"]],
+    [/контакт|связ|телеграм|почт|мейл|email/i,["Телеграм: t.me/rust_a_m · Почта: rustamchuchuev111@gmail.com. Пишите!"]],
+    [/ии|нейро|ai|промт|клод|gpt/i,["Всё здесь создано в паре с ИИ: человек ставит задачу, держит планку качества и принимает каждую механику руками. ИИ пишет черновики — быстро и много."]],
+    [/кто ты|рустам|автор/i,["Рустам Чучуев — разработчик в паре с ИИ. Этот сайт целиком, включая меня, написан кодом без библиотек."]],
+    [/мир|тем|фэнтези|оформлен/i,["Нажмите 🌌 в шапке — там четыре мира: НЕОН, мрачная ТЬМА, морозная ЗИМА и ламповый РЕТРО. Весь сайт перекрашивается на лету."]],
+    [/шутк|анекдот|юмор/i,["Почему программист путает Хэллоуин и Рождество? Потому что OCT 31 == DEC 25. Настоящая шутка, проверено решателем."]]
+  ];
+  const DEF=["Я простой скрипт, а не настоящая нейросеть — спросите про игры, стек, миры или контакты.",
+    "Хм, это за пределами моего сценария. Зато я знаю всё про этот сайт — спрашивайте!",
+    "Передам вопрос Рустаму: t.me/rust_a_m. А пока могу рассказать про аркаду или полигон."];
+  function bubble(cls,txt){ const m=ce("div","wl-msg "+cls,esc(txt)); log.appendChild(m); log.scrollTop=log.scrollHeight; return m; }
+  function send(text){
+    const v=(text||inp.value).trim(); if(!v) return; inp.value="";
+    bubble("me",v); beep(950,.04,"triangle",.08);
+    const typing=bubble("bot","…");
+    setTimeout(()=>{
+      const rule=RULES.find(r=>r[0].test(v));
+      const ans=rule?rule[1][0]:DEF[Math.random()*DEF.length|0];
+      typing.textContent=ans; log.scrollTop=log.scrollHeight; beep(620,.05,"triangle",.08);
+    },520+Math.random()*500);
+  }
+  btn.addEventListener("click",()=>send());
+  inp.addEventListener("keydown",e=>{ if(e.key==="Enter") send(); });
+  bubble("bot","Привет! Я скриптовый гид портфолио. Жмите кнопки или пишите свой вопрос.");
+}
+
+/* === 5. формы === */
+function dForm(el){
+  const st={step:0,name:"",email:"",cls:"",pow:5,agree:false};
+  const steps=ce("div","wl-steps"); el.appendChild(steps);
+  const box=ce("div"); el.appendChild(box);
+  el.appendChild(ce("div","wl-note","Живая валидация, шаги с прогрессом, карточки-варианты и итоговая сводка — скелет любой регистрации или заявки. Данные никуда не отправляются."));
+  function bar(){ steps.innerHTML=""; for(let i=0;i<3;i++) steps.appendChild(ce("div","wl-step"+(i<=st.step?" on":""))); }
+  const emailOk=v=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+  function render(){
+    bar(); box.innerHTML="";
+    if(st.step===0){
+      const f1=ce("div","wl-fld",'<label>ИМЯ ГЕРОЯ</label>');
+      const i1=ce("input","wl-in"); i1.value=st.name; i1.placeholder="минимум 2 символа"; i1.style.width="100%"; i1.style.boxSizing="border-box";
+      const e1=ce("div","wl-err"); f1.appendChild(i1); f1.appendChild(e1);
+      const f2=ce("div","wl-fld",'<label>ПОЧТА ДЛЯ СВИТКОВ</label>');
+      const i2=ce("input","wl-in"); i2.value=st.email; i2.placeholder="name@example.ru"; i2.style.width="100%"; i2.style.boxSizing="border-box";
+      const e2=ce("div","wl-err"); f2.appendChild(i2); f2.appendChild(e2);
+      i1.addEventListener("input",()=>{ st.name=i1.value; e1.textContent=st.name.trim().length>=2?"":"Имя короче двух символов"; });
+      i2.addEventListener("input",()=>{ st.email=i2.value; e2.textContent=emailOk(st.email)?"":"Это не похоже на почту"; });
+      const next=ce("button","wl-btn acc","ДАЛЕЕ →");
+      next.addEventListener("click",()=>{
+        e1.textContent=st.name.trim().length>=2?"":"Имя короче двух символов";
+        e2.textContent=emailOk(st.email)?"":"Это не похоже на почту";
+        if(!e1.textContent&&!e2.textContent){ st.step=1; render(); beep(700,.06,"triangle",.1); } else beep(180,.09,"square",.1);
+      });
+      box.appendChild(f1); box.appendChild(f2); box.appendChild(next);
+    } else if(st.step===1){
+      box.appendChild(ce("div","wl-fld","<label>ВЫБЕРИТЕ КЛАСС</label>"));
+      const cl=ce("div","wl-class");
+      [["⚔️ Воин кода","рубит легаси с плеча"],["🔮 Маг промтов","вызывает ИИ с полуслова"],
+       ["🕵️ Разведчик багов","видит null насквозь"],["🛡 Хранитель качества","без тестов не пускает"]].forEach(c=>{
+        const b=ce("button","wl-btn"+(st.cls===c[0]?" acc":""),"<b>"+c[0]+"</b><br><span style='font-size:10px;color:var(--dim)'>"+c[1]+"</span>");
+        b.addEventListener("click",()=>{ st.cls=c[0]; render(); });
+        cl.appendChild(b);
+      });
+      box.appendChild(cl);
+      const f=ce("div","wl-fld"); f.style.marginTop="12px";
+      f.innerHTML="<label>УРОВЕНЬ ЭНТУЗИАЗМА: <b id='wlpow'>"+st.pow+"</b>/10</label>";
+      const r=ce("input"); r.type="range"; r.min=1; r.max=10; r.value=st.pow; r.style.width="100%";
+      r.addEventListener("input",()=>{ st.pow=+r.value; f.querySelector("#wlpow").textContent=st.pow; });
+      f.appendChild(r); box.appendChild(f);
+      const row=ce("div","wl-row");
+      const back=ce("button","wl-btn","← НАЗАД"); back.addEventListener("click",()=>{ st.step=0; render(); });
+      const next=ce("button","wl-btn acc","ДАЛЕЕ →");
+      next.addEventListener("click",()=>{ if(st.cls){ st.step=2; render(); beep(700,.06,"triangle",.1);} else beep(180,.09,"square",.1); });
+      row.appendChild(back); row.appendChild(next); box.appendChild(row);
+    } else {
+      box.appendChild(ce("div","wl-md","<h3>СВОДКА АНКЕТЫ</h3><ul><li>Герой: <b>"+esc(st.name)+"</b></li><li>Почта: <b>"+esc(st.email)+"</b></li><li>Класс: <b>"+esc(st.cls)+"</b></li><li>Энтузиазм: <b>"+st.pow+"/10</b></li></ul>"));
+      const lab=ce("label","wl-row");
+      const cb=ce("input"); cb.type="checkbox"; cb.checked=st.agree;
+      cb.addEventListener("change",()=>st.agree=cb.checked);
+      lab.appendChild(cb); lab.appendChild(ce("span",null,"согласен вступить в гильдию (демо)"));
+      box.appendChild(lab);
+      const row=ce("div","wl-row");
+      const back=ce("button","wl-btn","← НАЗАД"); back.addEventListener("click",()=>{ st.step=1; render(); });
+      const ok=ce("button","wl-btn acc","ОТПРАВИТЬ");
+      ok.addEventListener("click",()=>{
+        if(!st.agree){ beep(180,.09,"square",.1); return; }
+        box.innerHTML='<div style="font-size:30px">🏰✅</div><div class="wl-md" style="margin-top:10px"><h3>ЗАЯВКА ПРИНЯТА</h3>Добро пожаловать в гильдию, <b>'+esc(st.name)+'</b>! Никакие данные никуда не ушли — это демо валидации и UX-паттернов.</div>';
+        steps.querySelectorAll(".wl-step").forEach(x=>x.classList.add("on"));
+        chord&&chord();
+      });
+      row.appendChild(back); row.appendChild(ok); box.appendChild(row);
+    }
+  }
+  render();
+}
+
+/* === 6. таблица === */
+function dTable(el){
+  const FIRST=["Северная","Тайная","Восьмая","Ночная","Медная","Астральная","Пепельная","Ледяная","Тихая","Алая"];
+  const SECOND=["экспедиция","вылазка","разведка","миссия","переправа","кампания"];
+  const ST=[["УСПЕХ","--green"],["В ПУТИ","--cyan"],["ГОТОВИТСЯ","--gold"],["ПРОПАЛА","--magenta"]];
+  const rows=Array.from({length:120},(_,i)=>({
+    n:FIRST[Math.random()*FIRST.length|0]+" "+SECOND[Math.random()*SECOND.length|0]+" №"+(i+1),
+    d:"2026-"+String(1+Math.random()*9|0).padStart(2,"0")+"-"+String(1+Math.random()*28|0).padStart(2,"0"),
+    s:Math.random()*4|0, g:Math.random()*9000+100|0 }));
+  const top=ce("div","wl-row"); top.style.marginTop="0";
+  const q=ce("input","wl-in"); q.placeholder="поиск по названию…"; q.style.flex="1";
+  const csv=ce("button","wl-btn","⬇ CSV");
+  top.appendChild(q); top.appendChild(csv); el.appendChild(top);
+  const wrap=ce("div","wl-tblwrap"); wrap.style.marginTop="12px"; el.appendChild(wrap);
+  const pag=ce("div","wl-row"); el.appendChild(pag);
+  el.appendChild(ce("div","wl-note","120 записей: живой поиск, сортировка по клику на заголовок, страницы и экспорт в CSV, который открывается в Excel."));
+  const state={q:"",k:"n",dir:1,page:0};
+  function view(){
+    let v=rows.filter(r=>r.n.toLowerCase().includes(state.q));
+    v.sort((a,b)=>{ const x=a[state.k],y=b[state.k]; return (x>y?1:x<y?-1:0)*state.dir; });
+    return v;
+  }
+  function render(){
+    const v=view(), per=10, pages=Math.max(1,Math.ceil(v.length/per));
+    state.page=Math.min(state.page,pages-1);
+    const cut=v.slice(state.page*per,state.page*per+per);
+    const arrow=k=>state.k===k?(state.dir>0?" ▲":" ▼"):"";
+    wrap.innerHTML='<table class="wl-tbl"><thead><tr>'+
+      '<th data-k="n">НАЗВАНИЕ'+arrow("n")+'</th><th data-k="d">ДАТА'+arrow("d")+'</th>'+
+      '<th data-k="s">СТАТУС'+arrow("s")+'</th><th data-k="g">ЗОЛОТО'+arrow("g")+"</th></tr></thead><tbody>"+
+      cut.map(r=>{ const st=ST[r.s];
+        return "<tr><td>"+r.n+"</td><td>"+r.d+'</td><td><span class="wl-tag" style="border:1px solid var('+st[1]+');color:var('+st[1]+')">'+st[0]+"</span></td><td>"+r.g+" ₽</td></tr>"; }).join("")+
+      "</tbody></table>";
+    wrap.querySelectorAll("th").forEach(th=>th.addEventListener("click",()=>{
+      const k=th.dataset.k; if(state.k===k) state.dir*=-1; else { state.k=k; state.dir=1; } render();
+    }));
+    pag.innerHTML="";
+    const prev=ce("button","wl-btn","←"), next=ce("button","wl-btn","→");
+    prev.addEventListener("click",()=>{ if(state.page>0){state.page--;render();} });
+    next.addEventListener("click",()=>{ if(state.page<pages-1){state.page++;render();} });
+    pag.appendChild(prev);
+    pag.appendChild(ce("span","wl-note","стр. "+(state.page+1)+" из "+pages+" · найдено: "+v.length));
+    pag.appendChild(next);
+  }
+  q.addEventListener("input",()=>{ state.q=q.value.trim().toLowerCase(); state.page=0; render(); });
+  csv.addEventListener("click",()=>{
+    const data="\uFEFF"+["НАЗВАНИЕ;ДАТА;СТАТУС;ЗОЛОТО"].concat(view().map(r=>[r.n,r.d,ST[r.s][0],r.g].join(";"))).join("\n");
+    const a=document.createElement("a");
+    a.href=URL.createObjectURL(new Blob([data],{type:"text/csv;charset=utf-8"}));
+    a.download="reestr.csv"; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),2000);
+    beep(800,.06,"triangle",.1);
+  });
+  render();
+}
+
+/* === 7. markdown-редактор === */
+function dEditor(el){
+  const g=ce("div","wl-grid2"); el.appendChild(g);
+  const ta=ce("textarea","wl-ed"); const out=ce("div","wl-md");
+  g.appendChild(ta); g.appendChild(out);
+  const cnt=ce("div","wl-note"); el.appendChild(cnt);
+  ta.value="# Markdown живьём\n\nНабирайте слева — превью **обновляется сразу**.\n\n## Что понимает парсер\n- заголовки и *курсив*\n- `код` и [ссылки](https://rustamchu.ru)\n- цитаты и списки\n\n> Парсер написан с нуля: ~30 строк регулярных выражений.\n\n---\nИ никакой библиотеки.";
+  function md(src){
+    let t=esc(src);
+    t=t.replace(/^### (.*)$/gm,"<h3>$1</h3>").replace(/^## (.*)$/gm,"<h2>$1</h2>").replace(/^# (.*)$/gm,"<h1>$1</h1>");
+    t=t.replace(/^---$/gm,"<hr>");
+    t=t.replace(/^&gt; (.*)$/gm,"<blockquote>$1</blockquote>");
+    t=t.replace(/^[-*] (.*)$/gm,"<li>$1</li>").replace(/(<li>[\s\S]*?<\/li>)(?!\s*<li>)/g,"<ul>$1</ul>");
+    t=t.replace(/\*\*([^*]+)\*\*/g,"<b>$1</b>").replace(/\*([^*]+)\*/g,"<i>$1</i>");
+    t=t.replace(/`([^`]+)`/g,"<code>$1</code>");
+    t=t.replace(/\[([^\]]+)\]\((https?:[^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
+    t=t.split(/\n{2,}/).map(p=>/^<(h\d|ul|blockquote|hr)/.test(p.trim())?p:"<p>"+p.replace(/\n/g,"<br>")+"</p>").join("");
+    return t;
+  }
+  function upd(){ out.innerHTML=md(ta.value);
+    const words=(ta.value.trim().match(/\S+/g)||[]).length;
+    cnt.textContent="Слов: "+words+" · символов: "+ta.value.length+" · парсер: свой, ~30 строк."; }
+  ta.addEventListener("input",upd); upd();
+}
+
+/* === 8. календарь === */
+function dCal(el){
+  const KEY="rustamchu_cal"; let ev=store(KEY)||{};
+  let cur=new Date(); cur.setDate(1); let sel=null;
+  const head=ce("div","wl-row"); head.style.marginTop="0";
+  const prev=ce("button","wl-btn","←"), next=ce("button","wl-btn","→");
+  const title=ce("b",null,""); title.style.cssText="flex:1;text-align:center;font-family:var(--disp);letter-spacing:.06em;color:var(--cyan)";
+  head.appendChild(prev); head.appendChild(title); head.appendChild(next); el.appendChild(head);
+  const grid=ce("div","wl-cal"); el.appendChild(grid);
+  const edit=ce("div"); el.appendChild(edit);
+  el.appendChild(ce("div","wl-note","Кликните по дню, чтобы добавить событие — календарь помнит их в браузере. Основа любого планировщика или букинга."));
+  const MON=["ЯНВАРЬ","ФЕВРАЛЬ","МАРТ","АПРЕЛЬ","МАЙ","ИЮНЬ","ИЮЛЬ","АВГУСТ","СЕНТЯБРЬ","ОКТЯБРЬ","НОЯБРЬ","ДЕКАБРЬ"];
+  function key(d){ return cur.getFullYear()+"-"+(cur.getMonth()+1)+"-"+d; }
+  function render(){
+    title.textContent=MON[cur.getMonth()]+" "+cur.getFullYear();
+    grid.innerHTML="";
+    ["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"].forEach(d=>grid.appendChild(ce("div","hd",d)));
+    const off=(new Date(cur.getFullYear(),cur.getMonth(),1).getDay()+6)%7;
+    const days=new Date(cur.getFullYear(),cur.getMonth()+1,0).getDate();
+    const now=new Date();
+    for(let i=0;i<off;i++) grid.appendChild(ce("div","wl-day mute",""));
+    for(let d=1;d<=days;d++){
+      const today=now.getFullYear()===cur.getFullYear()&&now.getMonth()===cur.getMonth()&&now.getDate()===d;
+      const cell=ce("div","wl-day"+(today?" today":"")+(sel===d?" sel":""),d+(ev[key(d)]?'<div class="dot">'+esc(ev[key(d)].join(" · "))+"</div>":""));
+      cell.addEventListener("click",()=>{ sel=d; render(); });
+      grid.appendChild(cell);
+    }
+    edit.innerHTML="";
+    if(sel){
+      const row=ce("div","wl-row");
+      const inp=ce("input","wl-in"); inp.placeholder="событие на "+sel+" "+MON[cur.getMonth()].toLowerCase(); inp.style.flex="1"; inp.maxLength=40;
+      const add=ce("button","wl-btn acc","ДОБАВИТЬ");
+      add.addEventListener("click",()=>{ const v=inp.value.trim(); if(!v) return;
+        (ev[key(sel)]=ev[key(sel)]||[]).push(v); store(KEY,ev); inp.value=""; render(); beep(760,.05,"triangle",.1); });
+      inp.addEventListener("keydown",e=>{ if(e.key==="Enter") add.click(); });
+      row.appendChild(inp); row.appendChild(add);
+      if(ev[key(sel)]&&ev[key(sel)].length){
+        const clr=ce("button","wl-btn","✕ ОЧИСТИТЬ ДЕНЬ");
+        clr.addEventListener("click",()=>{ delete ev[key(sel)]; store(KEY,ev); render(); });
+        row.appendChild(clr);
+      }
+      edit.appendChild(row);
+    }
+  }
+  prev.addEventListener("click",()=>{ cur.setMonth(cur.getMonth()-1); sel=null; render(); });
+  next.addEventListener("click",()=>{ cur.setMonth(cur.getMonth()+1); sel=null; render(); });
+  render();
+}
+
+/* === 9. генеративная галерея === */
+function dGal(el){
+  function mulberry(a){ return function(){ a|=0; a=a+0x6D2B79F5|0; let t=Math.imul(a^a>>>15,1|a);
+    t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; }
+  let seeds=Array.from({length:6},()=>Math.random()*1e9|0), idx=0;
+  const gal=ce("div","wl-gal"); const cv=ce("canvas"); gal.appendChild(cv);
+  const pb=ce("button","wl-gnav","‹"); pb.style.left="10px";
+  const nb=ce("button","wl-gnav","›"); nb.style.right="10px";
+  gal.appendChild(pb); gal.appendChild(nb); el.appendChild(gal);
+  const row=ce("div","wl-row");
+  const cap=ce("span","wl-note",""); cap.style.marginTop="0";
+  const re=ce("button","wl-btn acc","⟳ НОВАЯ КОЛЛЕКЦИЯ");
+  row.appendChild(re); row.appendChild(cap); el.appendChild(row);
+  el.appendChild(ce("div","wl-note","Каждый «артефакт» рождается из числа-сида: симметричный спрайт, палитра и звёздный фон. Так в моих играх генерируется вся графика — ноль нарисованных картинок."));
+  function draw(){
+    const seed=seeds[idx], r=mulberry(seed);
+    const w=Math.max(280,cv.parentElement.clientWidth||560), h=240;
+    cv.width=w*2; cv.height=h*2; cv.style.height=h+"px";
+    const x=cv.getContext("2d"); x.scale(2,2);
+    x.fillStyle="#04060c"; x.fillRect(0,0,w,h);
+    for(let i=0;i<60;i++){ x.fillStyle="rgba(255,255,255,"+(r()*.7+.1)+")"; x.fillRect(r()*w,r()*h,1.3,1.3); }
+    const hue=r()*360, cells=11, px=Math.min(w*.45,h*.8)/cells;
+    const ox=w/2-(cells*px)/2, oy=h/2-(cells*px)/2;
+    for(let cy=0;cy<cells;cy++) for(let cx=0;cx<Math.ceil(cells/2);cx++){
+      if(r()>.52) continue;
+      const l=35+r()*40;
+      x.fillStyle="hsl("+(hue+r()*50)+" 75% "+l+"%)";
+      x.shadowColor=x.fillStyle; x.shadowBlur=10;
+      x.fillRect(ox+cx*px,oy+cy*px,px-1,px-1);
+      x.fillRect(ox+(cells-1-cx)*px,oy+cy*px,px-1,px-1);
+    }
+    x.shadowBlur=0;
+    cap.textContent="АРТЕФАКТ #"+seed+" · "+(idx+1)+"/"+seeds.length;
+  }
+  pb.addEventListener("click",()=>{ idx=(idx-1+seeds.length)%seeds.length; draw(); beep(500,.04,"triangle",.08); });
+  nb.addEventListener("click",()=>{ idx=(idx+1)%seeds.length; draw(); beep(560,.04,"triangle",.08); });
+  re.addEventListener("click",()=>{ seeds=seeds.map(()=>Math.random()*1e9|0); idx=0; draw(); });
+  draw();
+}
+
+/* === 10. синтезатор === */
+function dSynth(el){
+  const NOTES=[["ДО",261.63],["РЕ",293.66],["МИ",329.63],["ФА",349.23],["СОЛЬ",392],["ЛЯ",440],["СИ",493.88],["ДО₂",523.25]];
+  let wave="sine", rec=[], t0=0, recOn=false;
+  const chips=ce("div","wl-row"); chips.style.marginTop="0";
+  ["sine","triangle","square","sawtooth"].forEach(wv=>{
+    const b=ce("button","wl-btn"+(wv===wave?" acc":""),wv.toUpperCase());
+    b.addEventListener("click",()=>{ wave=wv; chips.querySelectorAll(".wl-btn").forEach(x=>x.classList.remove("acc")); b.classList.add("acc"); });
+    chips.appendChild(b);
+  });
+  el.appendChild(chips);
+  const keys=ce("div","wl-keys"); el.appendChild(keys);
+  NOTES.forEach(n=>{
+    const k=ce("div","wl-key",n[0]);
+    k.addEventListener("pointerdown",e=>{ e.preventDefault();
+      beep(n[1],.3,wave,.16); k.classList.add("on"); setTimeout(()=>k.classList.remove("on"),180);
+      if(recOn) rec.push([n[1],performance.now()-t0]); });
+    keys.appendChild(k);
+  });
+  const row=ce("div","wl-row");
+  const rb=ce("button","wl-btn","● ЗАПИСЬ"), pb=ce("button","wl-btn","▶ ИГРАТЬ ЗАПИСЬ"), db=ce("button","wl-btn","♪ ДЕМО-МЕЛОДИЯ");
+  row.appendChild(rb); row.appendChild(pb); row.appendChild(db); el.appendChild(row);
+  el.appendChild(ce("div","wl-note","Каждая нота — формула WebAudio, никаких аудиофайлов (как и во всех играх серии). Если тишина — включите 🔇 ЗВУК в шапке сайта."));
+  rb.addEventListener("click",()=>{ recOn=!recOn; if(recOn){ rec=[]; t0=performance.now(); rb.textContent="■ СТОП"; rb.classList.add("acc"); }
+    else { rb.textContent="● ЗАПИСЬ"; rb.classList.remove("acc"); } });
+  function play(seq){ seq.forEach(s=>setTimeout(()=>beep(s[0],.3,wave,.16),s[1])); }
+  pb.addEventListener("click",()=>{ if(rec.length) play(rec); else beep(150,.1,"square",.1); });
+  db.addEventListener("click",()=>{
+    const m=[[329.63,0],[293.66,220],[261.63,440],[293.66,660],[329.63,880],[329.63,1100],[329.63,1320]];
+    play(m);
+  });
+}
+
+/* === 11. физика === */
+function dPhys(el){
+  const cv=ce("canvas","wl-cv"); el.appendChild(cv);
+  const row=ce("div","wl-row");
+  const boom=ce("button","wl-btn acc","💥 ВЗРЫВ"), gb=ce("button","wl-btn","ГРАВИТАЦИЯ: ВКЛ"), clr=ce("button","wl-btn","ОЧИСТИТЬ");
+  row.appendChild(boom); row.appendChild(gb); row.appendChild(clr); el.appendChild(row);
+  el.appendChild(ce("div","wl-note","Тапайте по полю — шарики рождаются под пальцем. Скорости, отскоки и трение считаются каждый кадр — та же математика, что в играх аркады."));
+  const [x,w,h]=fitCv(cv,250);
+  let balls=[], grav=true;
+  function add(px,py){ balls.push({x:px,y:py,vx:(Math.random()-.5)*7,vy:(Math.random()-.5)*5,
+    r:6+Math.random()*13,c:"hsl("+(Math.random()*360|0)+" 80% 62%)"}); if(balls.length>70) balls.shift(); }
+  for(let i=0;i<9;i++) add(Math.random()*w,Math.random()*h*.6);
+  cv.addEventListener("pointerdown",e=>{ const r=cv.getBoundingClientRect();
+    add(e.clientX-r.left,e.clientY-r.top); beep(280+Math.random()*400,.05,"square",.06); });
+  boom.addEventListener("click",()=>{ balls.forEach(b=>{ b.vy-=7+Math.random()*7; b.vx+=(Math.random()-.5)*12; }); beep(120,.15,"sawtooth",.14); });
+  gb.addEventListener("click",()=>{ grav=!grav; gb.textContent="ГРАВИТАЦИЯ: "+(grav?"ВКЛ":"ВЫКЛ"); });
+  clr.addEventListener("click",()=>{ balls=[]; });
+  (function loop(){
+    if(!cv.isConnected) return;
+    requestAnimationFrame(loop);
+    x.clearRect(0,0,w,h);
+    balls.forEach(b=>{
+      if(grav) b.vy+=.28;
+      b.x+=b.vx; b.y+=b.vy;
+      if(b.x<b.r){ b.x=b.r; b.vx*=-.82; } if(b.x>w-b.r){ b.x=w-b.r; b.vx*=-.82; }
+      if(b.y>h-b.r){ b.y=h-b.r; b.vy*=-.82; b.vx*=.985; } if(b.y<b.r){ b.y=b.r; b.vy*=-.82; }
+      x.beginPath(); x.arc(b.x,b.y,b.r,0,7);
+      x.fillStyle=b.c; x.shadowColor=b.c; x.shadowBlur=12; x.fill(); x.shadowBlur=0;
+    });
+  })();
+}
+
+/* === 12. дизайн-система === */
+function dDS(el){
+  const row=ce("div","wl-row"); row.style.marginTop="0"; el.appendChild(row);
+  WORLDS.forEach(wd=>{
+    const b=ce("button","wl-btn","🌌 "+wd[1]);
+    b.addEventListener("click",()=>{ applyWorld(wd[0]); document.dispatchEvent(new CustomEvent("worldchange")); });
+    row.appendChild(b);
+  });
+  const sw=ce("div","wl-swatches"); sw.style.marginTop="12px"; el.appendChild(sw);
+  const ty=ce("div","wl-md"); ty.style.marginTop="12px"; el.appendChild(ty);
+  el.appendChild(ce("div","wl-note","Весь сайт держится на дизайн-токенах (CSS-переменных): смена мира — это подмена пары десятков значений, и каждая кнопка, карточка и график перекрашиваются сами."));
+  function render(){
+    sw.innerHTML="";
+    [["--bg","фон"],["--panel","панель"],["--cyan","акцент"],["--magenta","алый"],["--gold","золото"],["--green","живой"],["--text","текст"],["--dim","приглушённый"]].forEach(v=>{
+      const val=cssv(v[0]);
+      sw.appendChild(ce("div","wl-sw",'<i style="background:'+val+'"></i>'+v[1]+"<br>"+val));
+    });
+    const wname=(WORLDS.find(x=>x[0]===(document.documentElement.dataset.world||"neon"))||WORLDS[0])[1];
+    ty.innerHTML="<h2 style='margin-top:0'>МИР: "+wname+"</h2><p>Заголовки — <b>"+cssv("--disp").split(",")[0].replace(/'/g,"")+"</b>, текст — Rubik, код — <code>JetBrains Mono</code>.</p><blockquote>Одна вёрстка — четыре характера: неон, мрачное фэнтези, морозная тишина и ламповый терминал.</blockquote>";
+  }
+  document.addEventListener("worldchange",render);
+  render();
+}
+
+/* === реестр и модалка === */
+const WL=[
+ ["dash","📊","ДАШБОРД","Графики, KPI и живые данные — как в админке",dDash],
+ ["shop","🛒","МАГАЗИН","Каталог, фильтры, корзина и промокод",dShop],
+ ["kanban","🗂","КАНБАН","Доска задач с переносом и памятью",dKanban],
+ ["chat","💬","ЧАТ-ГИД","Мессенджер со скриптовым гидом по портфолио",dChat],
+ ["form","📝","АНКЕТА","Формы: валидация, шаги, карточки-варианты",dForm],
+ ["table","📚","РЕЕСТР","Таблица: поиск, сортировка, страницы, CSV",dTable],
+ ["editor","✍️","РЕДАКТОР","Markdown с живым превью и своим парсером",dEditor],
+ ["cal","📅","ПЛАНЕР","Календарь с событиями и памятью",dCal],
+ ["gal","🖼","ГАЛЕРЕЯ","Генеративные артефакты из чисел-сидов",dGal],
+ ["synth","🎹","СИНТЕЗАТОР","Клавиши на WebAudio, запись мелодии",dSynth],
+ ["phys","🎈","ПЕСОЧНИЦА","Физика: шарики, гравитация, взрывы",dPhys],
+ ["ds","🎨","ДИЗАЙН-СИСТЕМА","Токены и четыре мира — переключайте живьём",dDS]
+];
+let wlOpenId=null, wlSaved=0;
+function wlMark(){
+  grid.querySelectorAll(".wlc").forEach(c=>{
+    const done=PROFILE.wl.includes(c.dataset.id);
+    let d=c.querySelector(".done");
+    if(done&&!d) c.appendChild(ce("span","done","✓"));
+  });
+}
+function wlOpen(id,viaPop){
+  const item=WL.find(x=>x[0]===id); if(!item) return;
+  wlOpenId=id;
+  wtitle.textContent=item[2]+" · ДЕМО";
+  wbody.innerHTML="";
+  wlSaved=scrollY;
+  document.body.classList.add("wl-open");
+  document.body.style.top=-wlSaved+"px";
+  wlm.classList.add("on");
+  item[4](wbody);
+  beep(660,.06,"triangle",.1);
+  if(!viaPop){ try{ history.pushState({wl:id},""); }catch(e){} }
+  if(!PROFILE.wl.includes(id)){
+    PROFILE.wl.push(id); saveProfile(); xpAdd(4); wlMark();
+    if(PROFILE.wl.length===WL.length) ach("wl","Полигонщик: все 12 стендов испытаны");
+  }
+}
+function wlClose(viaPop){
+  if(!wlOpenId) return;
+  wlOpenId=null;
+  wlm.classList.remove("on"); wbody.innerHTML="";
+  document.body.classList.remove("wl-open"); document.body.style.top="";
+  scrollTo(0,wlSaved);
+  beep(330,.05,"triangle",.08);
+  if(!viaPop&&history.state&&history.state.wl){ try{ history.back(); }catch(e){} }
+}
+WL.forEach(item=>{
+  const c=ce("button","wlc",'<div class="ic">'+item[1]+'</div><div class="nm">'+item[2]+'</div><div class="sb">'+item[3]+'</div><span class="go">ОТКРЫТЬ ▸</span>');
+  c.dataset.id=item[0];
+  c.addEventListener("click",()=>wlOpen(item[0]));
+  grid.appendChild(c);
+});
+wlMark();
+$("#wlm-close").addEventListener("click",()=>wlClose(false));
+wlm.addEventListener("click",e=>{ if(e.target===wlm) wlClose(false); });
+document.addEventListener("keydown",e=>{ if(e.key==="Escape"&&wlOpenId) wlClose(false); });
+addEventListener("popstate",()=>{ if(wlOpenId) wlClose(true); });
+addEventListener("hashchange",()=>{ if(location.hash.startsWith("#demo=")&&!wlOpenId) wlOpen(location.hash.slice(6)); });
+if(location.hash.startsWith("#demo=")){
+  const id=location.hash.slice(6);
+  setTimeout(()=>wlOpen(id),400);
+}
 })();
 
 /* ---------- панель профиля ---------- */
@@ -1044,7 +1833,7 @@ addEventListener("scroll",()=>{
 },{passive:true});
 
 /* ---------- PRESS START ---------- */
-$("#pressbtn").addEventListener("click",()=>{ chord(); location.href="mailto:rustamchuchuev111@gmail.com?subject="+encodeURIComponent("Нейроигры: приглашение к разговору"); });
+$("#pressbtn").addEventListener("click",()=>{ chord(); location.href="mailto:rustamchuchuev111@gmail.com?subject="+encodeURIComponent("Портфолио: приглашение к разговору"); });
 $("#crttgl").addEventListener("click",e=>{ const crtOn=document.body.classList.toggle("crt"); e.target.classList.toggle("on",crtOn); e.target.setAttribute("aria-pressed",crtOn); beep(240,.09,"sawtooth",.12); ach("crt","Ламповый режим: включён CRT"); });
 
 /* ---------- лаборатория кода ---------- */
