@@ -536,7 +536,7 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
 </head>
 <body>
 <a class="skip" href="#weblab" data-en="STRAIGHT TO THE WORK ↓">СРАЗУ К РАБОТАМ ↓</a>
-<div id="boot" role="button" aria-label="войти на сайт">
+<div id="boot" role="button" aria-label="войти на сайт" data-en-al="enter the site">
   <div class="logo">RUSTAM<span>.CHU</span></div>
   <div class="bar"><i id="bootbar"></i></div>
   <div class="hint" id="boothint" data-en="WARMING UP THE WORKSHOP…">ПОДГОТОВКА МАСТЕРСКОЙ…</div>
@@ -548,7 +548,7 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
 
 <header id="hud">
   <div class="lg">RUSTAM<span>.CHU</span></div>
-  <span class="chip" id="bstamp" title="штамп сборки: если после публикации не сменился — у вас кэш">v20.09 01:18 МСК</span>
+  <span class="chip" id="bstamp" title="штамп сборки: если после публикации не сменился — у вас кэш" data-en-t="build stamp: if it did not change after publishing, you are looking at a cached page">v20.09 01:32 МСК</span>
   <nav>
     <a href="#skills" data-en="SKILLS">НАВЫКИ</a>
     <a href="#cases" data-en="CASES">ИЗБРАННОЕ</a>
@@ -558,12 +558,12 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
     <a href="#console" data-en="CONSOLE">КОНСОЛЬ</a>
     <a href="#contact" data-en="CONTACT">КОНТАКТЫ</a>
   </nav>
-  <button id="burger" aria-label="меню">☰</button>
+  <button id="burger" aria-label="меню" data-en-al="menu">☰</button>
   <div class="sp"></div>
   <div class="xp" id="explored" role="button" aria-label="прогресс исследования сайта" data-en-al="exploration progress" title="сколько сайта вы уже исследовали" data-en-t="how much of the site you have explored">
     <span id="xpn">0%</span><span class="track"><i id="xpbar"></i></span>
   </div>
-  <button class="tgl" id="langtgl" title="сменить язык интерфейса / switch language" aria-label="язык интерфейса">RU</button>
+  <button class="tgl" id="langtgl" title="сменить язык интерфейса / switch language" data-en-t="switch language / сменить язык" aria-label="язык интерфейса" data-en-al="interface language">RU</button>
   <button class="tgl" id="cmdk" title="командная палитра — Ctrl+K" data-en-t="command palette — Ctrl+K">CTRL+K</button>
   <button class="tgl" id="sndtgl" aria-pressed="false" title="звук синтезируется кодом прямо в браузере" data-en-t="sound is synthesised by code in the browser">🔇<span class="lbl"> ЗВУК</span></button>
   <button class="tgl" id="crttgl" aria-pressed="false" title="режим лампового монитора" data-en-t="CRT monitor mode">CRT</button>
@@ -581,7 +581,7 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
 </nav>
 <div id="toasts" role="status" aria-live="polite"></div>
 
-<div id="profile" role="dialog" aria-label="карточка исследователя">
+<div id="profile" role="dialog" aria-label="карточка исследователя" data-en-al="explorer card">
   <div class="ph">
     <div class="pava" id="pava">?</div>
     <div style="flex:1">
@@ -597,7 +597,7 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
 
 <div id="hero">
   <div class="over" data-en="— PORTFOLIO —">— ПОРТФОЛИО —</div>
-  <h1 id="title">ЧУЧУЕВ РУСТАМ</h1>
+  <h1 id="title" data-en="RUSTAM CHUCHUEV">ЧУЧУЕВ РУСТАМ</h1>
   <p class="sub"><span id="subpre" data-en="I build ">Создаю </span><b id="typer"></b><span id="caret">▌</span></p>
   <p class="sub2" data-en="The whole site is one file with not a single library: every section, every stand and every sound written from scratch. That is the résumé — look, touch, change the theme.">Весь сайт — один файл без единой библиотеки: каждая секция, каждый стенд,
     каждый звук написаны с нуля. Это и есть моё резюме: смотрите, трогайте, меняйте стили.</p>
@@ -630,7 +630,7 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
   <p class="slead" data-en="Not a list of technologies for the sake of a list: every skill below can be checked right here — in the playground, in the console, in the themes of this very page.">Не список технологий ради списка: каждый навык ниже можно проверить
     прямо на этом сайте — в полигоне, в консоли, в самих стилях страницы.</p>
   <div id="skgrid">
-    <canvas id="radar" width="420" height="420" aria-label="диаграмма навыков"></canvas>
+    <canvas id="radar" width="420" height="420" aria-label="диаграмма навыков" data-en-al="skills radar chart"></canvas>
     <div id="sklist"></div>
   </div>
 </section>
@@ -657,7 +657,7 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
           Числа ниже страница измеряет на себе прямо сейчас.</p></div>
       <div class="nums" id="c1nums"></div>
     </div>
-    <div><canvas id="c1cv" aria-label="состав файла страницы"></canvas>
+    <div><canvas id="c1cv" aria-label="состав файла страницы" data-en-al="composition of the page file"></canvas>
       <div class="ccap" data-en="Composition of this very file: markup, styles, code. Measured live in the browser.">Состав вот этого самого файла: разметка, стили, код. Измерено живьём в браузере.</div></div>
   </article>
 
@@ -676,7 +676,7 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
           а штамп в шапке — честное доказательство, что вы видите свежую версию.</p></div>
       <div class="nums" id="c2nums"></div>
     </div>
-    <div><canvas id="c2cv" aria-label="конвейер сборки"></canvas>
+    <div><canvas id="c2cv" aria-label="конвейер сборки" data-en-al="build pipeline"></canvas>
       <div class="ccap" data-en="The pipeline from the file on disk to the live domain, with the real seconds each stage takes.">Путь от файла на диске до живого домена — с реальными секундами на каждом этапе.</div></div>
   </article>
 
@@ -695,7 +695,7 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
           и каждая картинка перекрашивается вместе со стилем. Нажмите кнопку — сменится сид, сменится и арт.</p></div>
       <div class="nums" id="c3nums"></div>
     </div>
-    <div><canvas id="c3cv" aria-label="генеративные артефакты"></canvas>
+    <div><canvas id="c3cv" aria-label="генеративные артефакты" data-en-al="generative artefacts"></canvas>
       <div class="ccap" id="c3cap"></div>
       <button class="wl-btn acc cbtn" id="c3roll" data-en="⟳ NEW SEED">⟳ НОВЫЙ СИД</button></div>
   </article>
@@ -710,10 +710,10 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
   <div id="wlgrid"></div>
 </section>
 
-<div id="wlm" role="dialog" aria-modal="true" aria-label="демо-стенд">
+<div id="wlm" role="dialog" aria-modal="true" aria-label="демо-стенд" data-en-al="demo stand">
   <div class="box">
-    <div class="wbar"><span class="t" id="wlm-title">СТЕНД</span><span class="sp"></span>
-      <button class="x" id="wlm-close" aria-label="закрыть">✕</button></div>
+    <div class="wbar"><span class="t" id="wlm-title" data-en="STAND">СТЕНД</span><span class="sp"></span>
+      <button class="x" id="wlm-close" aria-label="закрыть" data-en-al="close">✕</button></div>
     <div class="wbody" id="wlm-body"></div>
   </div>
 </div>
@@ -825,7 +825,7 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
   <h2 data-en="TALK TO THE SITE DIRECTLY">ПОГОВОРИТЕ С САЙТОМ НАПРЯМУЮ</h2>
   <p class="slead" data-en="A real command line: it opens stands, switches themes and answers questions about me. Start with <b>help</b>.">Настоящая командная строка: умеет открывать стенды, менять стили и рассказывать
     обо мне. Начните с <b>help</b>.</p>
-  <div id="term" aria-label="консоль сайта">
+  <div id="term" aria-label="консоль сайта" data-en-al="site console">
     <div id="tout"></div>
     <div class="tline"><span class="tp">rustam@site:~$</span>
       <input id="tin" autocomplete="off" spellcheck="false" aria-label="команда" data-en-al="command"></div>
@@ -847,7 +847,7 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
     ЧУЧУЕВ РУСТАМ · ПОРТФОЛИО · 2026</div>
 </section>
 
-<div id="tourbox" role="dialog" aria-label="экскурсия по сайту">
+<div id="tourbox" role="dialog" aria-label="экскурсия по сайту" data-en-al="guided tour">
   <div class="tn">1 / 8</div>
   <div class="tt2"></div>
   <div class="wl-row" style="margin-top:10px">
@@ -856,7 +856,7 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
   </div>
 </div>
 
-<div id="cmdp" role="dialog" aria-modal="true" aria-label="палитра команд">
+<div id="cmdp" role="dialog" aria-modal="true" aria-label="палитра команд" data-en-al="command palette">
   <div class="cbox">
     <input id="cmdin" placeholder="куда отправимся? печатайте…" data-en-ph="where to? just type…" aria-label="поиск по сайту" data-en-al="search the site">
     <div id="cmdlist"></div>
@@ -970,9 +970,17 @@ function applyLang(l,quiet){
       el.setAttribute(a[1],(LANG==="en")?el.dataset[a[0]]:el.dataset[a[2]]);
     });
   });
+  ["bstamp","bstamp2"].forEach(function(id){
+    const el=document.getElementById(id); if(!el) return;
+    if(el.dataset.stampRu===undefined) el.dataset.stampRu=el.textContent;
+    el.textContent=(LANG==="en")
+      ? el.dataset.stampRu.replace("МСК","MSK").replace("сборка","build")
+      : el.dataset.stampRu;
+  });
   const b=document.getElementById("langtgl");
   if(b){ b.textContent=(LANG==="en")?"EN":"RU"; b.classList.toggle("on",LANG==="en"); }
   try{ applyWorld(document.documentElement.dataset.world||PROFILE.world||"neon",true); }catch(e){}
+  try{ renderExplored(); }catch(e){}
   document.dispatchEvent(new CustomEvent("langchange"));
   if(!quiet){ beep(LANG==="en"?880:660,.07,"triangle",.1); pooladd("lang:"+LANG); }
 }
@@ -1017,9 +1025,9 @@ function pooladd(t){ if(PROFILE.pool.includes(t)) return; PROFILE.pool.push(t); 
 
 /* свой стиль: вычисленные токены из тона */
 function applyCustomVars(){
-  const h=(((PROFILE.ch===undefined?200:PROFILE.ch)%360)+360)%360, L=!!PROFILE.cl;
+  const h=(((PROFILE.ch===undefined?200:PROFILE.ch)%360)+360)%360, LIGHT=!!PROFILE.cl;
   const rs=document.documentElement.style, set=(k,v)=>rs.setProperty(k,v);
-  if(!L){
+  if(!LIGHT){
     set("--bg","hsl("+h+" 45% 7%)"); set("--panel","hsl("+h+" 40% 12%)"); set("--panel2","hsl("+h+" 38% 16%)");
     set("--line","hsl("+h+" 35% 24%)"); set("--cyan","hsl("+h+" 85% 62%)");
     set("--magenta","hsl("+((h+50)%360)+" 85% 62%)"); set("--gold","hsl("+((h+90)%360)+" 85% 65%)");
@@ -1052,7 +1060,7 @@ function renderExplored(){
   const xn=$("#xpn"); if(xn) xn.textContent=p+"%";
   const xb=$("#xpbar"); if(xb) xb.style.width=p+"%";
   const f=$("#pbarfill"); if(f) f.style.width=p+"%";
-  const l=$("#plvl"); if(l) l.textContent="ИССЛЕДОВАНО "+p+"%";
+  const l=$("#plvl"); if(l) l.textContent=((typeof LANG!=="undefined"&&LANG==="en")?"EXPLORED ":"ИССЛЕДОВАНО ")+p+"%";
   renderPanel();
 }
 function renderPanel(){
@@ -1407,7 +1415,7 @@ document.addEventListener("langchange",()=>{ RAX=(LANG==="en")?RAX_EN:RAX_RU; if
 /* ---------- избранное: три кейса ---------- */
 (function(){
   const sec=document.getElementById("cases"); if(!sec) return;
-  const REGRESS=140;          /* проверок в последнем зелёном прогоне регресса */
+  const REGRESS=148;          /* проверок в последнем зелёном прогоне регресса */
   let seed=Math.random()*1e9|0, inited=false;
   function fit(cv,hh){
     const w=Math.max(220,cv.parentElement.clientWidth||520);
@@ -1967,7 +1975,11 @@ window.matrixRain=function(){
 };
 
 /* стартовые отрисовки */
-(function(){ const b2=$("#bstamp2"); if(b2) b2.textContent="сборка "+$("#bstamp").textContent; })();
+(function(){ const b2=$("#bstamp2"); if(!b2) return;
+  function fill(){ const raw="сборка "+($("#bstamp").dataset.stampRu||$("#bstamp").textContent);
+    b2.dataset.stampRu=raw;
+    b2.textContent=(LANG==="en")?raw.replace("МСК","MSK").replace("сборка","build"):raw; }
+  fill(); document.addEventListener("langchange",fill); })();
 renderExplored();
 drawRadar(0);
 paintFavicon();
@@ -2105,10 +2117,14 @@ function dDash(el){
 
 /* === 2. магазин === */
 function dShop(el){
-  const PRODS=[["🖥","Монитор 27\"",18990,"техника"],["⌨️","Механическая клавиатура",6490,"техника"],
+  const PRODS=L([["🖥","Монитор 27\"",18990,"техника"],["⌨️","Механическая клавиатура",6490,"техника"],
     ["🖱","Мышь бесшумная",2190,"техника"],["🎧","Наушники студийные",8990,"техника"],
     ["📐","Планшет для скетчей",12490,"инструменты"],["💾","SSD на терабайт",7990,"инструменты"],
-    ["☕","Кофе бесконечный",420,"расходники"],["🪑","Кресло правильное",15990,"инструменты"]];
+    ["☕","Кофе бесконечный",420,"расходники"],["🪑","Кресло правильное",15990,"инструменты"]],
+   [["🖥","27-inch monitor",18990,"техника"],["⌨️","Mechanical keyboard",6490,"техника"],
+    ["🖱","Silent mouse",2190,"техника"],["🎧","Studio headphones",8990,"техника"],
+    ["📐","Sketching tablet",12490,"инструменты"],["💾","One-terabyte SSD",7990,"инструменты"],
+    ["☕","Endless coffee",420,"расходники"],["🪑","A proper chair",15990,"инструменты"]]);
   const cart=new Map(); let promo=false;
   const FAVKEY="rustamchu_shop_fav";
   let favs=new Set(store(FAVKEY)||[]);
@@ -2158,8 +2174,8 @@ function dShop(el){
     });
   }
   function renderCart(){
-    right.innerHTML='<h4>КОРЗИНА</h4>';
-    if(!cart.size){ right.appendChild(ce("div","wl-note","Пока пусто. Соберите рабочее место мечты.")); return; }
+    right.innerHTML="<h4>"+L("КОРЗИНА","CART")+"</h4>";
+    if(!cart.size){ right.appendChild(ce("div","wl-note",L("Пока пусто. Соберите рабочее место мечты.","Empty for now. Assemble the workplace of your dreams."))); return; }
     let sum=0;
     cart.forEach((q,i)=>{
       const p=PRODS[i]; sum+=p[2]*q;
@@ -2169,17 +2185,19 @@ function dShop(el){
       r.appendChild(minus); right.appendChild(r);
     });
     const disc=promo?Math.round(sum*.2):0;
-    right.appendChild(ce("div","wl-crow","<b>ИТОГО</b><span style='font-family:var(--mono);color:var(--gold)'>"+(sum-disc)+" ₽</span>"));
-    if(promo) right.appendChild(ce("div","wl-note","Промокод RUSTAM: −20% ("+disc+" ₽)"));
+    right.appendChild(ce("div","wl-crow","<b>"+L("ИТОГО","TOTAL")+"</b><span style='font-family:var(--mono);color:var(--gold)'>"+(sum-disc)+" ₽</span>"));
+    if(promo) right.appendChild(ce("div","wl-note",L("Промокод RUSTAM: −20% (","Promo code RUSTAM: −20% (")+disc+" ₽)"));
     const prow=ce("div","wl-row");
-    const pin=ce("input","wl-in"); pin.placeholder="промокод"; pin.style.width="110px";
+    const pin=ce("input","wl-in"); pin.placeholder=L("промокод","promo code"); pin.style.width="110px";
     const pbtn=ce("button","wl-btn","OK");
     pbtn.addEventListener("click",()=>{ promo=pin.value.trim().toUpperCase()==="RUSTAM"; renderCart(); beep(promo?990:180,.09,"triangle",.12); });
     prow.appendChild(pin); prow.appendChild(pbtn); right.appendChild(prow);
-    const buy=ce("button","wl-btn acc","ОФОРМИТЬ ЗАКАЗ");
+    const buy=ce("button","wl-btn acc",L("ОФОРМИТЬ ЗАКАЗ","PLACE THE ORDER"));
     buy.style.marginTop="10px";
     buy.addEventListener("click",()=>{
-      right.innerHTML='<h4>КОРЗИНА</h4><div style="font-size:26px">✅</div><div class="wl-note">Заказ #'+(1000+Math.random()*9000|0)+' оформлен. Данные никуда не ушли — это демо, но так выглядит настоящий чекаут.</div>';
+      right.innerHTML="<h4>"+L("КОРЗИНА","CART")+'</h4><div style="font-size:26px">✅</div><div class="wl-note">'+
+        L("Заказ #","Order #")+(1000+Math.random()*9000|0)+
+        L(" оформлен. Данные никуда не ушли — это демо, но так выглядит настоящий чекаут."," is placed. No data went anywhere — it is a demo, but this is how a real checkout looks.")+"</div>";
       cart.clear(); chord&&chord();
     });
     right.appendChild(buy);
@@ -2193,7 +2211,8 @@ function dShop(el){
 /* === 3. канбан === */
 function dKanban(el){
   const KEY="rustamchu_kanban";
-  const DEF=[["Эскиз главной страницы","Выучить новую CSS-фичу"],["Сайт-портфолио"],["Генератор палитр","Синтезатор"]];
+  const DEF=L([["Эскиз главной страницы","Выучить новую CSS-фичу"],["Сайт-портфолио"],["Генератор палитр","Синтезатор"]],
+    [["Sketch the landing page","Learn a new CSS feature"],["Portfolio site"],["Palette generator","Synthesiser"]]);
   let cols=store(KEY)||DEF.map(c=>c.slice());
   const names=[L("ПЛАН","PLAN"),L("В РАБОТЕ","IN PROGRESS"),L("ГОТОВО","DONE")];
   const addRow=ce("div","wl-row"); addRow.style.marginTop="0";
@@ -2245,9 +2264,9 @@ function dKanban(el){
         card.addEventListener("dragstart",e=>e.dataTransfer.setData("text",ci+":"+ti));
         card.addEventListener("dragend",()=>kan.querySelectorAll(".wl-col").forEach(c=>c.classList.remove("над")));
         const mk=(txt,fn,tt)=>{ const b=ce("button",null,txt); b.title=tt; b.setAttribute("aria-label",tt); b.addEventListener("click",fn); card.appendChild(b); };
-        if(ci>0) mk("◀",()=>{ cols[ci].splice(ti,1); cols[ci-1].push(t); save(); render(); },"перенести влево");
-        if(ci<2) mk("▶",()=>{ cols[ci].splice(ti,1); cols[ci+1].push(t); save(); render(); beep(ci===1?900:600,.05,"triangle",.08); },"перенести вправо");
-        mk("✕",()=>{ cols[ci].splice(ti,1); save(); render(); },"удалить задачу");
+        if(ci>0) mk("◀",()=>{ cols[ci].splice(ti,1); cols[ci-1].push(t); save(); render(); },L("перенести влево","move left"));
+        if(ci<2) mk("▶",()=>{ cols[ci].splice(ti,1); cols[ci+1].push(t); save(); render(); beep(ci===1?900:600,.05,"triangle",.08); },L("перенести вправо","move right"));
+        mk("✕",()=>{ cols[ci].splice(ti,1); save(); render(); },L("удалить задачу","delete the task"));
         col.appendChild(card);
       });
       kan.appendChild(col);
@@ -2337,60 +2356,70 @@ function dForm(el){
   const st={step:0,name:"",email:"",cls:"",pow:5,agree:false};
   const steps=ce("div","wl-steps"); el.appendChild(steps);
   const box=ce("div"); el.appendChild(box);
-  el.appendChild(ce("div","wl-note","Живая валидация, шаги с прогрессом, карточки-варианты и итоговая сводка — скелет любой регистрации или заявки. Данные никуда не отправляются."));
+  el.appendChild(ce("div","wl-note",L(
+    "Живая валидация, шаги с прогрессом, карточки-варианты и итоговая сводка — скелет любой регистрации или заявки. Данные никуда не отправляются.",
+    "Live validation, steps with progress, option cards and a final summary — the skeleton of any sign-up or application form. Nothing is sent anywhere.")));
   function bar(){ steps.innerHTML=""; for(let i=0;i<3;i++) steps.appendChild(ce("div","wl-step"+(i<=st.step?" on":""))); }
   const emailOk=v=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
   function render(){
     bar(); box.innerHTML="";
     if(st.step===0){
-      const f1=ce("div","wl-fld",'<label>ВАШЕ ИМЯ</label>');
-      const i1=ce("input","wl-in"); i1.value=st.name; i1.placeholder="минимум 2 символа"; i1.style.width="100%"; i1.style.boxSizing="border-box";
+      const f1=ce("div","wl-fld",'<label>'+L("ВАШЕ ИМЯ","YOUR NAME")+'</label>');
+      const i1=ce("input","wl-in"); i1.value=st.name; i1.placeholder=L("минимум 2 символа","at least 2 characters"); i1.style.width="100%"; i1.style.boxSizing="border-box";
       const e1=ce("div","wl-err"); f1.appendChild(i1); f1.appendChild(e1);
-      const f2=ce("div","wl-fld",'<label>ПОЧТА ДЛЯ ОТВЕТА</label>');
-      const i2=ce("input","wl-in"); i2.value=st.email; i2.placeholder="name@example.ru"; i2.style.width="100%"; i2.style.boxSizing="border-box";
+      const f2=ce("div","wl-fld",'<label>'+L("ПОЧТА ДЛЯ ОТВЕТА","EMAIL FOR THE REPLY")+'</label>');
+      const i2=ce("input","wl-in"); i2.value=st.email; i2.placeholder="name@example.com"; i2.style.width="100%"; i2.style.boxSizing="border-box";
       const e2=ce("div","wl-err"); f2.appendChild(i2); f2.appendChild(e2);
-      i1.addEventListener("input",()=>{ st.name=i1.value; e1.textContent=st.name.trim().length>=2?"":"Имя короче двух символов"; });
-      i2.addEventListener("input",()=>{ st.email=i2.value; e2.textContent=emailOk(st.email)?"":"Это не похоже на почту"; });
-      const next=ce("button","wl-btn acc","ДАЛЕЕ →");
+      const ERR1=L("Имя короче двух символов","The name is shorter than two characters");
+      const ERR2=L("Это не похоже на почту","That does not look like an email");
+      i1.addEventListener("input",()=>{ st.name=i1.value; e1.textContent=st.name.trim().length>=2?"":ERR1; });
+      i2.addEventListener("input",()=>{ st.email=i2.value; e2.textContent=emailOk(st.email)?"":ERR2; });
+      const next=ce("button","wl-btn acc",L("ДАЛЕЕ →","NEXT →"));
       next.addEventListener("click",()=>{
-        e1.textContent=st.name.trim().length>=2?"":"Имя короче двух символов";
-        e2.textContent=emailOk(st.email)?"":"Это не похоже на почту";
+        e1.textContent=st.name.trim().length>=2?"":ERR1;
+        e2.textContent=emailOk(st.email)?"":ERR2;
         if(!e1.textContent&&!e2.textContent){ st.step=1; render(); beep(700,.06,"triangle",.1); } else beep(180,.09,"square",.1);
       });
       box.appendChild(f1); box.appendChild(f2); box.appendChild(next);
     } else if(st.step===1){
-      box.appendChild(ce("div","wl-fld","<label>ВЫБЕРИТЕ РОЛЬ</label>"));
+      box.appendChild(ce("div","wl-fld","<label>"+L("ВЫБЕРИТЕ РОЛЬ","PICK A ROLE")+"</label>"));
       const cl=ce("div","wl-class");
-      [["🧱 Верстальщик","собирает интерфейсы по пикселям"],["🎨 График","рисует всё кодом"],
-       ["🎹 Звукорежиссёр","синтезирует звук формулами"],["🔍 Тестировщик","ловит баги до релиза"]].forEach(c=>{
+      L([["🧱 Верстальщик","собирает интерфейсы по пикселям"],["🎨 График","рисует всё кодом"],
+       ["🎹 Звукорежиссёр","синтезирует звук формулами"],["🔍 Тестировщик","ловит баги до релиза"]],
+      [["🧱 Layout engineer","assembles interfaces pixel by pixel"],["🎨 Graphics author","draws everything with code"],
+       ["🎹 Sound designer","synthesises sound from formulas"],["🔍 Tester","catches bugs before the release"]]).forEach(c=>{
         const b=ce("button","wl-btn"+(st.cls===c[0]?" acc":""),"<b>"+c[0]+"</b><br><span style='font-size:10px;color:var(--dim)'>"+c[1]+"</span>");
         b.addEventListener("click",()=>{ st.cls=c[0]; render(); });
         cl.appendChild(b);
       });
       box.appendChild(cl);
       const f=ce("div","wl-fld"); f.style.marginTop="12px";
-      f.innerHTML="<label>УРОВЕНЬ ЭНТУЗИАЗМА: <b id='wlpow'>"+st.pow+"</b>/10</label>";
+      f.innerHTML="<label>"+L("УРОВЕНЬ ЭНТУЗИАЗМА","ENTHUSIASM LEVEL")+": <b id='wlpow'>"+st.pow+"</b>/10</label>";
       const r=ce("input"); r.type="range"; r.min=1; r.max=10; r.value=st.pow; r.style.width="100%";
       r.addEventListener("input",()=>{ st.pow=+r.value; f.querySelector("#wlpow").textContent=st.pow; });
       f.appendChild(r); box.appendChild(f);
       const row=ce("div","wl-row");
-      const back=ce("button","wl-btn","← НАЗАД"); back.addEventListener("click",()=>{ st.step=0; render(); });
-      const next=ce("button","wl-btn acc","ДАЛЕЕ →");
+      const back=ce("button","wl-btn",L("← НАЗАД","← BACK")); back.addEventListener("click",()=>{ st.step=0; render(); });
+      const next=ce("button","wl-btn acc",L("ДАЛЕЕ →","NEXT →"));
       next.addEventListener("click",()=>{ if(st.cls){ st.step=2; render(); beep(700,.06,"triangle",.1);} else beep(180,.09,"square",.1); });
       row.appendChild(back); row.appendChild(next); box.appendChild(row);
     } else {
-      box.appendChild(ce("div","wl-md","<h3>СВОДКА АНКЕТЫ</h3><ul><li>Имя: <b>"+esc(st.name)+"</b></li><li>Почта: <b>"+esc(st.email)+"</b></li><li>Роль: <b>"+esc(st.cls)+"</b></li><li>Энтузиазм: <b>"+st.pow+"/10</b></li></ul>"));
+      box.appendChild(ce("div","wl-md","<h3>"+L("СВОДКА АНКЕТЫ","FORM SUMMARY")+"</h3><ul><li>"+L("Имя","Name")+": <b>"+esc(st.name)+
+        "</b></li><li>"+L("Почта","Email")+": <b>"+esc(st.email)+"</b></li><li>"+L("Роль","Role")+": <b>"+esc(st.cls)+
+        "</b></li><li>"+L("Энтузиазм","Enthusiasm")+": <b>"+st.pow+"/10</b></li></ul>"));
       const lab=ce("label","wl-row");
       const cb=ce("input"); cb.type="checkbox"; cb.checked=st.agree;
       cb.addEventListener("change",()=>st.agree=cb.checked);
-      lab.appendChild(cb); lab.appendChild(ce("span",null,"согласен присоединиться к проекту (демо)"));
+      lab.appendChild(cb); lab.appendChild(ce("span",null,L("согласен присоединиться к проекту (демо)","I agree to join the project (demo)")));
       box.appendChild(lab);
       const row=ce("div","wl-row");
-      const back=ce("button","wl-btn","← НАЗАД"); back.addEventListener("click",()=>{ st.step=1; render(); });
-      const ok=ce("button","wl-btn acc","ОТПРАВИТЬ");
+      const back=ce("button","wl-btn",L("← НАЗАД","← BACK")); back.addEventListener("click",()=>{ st.step=1; render(); });
+      const ok=ce("button","wl-btn acc",L("ОТПРАВИТЬ","SUBMIT"));
       ok.addEventListener("click",()=>{
         if(!st.agree){ beep(180,.09,"square",.1); return; }
-        box.innerHTML='<div style="font-size:30px">🚀✅</div><div class="wl-md" style="margin-top:10px"><h3>ЗАЯВКА ПРИНЯТА</h3>Добро пожаловать в команду, <b>'+esc(st.name)+'</b>! Никакие данные никуда не ушли — это демо валидации и UX-паттернов.</div>';
+        box.innerHTML='<div style="font-size:30px">🚀✅</div><div class="wl-md" style="margin-top:10px"><h3>'+
+          L("ЗАЯВКА ПРИНЯТА","APPLICATION ACCEPTED")+"</h3>"+L("Добро пожаловать в команду, ","Welcome to the team, ")+"<b>"+esc(st.name)+"</b>! "+
+          L("Никакие данные никуда не ушли — это демо валидации и UX-паттернов.","No data went anywhere — this is a demo of validation and UX patterns.")+"</div>";
         steps.querySelectorAll(".wl-step").forEach(x=>x.classList.add("on"));
         chord&&chord();
       });
@@ -2402,20 +2431,25 @@ function dForm(el){
 
 /* === 6. таблица === */
 function dTable(el){
-  const FIRST=["Северная","Тайная","Восьмая","Ночная","Медная","Астральная","Пепельная","Ледяная","Тихая","Алая"];
-  const SECOND=["экспедиция","вылазка","разведка","миссия","переправа","кампания"];
-  const ST=[["УСПЕХ","--green"],["В ПУТИ","--cyan"],["ГОТОВИТСЯ","--gold"],["ПРОПАЛА","--magenta"]];
+  const FIRST=L(["Северная","Тайная","Восьмая","Ночная","Медная","Астральная","Пепельная","Ледяная","Тихая","Алая"],
+    ["Northern","Secret","Eighth","Night","Copper","Astral","Ashen","Icy","Quiet","Scarlet"]);
+  const SECOND=L(["экспедиция","вылазка","разведка","миссия","переправа","кампания"],
+    ["expedition","sortie","survey","mission","crossing","campaign"]);
+  const ST=L([["УСПЕХ","--green"],["В ПУТИ","--cyan"],["ГОТОВИТСЯ","--gold"],["ПРОПАЛА","--magenta"]],
+    [["DONE","--green"],["EN ROUTE","--cyan"],["PREPARING","--gold"],["LOST","--magenta"]]);
   const rows=Array.from({length:120},(_,i)=>({
     n:FIRST[Math.random()*FIRST.length|0]+" "+SECOND[Math.random()*SECOND.length|0]+" №"+(i+1),
     d:"2026-"+String(1+Math.random()*12|0).padStart(2,"0")+"-"+String(1+Math.random()*28|0).padStart(2,"0"),
     s:Math.random()*4|0, g:Math.random()*9000+100|0 }));
   const top=ce("div","wl-row"); top.style.marginTop="0";
-  const q=ce("input","wl-in"); q.placeholder="поиск по названию…"; q.style.flex="1";
+  const q=ce("input","wl-in"); q.placeholder=L("поиск по названию…","search by name…"); q.style.flex="1";
   const csv=ce("button","wl-btn","⬇ CSV");
   top.appendChild(q); top.appendChild(csv); el.appendChild(top);
   const wrap=ce("div","wl-tblwrap"); wrap.style.marginTop="12px"; el.appendChild(wrap);
   const pag=ce("div","wl-row"); el.appendChild(pag);
-  el.appendChild(ce("div","wl-note","120 записей: живой поиск, сортировка по клику на заголовок, страницы и экспорт в CSV, который открывается в Excel."));
+  el.appendChild(ce("div","wl-note",L(
+    "120 записей: живой поиск, сортировка по клику на заголовок, страницы и экспорт в CSV, который открывается в Excel.",
+    "120 records: live search, sorting by clicking a header, pagination and CSV export that opens straight in Excel.")));
   const state={q:"",k:"n",dir:1,page:0};
   function view(){
     let v=rows.filter(r=>r.n.toLowerCase().includes(state.q));
@@ -2428,8 +2462,8 @@ function dTable(el){
     const cut=v.slice(state.page*per,state.page*per+per);
     const arrow=k=>state.k===k?(state.dir>0?" ▲":" ▼"):"";
     wrap.innerHTML='<table class="wl-tbl"><thead><tr>'+
-      '<th data-k="n">НАЗВАНИЕ'+arrow("n")+'</th><th data-k="d">ДАТА'+arrow("d")+'</th>'+
-      '<th data-k="s">СТАТУС'+arrow("s")+'</th><th data-k="g">БЮДЖЕТ'+arrow("g")+"</th></tr></thead><tbody>"+
+      '<th data-k="n">'+L("НАЗВАНИЕ","NAME")+arrow("n")+'</th><th data-k="d">'+L("ДАТА","DATE")+arrow("d")+'</th>'+
+      '<th data-k="s">'+L("СТАТУС","STATUS")+arrow("s")+'</th><th data-k="g">'+L("БЮДЖЕТ","BUDGET")+arrow("g")+"</th></tr></thead><tbody>"+
       cut.map(r=>{ const st=ST[r.s];
         return "<tr><td>"+r.n+"</td><td>"+r.d+'</td><td><span class="wl-tag" style="border:1px solid var('+st[1]+');color:var('+st[1]+')">'+st[0]+"</span></td><td>"+r.g+" ₽</td></tr>"; }).join("")+
       "</tbody></table>";
@@ -2441,12 +2475,12 @@ function dTable(el){
     prev.addEventListener("click",()=>{ if(state.page>0){state.page--;render();} });
     next.addEventListener("click",()=>{ if(state.page<pages-1){state.page++;render();} });
     pag.appendChild(prev);
-    pag.appendChild(ce("span","wl-note","стр. "+(state.page+1)+" из "+pages+" · найдено: "+v.length));
+    pag.appendChild(ce("span","wl-note",L("стр. ","page ")+(state.page+1)+L(" из "," of ")+pages+L(" · найдено: "," · found: ")+v.length));
     pag.appendChild(next);
   }
   q.addEventListener("input",()=>{ state.q=q.value.trim().toLowerCase(); state.page=0; render(); });
   csv.addEventListener("click",()=>{
-    const data="\uFEFF"+["НАЗВАНИЕ;ДАТА;СТАТУС;БЮДЖЕТ"].concat(view().map(r=>[r.n,r.d,ST[r.s][0],r.g].join(";"))).join("\n");
+    const data="\uFEFF"+[L("НАЗВАНИЕ;ДАТА;СТАТУС;БЮДЖЕТ","NAME;DATE;STATUS;BUDGET")].concat(view().map(r=>[r.n,r.d,ST[r.s][0],r.g].join(";"))).join("\n");
     const a=document.createElement("a");
     a.href=URL.createObjectURL(new Blob([data],{type:"text/csv;charset=utf-8"}));
     a.download="reestr.csv"; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),2000);
@@ -2461,7 +2495,8 @@ function dEditor(el){
   const ta=ce("textarea","wl-ed"); const out=ce("div","wl-md");
   g.appendChild(ta); g.appendChild(out);
   const cnt=ce("div","wl-note"); el.appendChild(cnt);
-  ta.value="# Markdown живьём\n\nНабирайте слева — превью **обновляется сразу**.\n\n## Что понимает парсер\n- заголовки и *курсив*\n- `код` и [ссылки](https://rustamchu.ru)\n- цитаты и списки\n\n> Парсер написан с нуля: ~30 строк регулярных выражений.\n\n---\nИ никакой библиотеки.";
+  ta.value=L("# Markdown живьём\n\nНабирайте слева — превью **обновляется сразу**.\n\n## Что понимает парсер\n- заголовки и *курсив*\n- `код` и [ссылки](https://rustamchu.ru)\n- цитаты и списки\n\n> Парсер написан с нуля: ~30 строк регулярных выражений.\n\n---\nИ никакой библиотеки.",
+    "# Markdown, live\n\nType on the left — the preview **updates instantly**.\n\n## What the parser understands\n- headings and *italics*\n- `code` and [links](https://rustamchu.ru)\n- quotes and lists\n\n> The parser is written from scratch: about 30 lines of regular expressions.\n\n---\nAnd not a single library.");
   function md(src){
     let t=esc(src);
     t=t.replace(/^### (.*)$/gm,"<h3>$1</h3>").replace(/^## (.*)$/gm,"<h2>$1</h2>").replace(/^# (.*)$/gm,"<h1>$1</h1>");
@@ -2476,7 +2511,8 @@ function dEditor(el){
   }
   function upd(){ out.innerHTML=md(ta.value);
     const words=(ta.value.trim().match(/\S+/g)||[]).length;
-    cnt.textContent="Слов: "+words+" · символов: "+ta.value.length+" · парсер: свой, ~30 строк."; }
+    cnt.textContent=L("Слов: ","Words: ")+words+L(" · символов: "," · characters: ")+ta.value.length+
+      L(" · парсер: свой, ~30 строк."," · parser: hand-written, ~30 lines."); }
   ta.addEventListener("input",upd); upd();
 }
 
@@ -2576,14 +2612,16 @@ function dGal(el){
     t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; }
   let seeds=Array.from({length:6},()=>Math.random()*1e9|0), idx=0;
   const gal=ce("div","wl-gal"); const cv=ce("canvas"); gal.appendChild(cv);
-  const pb=ce("button","wl-gnav","‹"); pb.style.left="10px"; pb.setAttribute("aria-label","предыдущий арт");
-  const nb=ce("button","wl-gnav","›"); nb.style.right="10px"; nb.setAttribute("aria-label","следующий арт");
+  const pb=ce("button","wl-gnav","‹"); pb.style.left="10px"; pb.setAttribute("aria-label",L("предыдущий арт","previous artwork"));
+  const nb=ce("button","wl-gnav","›"); nb.style.right="10px"; nb.setAttribute("aria-label",L("следующий арт","next artwork"));
   gal.appendChild(pb); gal.appendChild(nb); el.appendChild(gal);
   const row=ce("div","wl-row");
   const cap=ce("span","wl-note",""); cap.style.marginTop="0";
-  const re=ce("button","wl-btn acc","⟳ НОВАЯ КОЛЛЕКЦИЯ");
+  const re=ce("button","wl-btn acc",L("⟳ НОВАЯ КОЛЛЕКЦИЯ","⟳ NEW COLLECTION"));
   row.appendChild(re); row.appendChild(cap); el.appendChild(row);
-  el.appendChild(ce("div","wl-note","Каждый «артефакт» рождается из числа-сида: симметричный узор, палитра и звёздный фон. Так работает генеративная графика — ноль нарисованных картинок."));
+  el.appendChild(ce("div","wl-note",L(
+    "Каждый «артефакт» рождается из числа-сида: симметричный узор, палитра и звёздный фон. Так работает генеративная графика — ноль нарисованных картинок.",
+    "Every artefact is born from a seed number: a symmetric pattern, a palette and a starfield. That is how generative graphics work — zero drawn images.")));
   function draw(){
     const seed=seeds[idx], r=mulberry(seed);
     const w=Math.max(280,cv.parentElement.clientWidth||560), h=240;
@@ -2602,7 +2640,7 @@ function dGal(el){
       x.fillRect(ox+(cells-1-cx)*px,oy+cy*px,px-1,px-1);
     }
     x.shadowBlur=0;
-    cap.textContent="АРТЕФАКТ #"+seed+" · "+(idx+1)+"/"+seeds.length;
+    cap.textContent=L("АРТЕФАКТ #","ARTEFACT #")+seed+" · "+(idx+1)+"/"+seeds.length;
   }
   pb.addEventListener("click",()=>{ idx=(idx-1+seeds.length)%seeds.length; draw(); beep(500,.04,"triangle",.08); });
   nb.addEventListener("click",()=>{ idx=(idx+1)%seeds.length; draw(); beep(560,.04,"triangle",.08); });
@@ -2612,7 +2650,8 @@ function dGal(el){
 
 /* === 10. синтезатор === */
 function dSynth(el){
-  const NOTES=[["ДО",261.63],["РЕ",293.66],["МИ",329.63],["ФА",349.23],["СОЛЬ",392],["ЛЯ",440],["СИ",493.88],["ДО₂",523.25]];
+  const NOTES=L([["ДО",261.63],["РЕ",293.66],["МИ",329.63],["ФА",349.23],["СОЛЬ",392],["ЛЯ",440],["СИ",493.88],["ДО₂",523.25]],
+    [["C",261.63],["D",293.66],["E",329.63],["F",349.23],["G",392],["A",440],["B",493.88],["C₂",523.25]]);
   let wave="sine", rec=[], t0=0, recOn=false;
   const chips=ce("div","wl-row"); chips.style.marginTop="0";
   ["sine","triangle","square","sawtooth"].forEach(wv=>{
@@ -2630,11 +2669,14 @@ function dSynth(el){
     keys.appendChild(k);
   });
   const row=ce("div","wl-row");
-  const rb=ce("button","wl-btn","● ЗАПИСЬ"), pb=ce("button","wl-btn","▶ ВОСПРОИЗВЕСТИ"), db=ce("button","wl-btn","♪ ДЕМО-МЕЛОДИЯ");
+  const rb=ce("button","wl-btn",L("● ЗАПИСЬ","● RECORD")), pb=ce("button","wl-btn",L("▶ ВОСПРОИЗВЕСТИ","▶ PLAY BACK")),
+    db=ce("button","wl-btn",L("♪ ДЕМО-МЕЛОДИЯ","♪ DEMO MELODY"));
   row.appendChild(rb); row.appendChild(pb); row.appendChild(db); el.appendChild(row);
-  el.appendChild(ce("div","wl-note","Каждая нота — формула WebAudio, никаких аудиофайлов: чистый синтез. Если тишина — включите 🔇 ЗВУК в шапке сайта."));
-  rb.addEventListener("click",()=>{ recOn=!recOn; if(recOn){ rec=[]; t0=performance.now(); rb.textContent="■ СТОП"; rb.classList.add("acc"); }
-    else { rb.textContent="● ЗАПИСЬ"; rb.classList.remove("acc"); } });
+  el.appendChild(ce("div","wl-note",L(
+    "Каждая нота — формула WebAudio, никаких аудиофайлов: чистый синтез. Если тишина — включите 🔇 ЗВУК в шапке сайта.",
+    "Every note is a WebAudio formula, no audio files at all: pure synthesis. If it is silent, switch the 🔇 sound toggle on in the header.")));
+  rb.addEventListener("click",()=>{ recOn=!recOn; if(recOn){ rec=[]; t0=performance.now(); rb.textContent=L("■ СТОП","■ STOP"); rb.classList.add("acc"); }
+    else { rb.textContent=L("● ЗАПИСЬ","● RECORD"); rb.classList.remove("acc"); } });
   function play(seq){ seq.forEach(s=>setTimeout(()=>{ if(keys.isConnected) beep(s[0],.3,wave,.16); },s[1])); }
   pb.addEventListener("click",()=>{ if(rec.length) play(rec); else beep(150,.1,"square",.1); });
   db.addEventListener("click",()=>{
@@ -2647,9 +2689,12 @@ function dSynth(el){
 function dPhys(el){
   const cv=ce("canvas","wl-cv"); el.appendChild(cv);
   const row=ce("div","wl-row");
-  const boom=ce("button","wl-btn acc","💥 ВЗРЫВ"), gb=ce("button","wl-btn","ГРАВИТАЦИЯ: ВКЛ"), clr=ce("button","wl-btn","ОЧИСТИТЬ");
+  const boom=ce("button","wl-btn acc",L("💥 ВЗРЫВ","💥 BLAST")),
+    gb=ce("button","wl-btn",L("ГРАВИТАЦИЯ: ВКЛ","GRAVITY: ON")), clr=ce("button","wl-btn",L("ОЧИСТИТЬ","CLEAR"));
   row.appendChild(boom); row.appendChild(gb); row.appendChild(clr); el.appendChild(row);
-  el.appendChild(ce("div","wl-note","Тапайте по полю — шарики рождаются под пальцем. Скорости, отскоки и трение считаются каждый кадр — та же математика, что в любой плавной анимации."));
+  el.appendChild(ce("div","wl-note",L(
+    "Тапайте по полю — шарики рождаются под пальцем. Скорости, отскоки и трение считаются каждый кадр — та же математика, что в любой плавной анимации.",
+    "Tap the field — balls are born under your finger. Velocities, bounces and friction are computed every frame: the same maths as in any smooth animation.")));
   const [x,w,h]=fitCv(cv,250);
   let balls=[], grav=true;
   function add(px,py){ balls.push({x:px,y:py,vx:(Math.random()-.5)*7,vy:(Math.random()-.5)*5,
@@ -2658,7 +2703,7 @@ function dPhys(el){
   cv.addEventListener("pointerdown",e=>{ const r=cv.getBoundingClientRect();
     add(e.clientX-r.left,e.clientY-r.top); beep(280+Math.random()*400,.05,"square",.06); });
   boom.addEventListener("click",()=>{ balls.forEach(b=>{ b.vy-=7+Math.random()*7; b.vx+=(Math.random()-.5)*12; }); beep(120,.15,"sawtooth",.14); });
-  gb.addEventListener("click",()=>{ grav=!grav; gb.textContent="ГРАВИТАЦИЯ: "+(grav?"ВКЛ":"ВЫКЛ"); });
+  gb.addEventListener("click",()=>{ grav=!grav; gb.textContent=L("ГРАВИТАЦИЯ: ","GRAVITY: ")+(grav?L("ВКЛ","ON"):L("ВЫКЛ","OFF")); });
   clr.addEventListener("click",()=>{ balls=[]; });
   (function loop(){
     if(!cv.isConnected) return;
@@ -2679,46 +2724,57 @@ function dPhys(el){
 function dDS(el){
   const row=ce("div","wl-row"); row.style.marginTop="0"; el.appendChild(row);
   WORLDS.forEach(wd=>{
-    const b=ce("button","wl-btn","🌌 "+wd[1]);
+    const b=ce("button","wl-btn","🌌 "+L(wd[1],wd[2]));
     b.addEventListener("click",()=>{ applyWorld(wd[0]); document.dispatchEvent(new CustomEvent("worldchange")); });
     row.appendChild(b);
   });
   const sw=ce("div","wl-swatches"); sw.style.marginTop="12px"; el.appendChild(sw);
   const ty=ce("div","wl-md"); ty.style.marginTop="12px"; el.appendChild(ty);
-  el.appendChild(ce("div","wl-note","Весь сайт держится на дизайн-токенах (CSS-переменных): смена мира — это подмена пары десятков значений, и каждая кнопка, карточка и график перекрашиваются сами."));
+  el.appendChild(ce("div","wl-note",L(
+    "Весь сайт держится на дизайн-токенах (CSS-переменных): смена стиля — это подмена пары десятков значений, и каждая кнопка, карточка и график перекрашиваются сами.",
+    "The whole site rests on design tokens (CSS variables): switching a theme swaps a couple of dozen values, and every button, card and chart repaints itself.")));
   function render(){
     if(!sw.isConnected){ document.removeEventListener("worldchange",render); return; }
     sw.innerHTML="";
-    [["--bg","фон"],["--panel","панель"],["--cyan","акцент"],["--magenta","алый"],["--gold","золото"],["--green","живой"],["--text","текст"],["--dim","приглушённый"]].forEach(v=>{
+    L([["--bg","фон"],["--panel","панель"],["--cyan","акцент"],["--magenta","алый"],["--gold","золото"],["--green","живой"],["--text","текст"],["--dim","приглушённый"]],
+      [["--bg","background"],["--panel","panel"],["--cyan","accent"],["--magenta","scarlet"],["--gold","gold"],["--green","vivid"],["--text","text"],["--dim","muted"]]).forEach(v=>{
       const val=cssv(v[0]);
       sw.appendChild(ce("div","wl-sw",'<i style="background:'+val+'"></i>'+v[1]+"<br>"+val));
     });
     const _dw=document.documentElement.dataset.world||"neon";
-    const wname=_dw==="custom"?"СВОЙ":((WORLDS.find(x=>x[0]===_dw)||WORLDS[0])[1]);
-    ty.innerHTML="<h2 style='margin-top:0'>СТИЛЬ: "+wname+"</h2><p>Заголовки — <b>"+cssv("--disp").split(",")[0].replace(/'/g,"")+"</b>, текст — Rubik, код — <code>JetBrains Mono</code>.</p><blockquote>Одна вёрстка — семь характеров: от неона и тьмы до дневного света и бумаги.</blockquote>";
+    const _wd=WORLDS.find(x=>x[0]===_dw)||WORLDS[0];
+    const wname=_dw==="custom"?L("СВОЙ","CUSTOM"):L(_wd[1],_wd[2]);
+    ty.innerHTML="<h2 style='margin-top:0'>"+L("СТИЛЬ: ","THEME: ")+wname+"</h2><p>"+
+      L("Заголовки — <b>","Headings — <b>")+cssv("--disp").split(",")[0].replace(/'/g,"")+
+      L("</b>, текст — Rubik, код — <code>JetBrains Mono</code>.","</b>, body — Rubik, code — <code>JetBrains Mono</code>.")+"</p><blockquote>"+
+      L("Одна вёрстка — восемь характеров: от неона и тьмы до дневного света и бумаги.",
+        "One layout, eight characters: from neon and dusk to daylight and paper.")+"</blockquote>";
   }
   /* конструктор собственного стиля */
   const cw=ce("div","wl-md"); cw.style.marginTop="12px";
-  cw.innerHTML="<h3 style='margin-top:0'>СОБЕРИТЕ СВОЙ СТИЛЬ</h3>";
-  const hf=ce("div","wl-fld","<label>БАЗОВЫЙ ТОН: <b>200</b>°</label>");
+  cw.innerHTML="<h3 style='margin-top:0'>"+L("СОБЕРИТЕ СВОЙ СТИЛЬ","ASSEMBLE YOUR OWN THEME")+"</h3>";
+  const hf=ce("div","wl-fld","<label>"+L("БАЗОВЫЙ ТОН","BASE HUE")+": <b>200</b>°</label>");
   const hl2=hf.querySelector("b");
   const hr=ce("input"); hr.type="range"; hr.min=0; hr.max=359;
   hr.value=PROFILE.ch!==undefined?PROFILE.ch:200; hr.style.width="100%";
   hf.appendChild(hr); cw.appendChild(hf);
   const lrow=ce("label","wl-row");
   const lc=ce("input"); lc.type="checkbox"; lc.checked=!!PROFILE.cl;
-  lrow.appendChild(lc); lrow.appendChild(ce("span",null,"светлая основа"));
+  lrow.appendChild(lc); lrow.appendChild(ce("span",null,L("светлая основа","light base")));
   cw.appendChild(lrow);
   const prev=ce("div","wl-row"); cw.appendChild(prev);
   const brow=ce("div","wl-row");
-  const ap=ce("button","wl-btn acc","ПРИМЕНИТЬ КАК «СВОЙ»");
-  const rsb=ce("button","wl-btn","ВЕРНУТЬ НЕОН");
+  const ap=ce("button","wl-btn acc",L("ПРИМЕНИТЬ КАК «СВОЙ»","APPLY AS «CUSTOM»"));
+  const rsb=ce("button","wl-btn",L("ВЕРНУТЬ НЕОН","BACK TO NEON"));
   brow.appendChild(ap); brow.appendChild(rsb); cw.appendChild(brow);
-  cw.appendChild(ce("div","wl-note","Восьмой стиль — ваш: тон задаёт всю палитру по формулам цветового круга, выбор запоминается."));
+  cw.appendChild(ce("div","wl-note",L(
+    "Восьмой стиль — ваш: тон задаёт всю палитру по формулам цветового круга, выбор запоминается.",
+    "The eighth theme is yours: one hue drives the whole palette through colour-wheel formulas, and the choice is remembered.")));
   function pv(){ hl2.textContent=hr.value; prev.innerHTML="";
-    const h=+hr.value, L=lc.checked?38:62;
-    [[h,"акцент"],[(h+50)%360,"второй"],[(h+90)%360,"тёплый"],[(h+150)%360,"живой"]].forEach(cc=>{
-      prev.appendChild(ce("div","wl-sw",'<i style="background:hsl('+cc[0]+' 80% '+L+'%)"></i>'+cc[1])); }); }
+    const h=+hr.value, LT=lc.checked?38:62;
+    L([[h,"акцент"],[(h+50)%360,"второй"],[(h+90)%360,"тёплый"],[(h+150)%360,"живой"]],
+      [[h,"accent"],[(h+50)%360,"second"],[(h+90)%360,"warm"],[(h+150)%360,"vivid"]]).forEach(cc=>{
+      prev.appendChild(ce("div","wl-sw",'<i style="background:hsl('+cc[0]+' 80% '+LT+'%)"></i>'+cc[1])); }); }
   hr.addEventListener("input",pv); lc.addEventListener("change",pv); pv();
   ap.addEventListener("click",()=>{
     PROFILE.ch=+hr.value; PROFILE.cl=lc.checked; saveProfile();
@@ -2732,16 +2788,19 @@ function dDS(el){
 
 /* === 13. генератор палитр === */
 function dPal(el){
-  const fwrap=ce("div","wl-fld","<label>БАЗОВЫЙ ТОН КРУГА</label>");
+  const fwrap=ce("div","wl-fld","<label>"+L("БАЗОВЫЙ ТОН КРУГА","BASE HUE OF THE WHEEL")+"</label>");
   const r=ce("input"); r.type="range"; r.min=0; r.max=359; r.value=Math.random()*360|0; r.style.width="100%";
   fwrap.appendChild(r); el.appendChild(fwrap);
   const modes=ce("div","wl-row"); modes.style.marginTop="0"; el.appendChild(modes);
   const grid=ce("div","wl-swatches"); grid.style.marginTop="12px"; el.appendChild(grid);
-  const msg=ce("div","wl-note","Кликните по цвету — HEX скопируется в буфер."); el.appendChild(msg);
-  el.appendChild(ce("div","wl-note","Гармонии считаются по цветовому кругу: моно, аналоговая, триада, комплементарная. Так подбираются палитры интерфейсов — включая семь стилей этого сайта."));
+  const msg=ce("div","wl-note",L("Кликните по цвету — HEX скопируется в буфер.","Click a colour — the HEX goes to the clipboard.")); el.appendChild(msg);
+  el.appendChild(ce("div","wl-note",L(
+    "Гармонии считаются по цветовому кругу: моно, аналоговая, триада, комплементарная. Так подбираются палитры интерфейсов — включая восемь стилей этого сайта.",
+    "The harmonies are computed on the colour wheel: mono, analogous, triad, complementary. That is how interface palettes are picked — including the eight themes of this site.")));
+  const MODEN={"моно":"MONO","аналог":"ANALOGOUS","триада":"TRIAD","комплемент":"COMPLEMENT"};
   let mode="аналог";
   ["моно","аналог","триада","комплемент"].forEach(m=>{
-    const b=ce("button","wl-btn"+(m===mode?" acc":""),m.toUpperCase());
+    const b=ce("button","wl-btn"+(m===mode?" acc":""),L(m.toUpperCase(),MODEN[m]));
     b.addEventListener("click",()=>{ mode=m;
       modes.querySelectorAll(".wl-btn").forEach(x=>x.classList.remove("acc"));
       b.classList.add("acc"); draw(); });
@@ -2764,7 +2823,7 @@ function dPal(el){
       d.addEventListener("click",()=>{
         let okc=false;
         try{ navigator.clipboard.writeText(hex); okc=true; }catch(e){}
-        msg.textContent=okc?("Скопировано: "+hex):("HEX: "+hex);
+        msg.textContent=okc?(L("Скопировано: ","Copied: ")+hex):("HEX: "+hex);
         beep(880,.04,"triangle",.08); });
       grid.appendChild(d); });
   }
@@ -2775,14 +2834,16 @@ function dPal(el){
 function dScope(el){
   const cv=ce("canvas","wl-cv"); el.appendChild(cv);
   const row=ce("div","wl-row");
-  const start=ce("button","wl-btn acc","▶ ЗАПУСТИТЬ ГЕНЕРАТОР");
+  const start=ce("button","wl-btn acc",L("▶ ЗАПУСТИТЬ ГЕНЕРАТОР","▶ START THE GENERATOR"));
   row.appendChild(start); el.appendChild(row);
   const wsel=ce("div","wl-row"); el.appendChild(wsel);
-  const fwrap=ce("div","wl-fld","<label>ЧАСТОТА: <b>220</b> ГЦ</label>");
+  const fwrap=ce("div","wl-fld","<label>"+L("ЧАСТОТА","FREQUENCY")+": <b>220</b> "+L("ГЦ","HZ")+"</label>");
   const flab=fwrap.querySelector("b");
   const fr=ce("input"); fr.type="range"; fr.min=80; fr.max=880; fr.value=220; fr.style.width="100%";
   fwrap.appendChild(fr); el.appendChild(fwrap);
-  el.appendChild(ce("div","wl-note","Сверху — осциллограмма, снизу — спектр через AnalyserNode. Меняйте частоту и форму волны — картинка и тембр меняются вместе. Громкость специально тихая."));
+  el.appendChild(ce("div","wl-note",L(
+    "Сверху — осциллограмма, снизу — спектр через AnalyserNode. Меняйте частоту и форму волны — картинка и тембр меняются вместе. Громкость специально тихая.",
+    "The waveform on top, the spectrum below, both through an AnalyserNode. Change the frequency and the wave shape — picture and timbre move together. The volume is deliberately low.")));
   let ctx=null,osc=null,an=null,data=null,fdata=null,wave="sine",run=false;
   ["sine","triangle","square","sawtooth"].forEach(wv=>{
     const b=ce("button","wl-btn"+(wv==="sine"?" acc":""),wv.toUpperCase());
@@ -2793,7 +2854,7 @@ function dScope(el){
   const [x,w,h]=fitCv(cv,240);
   function stop(){ if(!run) return; run=false;
     try{ osc.stop(); }catch(e){} try{ ctx.close(); }catch(e){}
-    osc=null; ctx=null; start.textContent="▶ ЗАПУСТИТЬ ГЕНЕРАТОР"; start.classList.add("acc"); }
+    osc=null; ctx=null; start.textContent=L("▶ ЗАПУСТИТЬ ГЕНЕРАТОР","▶ START THE GENERATOR"); start.classList.add("acc"); }
   start.addEventListener("click",()=>{
     if(run){ stop(); return; }
     try{
@@ -2804,7 +2865,7 @@ function dScope(el){
       osc.type=wave; osc.frequency.value=+fr.value;
       osc.connect(an); an.connect(g); g.connect(ctx.destination); osc.start();
       data=new Uint8Array(an.fftSize); fdata=new Uint8Array(an.frequencyBinCount);
-      run=true; start.textContent="■ ОСТАНОВИТЬ"; start.classList.remove("acc");
+      run=true; start.textContent=L("■ ОСТАНОВИТЬ","■ STOP"); start.classList.remove("acc");
     }catch(e){}
   });
   fr.addEventListener("input",()=>{ flab.textContent=fr.value; if(osc) osc.frequency.value=+fr.value; });
@@ -2834,7 +2895,7 @@ function dScope(el){
       x.globalAlpha=1;
     } else {
       x.fillStyle=dm; x.font="12px monospace"; x.textAlign="center";
-      x.fillText("нажмите «запустить генератор»",w/2,h/2); x.textAlign="left";
+      x.fillText(L("нажмите «запустить генератор»","press «start the generator»"),w/2,h/2); x.textAlign="left";
     }
   })();
 }
@@ -2845,15 +2906,17 @@ function dCard(el){
   const left=ce("div");
   const cv=ce("canvas"); cv.style.cssText="width:100%;border-radius:12px;border:1px solid var(--line);display:block";
   g.appendChild(left); g.appendChild(cv);
-  const f1=ce("div","wl-fld","<label>ИМЯ</label>");
-  const i1=ce("input","wl-in"); i1.value="РУСТАМ ЧУЧУЕВ"; i1.maxLength=24;
+  const f1=ce("div","wl-fld","<label>"+L("ИМЯ","NAME")+"</label>");
+  const i1=ce("input","wl-in"); i1.value=L("РУСТАМ ЧУЧУЕВ","RUSTAM CHUCHUEV"); i1.maxLength=24;
   i1.style.width="100%"; i1.style.boxSizing="border-box"; f1.appendChild(i1);
-  const f2=ce("div","wl-fld","<label>ПОДПИСЬ</label>");
-  const i2=ce("input","wl-in"); i2.value="создаю цифровые вещи"; i2.maxLength=32;
+  const f2=ce("div","wl-fld","<label>"+L("ПОДПИСЬ","TAGLINE")+"</label>");
+  const i2=ce("input","wl-in"); i2.value=L("создаю цифровые вещи","I build digital things"); i2.maxLength=32;
   i2.style.width="100%"; i2.style.boxSizing="border-box"; f2.appendChild(i2);
-  const dl=ce("button","wl-btn acc","⬇ СКАЧАТЬ PNG");
+  const dl=ce("button","wl-btn acc",L("⬇ СКАЧАТЬ PNG","⬇ DOWNLOAD PNG"));
   left.appendChild(f1); left.appendChild(f2); left.appendChild(dl);
-  el.appendChild(ce("div","wl-note","Карточка рисуется на canvas в цветах активного стиля и скачивается настоящим PNG. Смените стиль — визитка перекрасится сама."));
+  el.appendChild(ce("div","wl-note",L(
+    "Карточка рисуется на canvas в цветах активного стиля и скачивается настоящим PNG. Смените стиль — визитка перекрасится сама.",
+    "The card is drawn on canvas in the colours of the active theme and downloads as a real PNG. Change the theme and it repaints itself.")));
   function draw(){
     const W=960,H=540; cv.width=W; cv.height=H;
     const x=cv.getContext("2d");
@@ -2895,13 +2958,15 @@ function dCard(el){
 function dSrc(el){
   const chips=ce("div","wl-row"); chips.style.marginTop="0"; el.appendChild(chips);
   const pre=ce("pre","wl-code"); el.appendChild(pre);
-  el.appendChild(ce("div","wl-note","Это не картинка: стенд читает собственный <script> страницы, режет его по заголовкам модулей и подсвечивает синтаксис самописным токенизатором на регулярных выражениях."));
+  el.appendChild(ce("div","wl-note",L(
+    "Это не картинка: стенд читает собственный <script> страницы, режет его по заголовкам модулей и подсвечивает синтаксис самописным токенизатором на регулярных выражениях.",
+    "This is not a picture: the stand reads the page's own <script>, splits it by module headings and highlights the syntax with a hand-written tokeniser built on regular expressions. Module names stay in Russian — that is the real source code.")));
   let src="";
   try{ const sc=[...document.querySelectorAll("script:not([type])")]; src=(sc[sc.length-1]||{}).textContent||""; }catch(e){}
   const parts=src.split(/\/\* ---------- (.+?) ---------- \*\//);
   const mods=[];
   for(let i=1;i<parts.length;i+=2){ const code=(parts[i+1]||"").trim(); if(code.length>150) mods.push([parts[i],code]); }
-  if(!mods.length) mods.push(["весь скрипт",src.slice(0,4000)]);
+  if(!mods.length) mods.push([L("весь скрипт","whole script"),src.slice(0,4000)]);
   function esc2(t){ return t.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c])); }
   function hi(code){
     let t=esc2(code.slice(0,4200)); const tok=[];
