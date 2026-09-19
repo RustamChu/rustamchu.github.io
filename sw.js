@@ -3,7 +3,7 @@
    - навигация (index): network-first — публикации видны сразу, офлайн отдаём кэш;
    - play/* и статика с этого origin: stale-while-revalidate — игры мгновенны
      и тихо обновляются в фоне. Версия кэша = штамп сборки. */
-const VERSION = "18.09-1208";
+const VERSION = "19.09-1657";
 const CACHE = "rustamchu-" + VERSION;
 
 self.addEventListener("install", e => {
