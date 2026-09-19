@@ -15,6 +15,30 @@
 <meta property="og:locale" content="ru_RU">
 <meta property="og:url" content="https://rustamchu.ru/">
 <meta property="og:title" content="РУСТАМ ЧУЧУЕВ — игровое меню · 10 игр с ИИ">
+<<<<<<< HEAD
+=======
+<meta name="color-scheme" content="dark">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Person","name":"Рустам Чучуев","alternateName":"RustamChu",
+  "url":"https://rustamchu.ru/","email":"mailto:rustamchuchuev111@gmail.com",
+  "sameAs":["https://github.com/RustamChu","https://t.me/rust_a_m"],
+  "jobTitle":"Разработчик игр в паре с ИИ"},
+ {"@type":"ItemList","name":"Серия «10 жанров»","numberOfItems":10,"itemListElement":[
+  {"@type":"VideoGame","position":1,"name":"NEON DOOM","genre":"шутер-рейкастер","url":"https://github.com/RustamChu/neon-doom"},
+  {"@type":"VideoGame","position":2,"name":"ASHEN DEPTHS","genre":"пошаговый рогалик","url":"https://github.com/RustamChu/ashen-depths"},
+  {"@type":"VideoGame","position":3,"name":"LAST REACTOR","genre":"tower defense","url":"https://github.com/RustamChu/last-reactor"},
+  {"@type":"VideoGame","position":4,"name":"ОРБИТА-9","genre":"космический мини-гольф","url":"https://github.com/RustamChu/orbit-nine"},
+  {"@type":"VideoGame","position":5,"name":"БАТИСФЕРА","genre":"сонарный хоррор","url":"https://github.com/RustamChu/bathysphere"},
+  {"@type":"VideoGame","position":6,"name":"ЗИМНИК","genre":"ночное ралли","url":"https://github.com/RustamChu/zimnik"},
+  {"@type":"VideoGame","position":7,"name":"НАВЬ","genre":"карточный роглайк","url":"https://github.com/RustamChu/navka"},
+  {"@type":"VideoGame","position":8,"name":"ПОЛЫНЬЯ","genre":"головоломка","url":"https://github.com/RustamChu/polynya"},
+  {"@type":"VideoGame","position":9,"name":"ФОНАРЩИК","genre":"платформер","url":"https://github.com/RustamChu/lamplighter"},
+  {"@type":"VideoGame","position":10,"name":"МЕДВЕЖАТНИК","genre":"стелс","url":"https://github.com/RustamChu/medvezhatnik"}]}]}
+</script>
+>>>>>>> 2c80fd8 (site 2026-09-19 14:26)
 <meta property="og:description" content="Портфолио-сайт как живое меню игры: 10 игр в 10 жанрах за два часа, лаборатория кода, «Бутылочка» и серверы. Всё рисуется и звучит кодом.">
 <style>
   :root{
@@ -262,6 +286,81 @@
   .cchip b{color:#fff}
   #press .fine{margin-top:34px;font-family:var(--mono);font-size:12px;color:#5a6690;letter-spacing:.12em;line-height:2}
 
+<<<<<<< HEAD
+=======
+  /* telemetry (F3) */
+  #tele{position:fixed;top:58px;left:12px;z-index:66;display:none;width:230px;
+    border:1px solid rgba(111,224,138,.5);border-radius:12px;background:rgba(6,12,8,.93);
+    box-shadow:0 0 24px rgba(111,224,138,.2);padding:12px;font-family:var(--mono);
+    font-size:10.5px;letter-spacing:.06em;color:#cfe8d6;line-height:2}
+  #tele.on{display:block}
+  #tele .th{color:var(--green);letter-spacing:.25em;font-size:9.5px;margin-bottom:6px}
+  #tele b{color:#fff;font-weight:700}
+  #tele canvas{display:block;width:100%;height:38px;background:#04120a;border:1px solid #143020;
+    border-radius:6px;margin:6px 0}
+
+  /* game filters */
+  #gfilters{display:flex;gap:8px;flex-wrap:wrap;margin:-12px 0 22px}
+  .gf{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--dim);
+    border:1px solid var(--line);background:rgba(18,23,43,.8);border-radius:16px;
+    padding:7px 14px;cursor:pointer;transition:.15s}
+  .gf:hover{color:#fff;border-color:#3a4a7a}
+  .gf.on{color:#061018;background:linear-gradient(90deg,var(--cyan),#9ff0f0);border-color:transparent;font-weight:700}
+
+  /* studio */
+  #crew{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+  .dev{border:1px solid var(--line);border-radius:14px;background:rgba(18,23,43,.78);
+    padding:18px;transition:border-color .2s,transform .2s}
+  .dev:hover{border-color:#3a4a7a;transform:translateY(-3px)}
+  .dev .dico{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;
+    justify-content:center;font-size:22px;margin-bottom:12px;
+    background:rgba(77,227,227,.1);border:1px solid rgba(77,227,227,.35)}
+  .dev .dnm{font-family:var(--disp);font-size:15px;color:#fff;letter-spacing:.04em}
+  .dev .drl{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--magenta);margin-top:4px}
+  .dev .dtx{margin-top:10px;font-size:13.5px;line-height:1.55;color:var(--dim)}
+  .dev .dst{margin-top:10px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:#6fe08a}
+  #crew-total{margin-top:22px;text-align:center;font-family:var(--mono);font-size:12px;
+    letter-spacing:.14em;color:var(--gold)}
+
+  /* news ticker */
+  #ticker{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    background:rgba(8,11,22,.6);padding:9px 0;position:relative;z-index:2}
+  #ticker .trow{display:flex;gap:44px;white-space:nowrap;font-family:var(--mono);
+    font-size:11.5px;letter-spacing:.14em;color:var(--dim);
+    animation:tick 40s linear infinite;width:max-content}
+  #ticker .trow b{color:var(--cyan);font-weight:700}
+  @keyframes tick{to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){#ticker .trow{animation:none}}
+
+  /* player profile */
+  .xp{cursor:pointer;border-radius:8px;padding:3px 6px;transition:.18s}
+  .xp:hover{background:rgba(255,201,77,.1)}
+  #profile{position:fixed;top:56px;right:12px;z-index:65;width:min(320px,calc(100vw - 24px));
+    display:none;border:1px solid rgba(255,201,77,.5);border-radius:14px;
+    background:rgba(14,12,5,.96);box-shadow:0 0 30px rgba(255,201,77,.25);padding:16px}
+  #profile.on{display:block}
+  #profile .ph{display:flex;gap:12px;align-items:center}
+  #profile .pava{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;
+    justify-content:center;font-family:var(--disp);font-size:24px;color:#140f04;
+    background:linear-gradient(135deg,var(--gold),#ffe4a0)}
+  #profile .pnick{width:100%;background:none;border:none;border-bottom:1px dashed rgba(255,201,77,.5);
+    color:#fff;font-family:var(--disp);font-size:17px;padding:2px 0;outline:none}
+  #profile .plvl{font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:.12em;margin-top:3px}
+  #profile .pbar{margin-top:12px;height:8px;border-radius:5px;background:#0c1020;
+    border:1px solid #3a3417;overflow:hidden}
+  #profile .pbar i{display:block;height:100%;background:linear-gradient(90deg,#8a6a1f,var(--gold))}
+  #profile .pstats{margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px;
+    font-size:12.5px;color:#d7cfa8}
+  #profile .pstats b{color:#fff}
+  #profile .pach{margin-top:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;
+    color:var(--dim);line-height:1.9}
+  #profile .pach .got{color:var(--gold)}
+  #profile .preset{margin-top:12px;width:100%;font-family:var(--mono);font-size:10.5px;
+    letter-spacing:.1em;color:var(--dim);background:none;border:1px solid var(--line);
+    border-radius:8px;padding:8px;cursor:pointer}
+  #profile .preset:hover{color:var(--magenta);border-color:rgba(255,77,141,.5)}
+
+>>>>>>> 2c80fd8 (site 2026-09-19 14:26)
   /* toasts */
   #toasts{position:fixed;top:64px;right:16px;z-index:60;display:flex;flex-direction:column;gap:10px}
   .toast{display:flex;gap:12px;align-items:center;border:1px solid rgba(255,201,77,.55);border-radius:12px;
@@ -343,29 +442,73 @@
   </div>
   <div class="stage"><iframe id="arc-frame" title="игра из серии"></iframe></div>
 </div>
+<<<<<<< HEAD
 <div id="toasts"></div>
 
 <header id="hud">
   <div class="lg">RUSTAM<span>.CHU</span></div>
   <span class="chip warm" id="bstamp" style="font-size:9px;padding:3px 7px" title="штамп сборки: если после публикации не сменился — у вас кэш">v16.08 14:08 МСК</span>
+=======
+<div id="toasts" role="status" aria-live="polite"></div>
+
+<header id="hud">
+  <div class="lg">RUSTAM<span>.CHU</span></div>
+  <span class="chip warm" id="bstamp" style="font-size:9px;padding:3px 7px" title="штамп сборки: если после публикации не сменился — у вас кэш">v18.09 12:08 МСК</span>
+>>>>>>> 2c80fd8 (site 2026-09-19 14:26)
   <nav>
     <a href="#games">УРОВНИ</a>
     <a href="#lab">ЛАБА</a>
     <a href="#butylochka">БУТЫЛОЧКА</a>
     <a href="#servers">СЕРВЕРЫ</a>
+<<<<<<< HEAD
+=======
+    <a href="#studio">СТУДИЯ</a>
+>>>>>>> 2c80fd8 (site 2026-09-19 14:26)
     <a href="#press">КОНТАКТЫ</a>
   </nav>
   <button id="burger" aria-label="меню">☰</button>
   <div class="sp"></div>
   <div class="xp"><span id="xpn">0 XP</span><span class="track"><i id="xpbar"></i></span></div>
+<<<<<<< HEAD
   <button class="tgl" id="sndtgl" title="звук синтезируется кодом, как в играх серии">🔇 ЗВУК</button>
   <button class="tgl" id="crttgl" title="режим старого монитора">CRT</button>
 </header>
+=======
+  <button class="tgl" id="sndtgl" aria-pressed="false" title="звук синтезируется кодом, как в играх серии">🔇 ЗВУК</button>
+  <button class="tgl" id="crttgl" aria-pressed="false" title="режим старого монитора">CRT</button>
+</header>
+<div id="tele" aria-label="телеметрия">
+  <div class="th">▮ ТЕЛЕМЕТРИЯ · F3</div>
+  <div>FPS: <b id="t-fps">—</b> · кадр: <b id="t-ms">—</b> мс</div>
+  <canvas id="t-graph" width="206" height="38"></canvas>
+  <div>частиц: <b id="t-p">0</b> · мобов: <b id="t-m">0</b></div>
+  <div>качество FX: <b id="t-q">full</b></div>
+  <div>XP: <b id="t-xp">0</b> · сессия: <b id="t-up">0с</b></div>
+  <div>сборка: <b id="t-b">—</b></div>
+</div>
+<div id="profile" role="dialog" aria-label="профиль игрока">
+  <div class="ph">
+    <div class="pava" id="pava">?</div>
+    <div style="flex:1">
+      <input class="pnick" id="pnick" maxlength="16" placeholder="ВАШ НИК" aria-label="ник игрока">
+      <div class="plvl" id="plvl">УРОВЕНЬ 1</div>
+    </div>
+  </div>
+  <div class="pbar"><i id="pbarfill" style="width:0%"></i></div>
+  <div class="pstats" id="pstats"></div>
+  <div class="pach" id="pach"></div>
+  <button class="preset" id="preset" type="button">СБРОСИТЬ ПРОФИЛЬ</button>
+</div>
+>>>>>>> 2c80fd8 (site 2026-09-19 14:26)
 <nav id="mnav">
   <a href="#games">▶ УРОВНИ</a>
   <a href="#lab">▶ ЛАБОРАТОРИЯ</a>
   <a href="#butylochka">▶ БУТЫЛОЧКА</a>
   <a href="#servers">▶ СЕРВЕРЫ</a>
+<<<<<<< HEAD
+=======
+  <a href="#studio">▶ СТУДИЯ</a>
+>>>>>>> 2c80fd8 (site 2026-09-19 14:26)
   <a href="#press">▶ КОНТАКТЫ</a>
 </nav>
 
@@ -386,6 +529,11 @@
   <div class="scrollhint">▼ КРУТИТЕ ВНИЗ ▼</div>
 </div>
 
+<<<<<<< HEAD
+=======
+<div id="ticker" aria-hidden="true"><div class="trow" id="tickrow"></div></div>
+
+>>>>>>> 2c80fd8 (site 2026-09-19 14:26)
 <section id="stats">
   <div class="stat"><div class="n" data-count="10">0</div><div class="l">ИГР ЗАВЕРШЕНО</div></div>
   <div class="stat"><div class="n" data-count="10">0</div><div class="l">ЖАНРОВ</div></div>
@@ -490,6 +638,68 @@
   </div>
 </section>
 
+<<<<<<< HEAD
+=======
+<section id="studio">
+  <div class="shead"><span class="tag">СТУДИЯ</span><span class="rule"></span></div>
+  <h2>КОМАНДА МЕЧТЫ ИЗ ОДНОГО ЧЕЛОВЕКА</h2>
+  <p class="slead">Внутри это устроено как студия с отделами. Просто во всех отделах
+    работает один и тот же человек — а рутину каждого отдела он поручил инструментам,
+    которые собрал сам.</p>
+  <div id="crew">
+    <div class="dev">
+      <div class="dico">👑</div>
+      <div class="dnm">РУСТАМ ЧУЧУЕВ</div>
+      <div class="drl">ГЕЙМ-ДИРЕКТОР · ПРОДЮСЕР · ВСЁ ОСТАЛЬНОЕ</div>
+      <div class="dtx">Ставит задачи, держит планку качества, принимает каждую механику
+        руками. Единственный, кто ходит на планёрки — сам с собой.</div>
+      <div class="dst">В ШТАТЕ: ЧЕЛОВЕК · 1</div>
+    </div>
+    <div class="dev">
+      <div class="dico">🤖</div>
+      <div class="dnm">ОТДЕЛ КОДОГЕНЕРАЦИИ</div>
+      <div class="drl">ИИ-НАПАРНИК · ПРОМТ-ИНЖИНИРИНГ</div>
+      <div class="dtx">Каждая игра серии — один развёрнутый промт и доведение до релиза.
+        ИИ пишет черновик мира, человек решает, каким миру быть.</div>
+      <div class="dst">ВЫРАБОТКА: 10 ИГР / 2 ЧАСА</div>
+    </div>
+    <div class="dev">
+      <div class="dico">🎨</div>
+      <div class="dnm">АРТ-ОТДЕЛ</div>
+      <div class="drl">ПРОЦЕДУРНАЯ ГРАФИКА</div>
+      <div class="dtx">Не нарисовал ни одной картинки: паркет, сонары, метели и неон
+        рисуют сами движки. В штате отдела — ноль художников и немного математики.</div>
+      <div class="dst">АССЕТОВ В ПРОЕКТАХ: 0</div>
+    </div>
+    <div class="dev">
+      <div class="dico">🎹</div>
+      <div class="dnm">ЗВУКОЦЕХ</div>
+      <div class="drl">WEBAUDIO-СИНТЕЗ</div>
+      <div class="dtx">Шаги, щелчки сейфа, окрики и фанфары — формулы, а не файлы.
+        Этот сайт озвучен так же: ни одного аудиофайла во всём проекте.</div>
+      <div class="dst">АУДИОФАЙЛОВ: 0 · ФОРМУЛ: МНОГО</div>
+    </div>
+    <div class="dev">
+      <div class="dico">🧪</div>
+      <div class="dnm">ОТДЕЛ КАЧЕСТВА</div>
+      <div class="drl">HEADLESS-ТЕСТЫ · РЕШАТЕЛИ</div>
+      <div class="dtx">Каждый уровень доказуемо проходим: A*, BFS и поиск по
+        пространству-времени принимают работу раньше игрока.</div>
+      <div class="dst">ПРОВЕРОК В СЕРИИ: 3000+</div>
+    </div>
+    <div class="dev">
+      <div class="dico">🛠</div>
+      <div class="dnm">ИНФРАСТРУКТУРА</div>
+      <div class="drl">СЕРВЕРЫ · CI · PWA</div>
+      <div class="dtx">Деплой в один клик, wasm-сборки, офлайн-режим, серверы по
+        World of Warcraft и бэкенд «Бутылочки» на PostgreSQL.</div>
+      <div class="dst">АПТАЙМ ЭНТУЗИАЗМА: 100%</div>
+    </div>
+  </div>
+  <div id="crew-total">ИТОГО В СТУДИИ: 1 ЧЕЛОВЕК, ОДИН ИИ-НАПАРНИК И ОЧЕНЬ МНОГО КОДА</div>
+</section>
+
+>>>>>>> 2c80fd8 (site 2026-09-19 14:26)
 <section id="press">
   <button id="pressbtn">▶ PRESS START</button>
   <div class="row">
@@ -503,6 +713,35 @@
 
 <script>
 "use strict";
+<<<<<<< HEAD
+=======
+/* ============================================================
+   RUSTAM.CHU — игровое меню-портфолио. Один файл, ноль зависимостей.
+   Карта модулей (Ctrl+F по заголовку):
+     данные серии        — const GAMES
+     синтезатор звука    — beep()/chord(), WebAudio, ноль аудиофайлов
+     boot / XP / ачивки  — экран загрузки, скролл-опыт, тосты
+     звёзды              — канвас с параллаксом (спит вне экрана)
+     карточки уровней    — 3D-tilt, per-game акценты
+     бутылочка           — замах → разгон с blur → пружина; выбирает игру
+     лаборатория кода    — генератор+BFS-решатель, DDA-рейкастер, синтез SFX
+     терминал            — help/wow/бутылочка/whoami/sudo
+     FX-слой             — мобы-питомцы, слэш, выстрелы; авто-качество
+     аркада              — игры в iframe: srcdoc и play/ (wasm),
+                           deep-link #play=, кнопка «назад» закрывает
+     service worker      — офлайн + мгновенные повторные загрузки
+   ============================================================ */
+if ("serviceWorker" in navigator &&
+    (location.protocol === "https:" || /^(127\.0\.0\.1|localhost)$/.test(location.hostname))) {
+  addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+}
+try {
+  console.log("%c РУСТАМ.CHU %c весь сайт — один файл, читайте на здоровье ",
+    "background:#4de3e3;color:#061018;font-weight:900;padding:4px 8px;border-radius:4px 0 0 4px",
+    "background:#12172b;color:#4de3e3;padding:4px 8px;border-radius:0 4px 4px 0");
+  console.log("10 игр · лаборатория · конами-код работает · t.me/rust_a_m");
+} catch (e) {}
+>>>>>>> 2c80fd8 (site 2026-09-19 14:26)
 if (typeof CanvasRenderingContext2D !== "undefined" && !CanvasRenderingContext2D.prototype.roundRect) {
   CanvasRenderingContext2D.prototype.roundRect = function(x, y, w, h, r) {
     r = Math.min(r || 0, Math.abs(w) / 2, Math.abs(h) / 2);
@@ -545,7 +784,11 @@ function beep(f=440,d=.06,type="square",v=.12){
 }
 function chord(){ beep(523,.14,"square",.09); setTimeout(()=>beep(659,.14,"square",.09),70); setTimeout(()=>beep(784,.22,"square",.1),140); }
 $("#sndtgl").addEventListener("click",e=>{
+<<<<<<< HEAD
   sndOn=!sndOn; e.target.classList.toggle("on",sndOn);
+=======
+  sndOn=!sndOn; e.target.classList.toggle("on",sndOn); e.target.setAttribute("aria-pressed",sndOn);
+>>>>>>> 2c80fd8 (site 2026-09-19 14:26)
   e.target.textContent=(sndOn?"🔊":"🔇")+" ЗВУК";
   if(sndOn){ ac().resume&&ac().resume(); chord(); }
 });
@@ -563,17 +806,84 @@ let booted=false;
   setTimeout(off,2600);
 })();
 
+<<<<<<< HEAD
 /* ---------- ачивки и XP ---------- */
 const got=new Set(); let xp=0;
 function xpAdd(n){ xp+=n; $("#xpn").textContent=xp+" XP"; $("#xpbar").style.width=Math.min(100,xp/2)+"%"; }
 function ach(id,title){
   if(got.has(id)) return; got.add(id); xpAdd(25); chord();
+=======
+/* ---------- профиль игрока: XP, уровни, персист ---------- */
+const ACH_NAMES={go:"Первые шаги",end:"Пройдено до конца",exit:"Выхода нет",spin:"Крутанул бутылочку",
+  term:"Поговорил с сервером",lab:"Лаборант",crt:"Ламповый режим",konami:"GOD MODE",
+  gun:"Стрелок",hunt:"Охотник на мобов",arcade:"Аркадчик",polynya:"Морозильщик"};
+let PROFILE={nick:"",xp:0,ach:[],visits:0,polyLevels:0};
+try{ Object.assign(PROFILE, JSON.parse(localStorage.getItem("rustamchu_profile")||"{}")); }catch(e){}
+PROFILE.visits=(PROFILE.visits||0)+1;
+function saveProfile(){ try{ localStorage.setItem("rustamchu_profile",JSON.stringify(PROFILE)); }catch(e){} }
+saveProfile();
+const got=new Set(PROFILE.ach||[]); let xp=PROFILE.xp||0;
+function lvlOf(x){ return Math.floor(Math.sqrt(x/50))+1; }
+function lvlFloor(l){ return 50*(l-1)*(l-1); }
+function renderXP(){
+  const lvl=lvlOf(xp), lo=lvlFloor(lvl), hi=lvlFloor(lvl+1);
+  $("#xpn").textContent="УР "+lvl+" · "+xp+" XP";
+  $("#xpbar").style.width=Math.round(100*(xp-lo)/(hi-lo))+"%";
+  const nick=(PROFILE.nick||"").trim();
+  $("#pava").textContent=nick?nick[0].toUpperCase():"?";
+  $("#plvl").textContent="УРОВЕНЬ "+lvl+" · до следующего: "+(hi-xp)+" XP";
+  $("#pbarfill").style.width=Math.round(100*(xp-lo)/(hi-lo))+"%";
+  $("#pstats").innerHTML="<span>Опыт: <b>"+xp+" XP</b></span><span>Визитов: <b>"+PROFILE.visits+"</b></span>"+
+    "<span>Ачивок: <b>"+got.size+"/"+Object.keys(ACH_NAMES).length+"</b></span>"+
+    "<span>Полынья: <b>"+(PROFILE.polyLevels||0)+" ур.</b></span>";
+  $("#pach").innerHTML=Object.keys(ACH_NAMES).map(k=>
+    '<span class="'+(got.has(k)?"got":"")+'">'+(got.has(k)?"★ ":"☆ ")+ACH_NAMES[k]+"</span>").join("<br>");
+}
+function xpAdd(n){ xp+=n; PROFILE.xp=xp; saveProfile(); renderXP(); }
+function ach(id,title){
+  if(got.has(id)) return; got.add(id); PROFILE.ach=[...got]; xpAdd(25); chord();
+>>>>>>> 2c80fd8 (site 2026-09-19 14:26)
   const t=document.createElement("div"); t.className="toast";
   t.innerHTML='<span class="cup">🏆</span><div><div class="tt">ДОСТИЖЕНИЕ · +25 XP</div><div class="tx">'+title+'</div></div>';
   $("#toasts").appendChild(t);
   setTimeout(()=>{ t.classList.add("bye"); setTimeout(()=>t.remove(),450); },3600);
 }
 
+<<<<<<< HEAD
+=======
+/* ---------- тикер студийных новостей ---------- */
+(function(){
+  const row=$("#tickrow"); if(!row) return;
+  const items=["<b>10/10</b> игр запускаются в браузере","вся серия — <b>за два часа</b>",
+    "ассетов нарисовано: <b>0</b>","аудиофайлов записано: <b>0</b>",
+    "проверок в тестах: <b>3000+</b>","сайт работает <b>офлайн</b> (PWA)",
+    "конами-код <b>работает</b>","мобов можно <b>лопать</b>",
+    "исходник открыт: <b>Ctrl+U</b>","связь: <b>t.me/rust_a_m</b>"];
+  const half=items.map(i=>"<span>"+i+"</span>").join('<span style="color:#3a4468">◆</span>');
+  row.innerHTML=half+'<span style="color:#3a4468">◆</span>'+half+'<span style="color:#3a4468">◆</span>';
+})();
+
+/* ---------- панель профиля ---------- */
+(function(){
+  const pr=$("#profile"); if(!pr) return;
+  $(".xp").setAttribute("role","button");
+  $(".xp").setAttribute("aria-label","профиль игрока");
+  $(".xp").addEventListener("click",()=>{ pr.classList.toggle("on"); beep(600,.05); renderXP(); });
+  document.addEventListener("click",e=>{
+    if(pr.classList.contains("on") && !pr.contains(e.target) && !e.target.closest(".xp"))
+      pr.classList.remove("on");
+  });
+  const ni=$("#pnick");
+  ni.value=PROFILE.nick||"";
+  ni.addEventListener("input",()=>{ PROFILE.nick=ni.value; saveProfile(); renderXP(); });
+  $("#preset").addEventListener("click",()=>{
+    PROFILE={nick:"",xp:0,ach:[],visits:1,polyLevels:0}; saveProfile();
+    got.clear(); xp=0; ni.value=""; renderXP(); beep(200,.15,"sawtooth",.12);
+  });
+  renderXP();
+})();
+
+>>>>>>> 2c80fd8 (site 2026-09-19 14:26)
 /* ---------- звёзды с параллаксом ---------- */
 (function(){
   const cv=$("#stars"), cx=cv.getContext("2d");
@@ -785,7 +1095,11 @@ addEventListener("scroll",()=>{
 
 /* ---------- PRESS START ---------- */
 $("#pressbtn").addEventListener("click",()=>{ chord(); location.href="mailto:rustamchuchuev111@gmail.com?subject="+encodeURIComponent("Нейроигры: приглашение к разговору"); });
+<<<<<<< HEAD
 $("#crttgl").addEventListener("click",e=>{ document.body.classList.toggle("crt"); e.target.classList.toggle("on"); beep(240,.09,"sawtooth",.12); ach("crt","Ламповый режим: включён CRT"); });
+=======
+$("#crttgl").addEventListener("click",e=>{ const crtOn=document.body.classList.toggle("crt"); e.target.classList.toggle("on",crtOn); e.target.setAttribute("aria-pressed",crtOn); beep(240,.09,"sawtooth",.12); ach("crt","Ламповый режим: включён CRT"); });
+>>>>>>> 2c80fd8 (site 2026-09-19 14:26)
 
 /* ---------- лаборатория кода ---------- */
 const labTouched=new Set();
@@ -976,6 +1290,19 @@ function labTouch(k){ if(labTouched.has(k)) return; labTouched.add(k); xpAdd(15)
   const P=[]; // частицы: {t:type,...}
   const mobs=[];
   let shots=0, streakAt=3000;
+<<<<<<< HEAD
+=======
+  /* авто-качество: медианный кадр > 36мс — глушим декор, вернулись < 26мс — включаем */
+  let lowfx=false, ftAcc=0, ftN=0;
+  function fxBudget(dtMs){
+    ftAcc+=dtMs; ftN++;
+    if(ftN>=120){
+      const avg=ftAcc/ftN; ftAcc=0; ftN=0;
+      if(!lowfx&&avg>36){ lowfx=true; }
+      else if(lowfx&&avg<26){ lowfx=false; }
+    }
+  }
+>>>>>>> 2c80fd8 (site 2026-09-19 14:26)
 
   /* --- звуки боя (через общий синтезатор) --- */
   function whoosh(){ if(!sndOn) return; try{ const a=ac(),t=a.currentTime,
@@ -1093,6 +1420,10 @@ function labTouch(k){ if(labTouched.has(k)) return; labTouched.add(k); xpAdd(15)
   /* --- наводка и клики по интерфейсу --- */
   const HOT=".mi,.card,.dbtn,.cchip,.tgl,#hud nav a,#spinbtn,#pressbtn,#table";
   document.addEventListener("mouseover",e=>{
+<<<<<<< HEAD
+=======
+    if(lowfx) return;
+>>>>>>> 2c80fd8 (site 2026-09-19 14:26)
     const el=e.target.closest&&e.target.closest(HOT); if(!el) return;
     const now=performance.now();
     if(el._sl&&now-el._sl<450) return; el._sl=now;
@@ -1109,18 +1440,31 @@ function labTouch(k){ if(labTouched.has(k)) return; labTouched.add(k); xpAdd(15)
   let last=performance.now(), spawnIn=1200;
   (function loop(t){
     requestAnimationFrame(loop);
+<<<<<<< HEAD
     const dt=Math.min(2.5,(t-last)/16.7); last=t;
+=======
+    const dtMs=t-last, dt=Math.min(2.5,dtMs/16.7); last=t;
+    fxBudget(dtMs);
+>>>>>>> 2c80fd8 (site 2026-09-19 14:26)
     cx.clearRect(0,0,W,H);
 
     /* падающая звезда */
     streakAt-=dt*16.7;
     if(streakAt<=0){ streakAt=6000+Math.random()*9000;
+<<<<<<< HEAD
       P.push({t:"st",x:Math.random()*W*.8,y:Math.random()*H*.3,life:1}); }
+=======
+      if(!lowfx) P.push({t:"st",x:Math.random()*W*.8,y:Math.random()*H*.3,life:1}); }
+>>>>>>> 2c80fd8 (site 2026-09-19 14:26)
 
     /* мобы */
     spawnIn-=dt*16.7;
     if(spawnIn<=0){ spawnIn=3500+Math.random()*5000;
+<<<<<<< HEAD
       if(mobs.length<(innerWidth<700?2:3)) spawnMob(); }
+=======
+      if(mobs.length<(lowfx?1:(innerWidth<700?2:3))) spawnMob(); }
+>>>>>>> 2c80fd8 (site 2026-09-19 14:26)
     for(let i=mobs.length-1;i>=0;i--){ const m=mobs[i];
       if(m.dead){ mobs.splice(i,1); continue; }
       m.x+=m.speed*dt;
@@ -1182,7 +1526,11 @@ function labTouch(k){ if(labTouched.has(k)) return; labTouched.add(k); xpAdd(15)
     if(P.length>400) P.splice(0,P.length-400);
   })(last);
 
+<<<<<<< HEAD
   window.FX={spawnMob,mobs,P,hearts,burst:(x,y,c,n,sp)=>sparks(x*DPR,y*DPR,c,n||10,sp||3)};
+=======
+  window.FX={spawnMob,mobs,P,hearts,quality:()=>lowfx?"low":"full",burst:(x,y,c,n,sp)=>sparks(x*DPR,y*DPR,c,n||10,sp||3)};
+>>>>>>> 2c80fd8 (site 2026-09-19 14:26)
 })();
 
 /* ---------- аркада: игры прямо на сайте ---------- */
@@ -1194,9 +1542,17 @@ function labTouch(k){ if(labTouched.has(k)) return; labTouched.add(k); xpAdd(15)
     lamplighter:{t:"ФОНАРЩИК — платформер",h:"клавиатура: ← → идти · ПРОБЕЛ — прыжок"},
     polynya:{t:"ПОЛЫНЬЯ — головоломка во льду",h:"стрелки/WASD · Z — отмена · R — заново · на телефоне — кнопки"}
   };
+<<<<<<< HEAD
   let savedScroll=0;
   function openArcade(name){
     const inf=INFO[name]; if(!inf) return;
+=======
+  let savedScroll=0, lastFocus=null, viaPop=false;
+  function hashFor(name){ return "#play="+encodeURIComponent(name.indexOf("url:")===0?name.slice(4):name); }
+  function openArcade(name,fromHistory){
+    const inf=INFO[name]; if(!inf) return;
+    lastFocus=document.activeElement;
+>>>>>>> 2c80fd8 (site 2026-09-19 14:26)
     if(name.indexOf("url:")===0){
       ttl.textContent=inf.t;
       let h=inf.h;
@@ -1218,6 +1574,11 @@ function labTouch(k){ if(labTouched.has(k)) return; labTouched.add(k); xpAdd(15)
     }
     savedScroll=scrollY; document.body.classList.add("arc-open");
     document.body.style.top=(-savedScroll)+"px";
+<<<<<<< HEAD
+=======
+    if(!fromHistory){ try{ history.pushState({arc:name},"",hashFor(name)); }catch(e){} }
+    setTimeout(()=>{ try{ $("#arc-close").focus(); }catch(e){} },60);
+>>>>>>> 2c80fd8 (site 2026-09-19 14:26)
     ov.classList.add("on"); document.body.style.overflow="hidden";
     fr.addEventListener("load",()=>{ try{
       fr.contentWindow.focus();
@@ -1230,9 +1591,44 @@ function labTouch(k){ if(labTouched.has(k)) return; labTouched.add(k); xpAdd(15)
     }catch(e){} },{once:true});
     beep(700,.08); ach("arcade","Аркада: игра серии запущена прямо на сайте");
   }
+<<<<<<< HEAD
   function closeArcade(){ ov.classList.remove("on"); fr.srcdoc=""; fr.removeAttribute("src");
     document.body.classList.remove("arc-open"); document.body.style.top="";
     scrollTo(0,savedScroll); document.body.style.overflow=""; beep(320,.07); }
+=======
+  function closeArcade(fromHistory){
+    if(!ov.classList.contains("on")) return;
+    ov.classList.remove("on"); fr.srcdoc=""; fr.removeAttribute("src");
+    document.body.classList.remove("arc-open"); document.body.style.top="";
+    scrollTo(0,savedScroll); document.body.style.overflow=""; beep(320,.07);
+    try{ lastFocus&&lastFocus.focus&&lastFocus.focus(); }catch(e){}
+    if(!fromHistory && history.state && history.state.arc){
+      viaPop=true; try{ history.back(); }catch(e){ viaPop=false; }
+    }
+  }
+  addEventListener("popstate",e=>{
+    if(viaPop){ viaPop=false; return; }
+    if(e.state && e.state.arc) openArcade(e.state.arc,true);
+    else closeArcade(true);
+  });
+  /* простая ловушка фокуса в диалоге */
+  ov.addEventListener("keydown",e=>{
+    if(e.key!=="Tab") return;
+    const f=[$("#arc-close"),fr].filter(Boolean);
+    if(document.activeElement===f[0]&&!e.shiftKey){ e.preventDefault(); try{fr.focus();}catch(x){} }
+    else if(e.shiftKey&&document.activeElement===fr){ e.preventDefault(); f[0].focus(); }
+  });
+  /* deep-link: rustamchu.ru/#play=navka открывает игру сразу после входа */
+  (function(){
+    const m=location.hash.match(/^#play=([a-z0-9-]+)$/i); if(!m) return;
+    const key=decodeURIComponent(m[1]);
+    const name=INFO[key]?key:(GAMES.some(g=>g.r===key)?"url:"+key:null);
+    if(!name) return;
+    try{ history.replaceState({arc:name},"",hashFor(name)); }catch(e){}
+    const tryOpen=()=>{ if(booted){ openArcade(name,true); } else setTimeout(tryOpen,250); };
+    setTimeout(tryOpen,400);
+  })();
+>>>>>>> 2c80fd8 (site 2026-09-19 14:26)
   $("#arc-close").addEventListener("click",closeArcade);
   ov.addEventListener("click",e=>{ if(e.target===ov||e.target.classList.contains("stage")) closeArcade(); });
   addEventListener("keydown",e=>{ if(e.key==="Escape"&&ov.classList.contains("on")) closeArcade(); });
@@ -1264,6 +1660,81 @@ function labTouch(k){ if(labTouched.has(k)) return; labTouched.add(k); xpAdd(15)
   }
 })();
 
+<<<<<<< HEAD
+=======
+/* ---------- F3-телеметрия ---------- */
+(function(){
+  const box=$("#tele"); if(!box) return;
+  const g=$("#t-graph").getContext("2d"), hist=[];
+  const t0=performance.now();
+  let last=performance.now(), frames=0, acc=0, fps=0, ms=0;
+  function toggle(){ box.classList.toggle("on"); beep(700,.05); }
+  addEventListener("keydown",e=>{ if(e.key==="F3"){ e.preventDefault(); toggle(); } });
+  let taps=0, tapAt=0;
+  const bs=$("#bstamp");
+  if(bs){ bs.style.cursor="pointer";
+    bs.addEventListener("click",()=>{ const n=performance.now();
+      taps=(n-tapAt<600)?taps+1:1; tapAt=n; if(taps>=3){ taps=0; toggle(); } }); }
+  (function loop(t){
+    requestAnimationFrame(loop);
+    const dt=t-last; last=t; acc+=dt; frames++;
+    if(acc>=500){ fps=Math.round(frames*1000/acc); ms=(acc/frames); frames=0; acc=0;
+      if(box.classList.contains("on")){
+        hist.push(fps); if(hist.length>60) hist.shift();
+        $("#t-fps").textContent=fps; $("#t-ms").textContent=ms.toFixed(1);
+        $("#t-p").textContent=window.FX?window.FX.P.length:0;
+        $("#t-m").textContent=window.FX?window.FX.mobs.length:0;
+        $("#t-q").textContent=window.FX?window.FX.quality():"—";
+        $("#t-xp").textContent=xp;
+        const s=Math.round((t-t0)/1000);
+        $("#t-up").textContent=s>=60?Math.floor(s/60)+"м "+(s%60)+"с":s+"с";
+        $("#t-b").textContent=(bs?bs.textContent:"").replace("v","");
+        g.clearRect(0,0,206,38);
+        g.strokeStyle="#143020"; g.beginPath(); g.moveTo(0,19); g.lineTo(206,19); g.stroke();
+        g.strokeStyle="#6fe08a"; g.lineWidth=1.5; g.beginPath();
+        hist.forEach((v,i)=>{ const x=i*(206/59), y=37-Math.min(37,v/60*34);
+          i?g.lineTo(x,y):g.moveTo(x,y); });
+        g.stroke();
+      }
+    }
+  })(last);
+})();
+
+/* ---------- фильтры игр ---------- */
+(function(){
+  const grid=$("#grid"); if(!grid) return;
+  const bar=document.createElement("div"); bar.id="gfilters";
+  bar.setAttribute("role","group"); bar.setAttribute("aria-label","фильтры игр");
+  const FS=[["all","ВСЕ 10"],["Python","PYTHON"],["JavaScript","JAVASCRIPT"],
+    ["PowerShell","POWERSHELL"],["play","▶ ИГРАБЕЛЬНЫЕ"]];
+  bar.innerHTML=FS.map(([k,l],i)=>'<button type="button" class="gf'+(i?"":" on")+'" data-f="'+k+'">'+l+"</button>").join("");
+  grid.parentNode.insertBefore(bar,grid);
+  bar.addEventListener("click",e=>{
+    const b=e.target.closest(".gf"); if(!b) return;
+    bar.querySelectorAll(".gf").forEach(x=>x.classList.toggle("on",x===b));
+    const f=b.dataset.f; beep(520,.05);
+    [...grid.children].forEach((card,i)=>{
+      const g=GAMES[i]; if(!g) return;
+      const ok=f==="all"||(f==="play"?!!(g.play||(window.URLPLAY&&window.URLPLAY.has(g.r))):g.g.indexOf(f)>=0);
+      card.style.display=ok?"":"none";
+    });
+  });
+})();
+
+/* ---------- сквозной XP: ПОЛЫНЬЯ рапортует сайту ---------- */
+addEventListener("message",e=>{
+  const d=e.data;
+  if(!d||d.game!=="polynya"||typeof d.level!=="number") return;
+  PROFILE.polyLevels=Math.max(PROFILE.polyLevels||0,d.level); saveProfile();
+  xpAdd(5*(d.stars||1));
+  ach("polynya","Морозильщик: уровень ПОЛЫНЬИ пройден");
+  const t=document.createElement("div"); t.className="toast";
+  t.innerHTML='<span class="cup">❄</span><div><div class="tt">ПОЛЫНЬЯ · +'+(5*(d.stars||1))+' XP</div><div class="tx">Уровень '+d.level+' пройден на '+"★".repeat(d.stars||1)+'</div></div>';
+  $("#toasts").appendChild(t);
+  setTimeout(()=>{ t.classList.add("bye"); setTimeout(()=>t.remove(),450); },3600);
+});
+
+>>>>>>> 2c80fd8 (site 2026-09-19 14:26)
 /* ---------- конами-код ---------- */
 (function(){
   const seq=["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a"];
@@ -5317,6 +5788,10 @@ function finishIfWon() {
   sWin();
   const st = stars(S.pushes, LEVELS[cur].Par);
   if (!progress[cur] || progress[cur] < st) { progress[cur] = st; saveProgress(); }
+<<<<<<< HEAD
+=======
+  try { parent.postMessage({ game: "polynya", level: cur + 1, stars: st }, "*"); } catch (e) {}
+>>>>>>> 2c80fd8 (site 2026-09-19 14:26)
 }
 function key(k) {
   if (mode === "menu") {

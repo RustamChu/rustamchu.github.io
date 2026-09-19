@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rustamchu.ru/sitemap.xml

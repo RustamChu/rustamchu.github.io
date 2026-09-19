@@ -36,6 +36,7 @@ if (-not (Test-Path ".git")) {
 $null = & git checkout -B main 2>&1
 $null = & git remote remove origin 2>&1
 $null = & git remote add origin $url 2>&1
+$null = & git rm -r --cached _websrc 2>&1
 $null = & git add -A 2>&1
 $null = & git commit -m ("site " + (Get-Date -Format "yyyy-MM-dd HH:mm")) 2>&1
 
