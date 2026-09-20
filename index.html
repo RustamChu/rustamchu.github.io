@@ -597,7 +597,7 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
 
 <header id="hud">
   <div class="lg">RUSTAM<span>.CHU</span></div>
-  <span class="chip" id="bstamp" title="штамп сборки: если после публикации не сменился — у вас кэш" data-en-t="build stamp: if it did not change after publishing, you are looking at a cached page">v20.09 10:26 МСК</span>
+  <span class="chip" id="bstamp" title="штамп сборки: если после публикации не сменился — у вас кэш" data-en-t="build stamp: if it did not change after publishing, you are looking at a cached page">v20.09 10:47 МСК</span>
   <nav>
     <a href="#skills" data-en="SKILLS">НАВЫКИ</a>
     <a href="#cases" data-en="CASES">ИЗБРАННОЕ</a>
@@ -652,8 +652,8 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
   <div class="over" data-en="— PORTFOLIO —">— ПОРТФОЛИО —</div>
   <h1 id="title" data-en="RUSTAM CHUCHUEV">ЧУЧУЕВ РУСТАМ</h1>
   <p class="sub"><span id="subpre" data-en="I build ">Создаю </span><b id="typer"></b><span id="caret">▌</span></p>
-  <p class="sub2" data-en="The whole site is one file with not a single library: every section, every stand and every sound written from scratch. That is the résumé — look, touch, change the theme.">Весь сайт — один файл без единой библиотеки: каждая секция, каждый стенд,
-    каждый звук написаны с нуля. Это и есть моё резюме: смотрите, трогайте, меняйте стили.</p>
+  <p class="sub2" data-en="One file, no libraries. Sections, stands and sound written from scratch. Look, touch, change the theme.">Один файл, без библиотек. Секции, стенды и звук написаны с нуля.
+    Смотрите, трогайте, меняйте стили.</p>
   <nav id="menu">
     <button class="mi" data-go="#weblab" data-en="SEE THE WORK">СМОТРЕТЬ РАБОТЫ</button>
     <button class="mi" data-go="#cases" data-en="FEATURED CASES">ИЗБРАННЫЕ КЕЙСЫ</button>
@@ -680,8 +680,8 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
 <section id="skills" class="rev">
   <div class="shead"><span class="tag" data-en="SKILLS">НАВЫКИ</span><span class="rule"></span></div>
   <h2 data-en="WHAT I CAN ACTUALLY BUILD">ЧТО Я УМЕЮ ДЕЛАТЬ РУКАМИ</h2>
-  <p class="slead" data-en="Not a list of technologies for the sake of a list: every skill below can be checked right here — in the playground, in the console, in the themes of this very page.">Не список технологий ради списка: каждый навык ниже можно проверить
-    прямо на этом сайте — в полигоне, в консоли, в самих стилях страницы.</p>
+  <p class="slead" data-en="Every skill below can be checked right here: in the playground, in the console, in the themes of this page.">Каждый навык ниже можно проверить прямо здесь: в полигоне,
+    в консоли, в стилях страницы.</p>
   <div id="skgrid">
     <canvas id="radar" width="420" height="420" aria-label="диаграмма навыков" data-en-al="skills radar chart"></canvas>
     <div id="sklist"></div>
@@ -691,27 +691,26 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
 <section id="cases" class="rev">
   <div class="shead"><span class="tag" data-en="FEATURED · THREE CASES">ИЗБРАННОЕ · ТРИ КЕЙСА</span><span class="rule"></span></div>
   <h2 data-en="WHAT I BUILT AND WHAT CAME OUT OF IT">ЧТО Я СДЕЛАЛ И ЧТО ИЗ ЭТОГО ВЫШЛО</h2>
-  <p class="slead" data-en="Three projects told the honest way: the problem, the decision and the measurable result. The pictures on the right are not screenshots — they are drawn by the page itself from live numbers.">Три работы, рассказанные честно: задача, принятое решение и измеримый результат.
-    Картинки справа — не скриншоты: страница рисует их сама по живым числам.</p>
+  <p class="slead" data-en="Three projects: problem, decision, result. The pictures are not screenshots — the page draws them from live numbers.">Три работы: задача, решение, результат. Картинки не скриншоты —
+    страница рисует их по живым числам.</p>
 
   <article class="case" id="case1">
     <div>
       <div class="cno" data-en="CASE 01 · SITE">КЕЙС 01 · САЙТ</div>
       <h3 data-en="A SITE THAT IS ITS OWN RÉSUMÉ">САЙТ, КОТОРЫЙ САМ СЕБЕ РЕЗЮМЕ</h3>
       <div class="qa"><span class="lb" data-en="PROBLEM">ЗАДАЧА</span>
-        <p data-en="A list of technologies proves nothing. I needed a portfolio that <b>demonstrates the skill instead of describing it</b> — and opens in a second on any phone, even on a weak connection.">Список технологий ничего не доказывает. Нужно было портфолио, которое
-          <b>показывает навык вместо того, чтобы его описывать</b>, и открывается за секунду на любом телефоне — даже на слабой связи.</p></div>
+        <p data-en="A list of technologies proves nothing. I needed a portfolio that <b>shows the skill instead of describing it</b> and opens in a second on a weak connection.">Список технологий ничего не доказывает. Нужно портфолио, которое
+          <b>показывает навык, а не описывает его</b>, и открывается за секунду на слабой связи.</p></div>
       <div class="qa"><span class="lb" data-en="DECISION">РЕШЕНИЕ</span>
-        <p data-en="One HTML file, zero libraries. The whole look lives in ~20 design tokens, so eight themes are a swap of variables, not eight stylesheets. Sixteen working stands instead of screenshots; a service worker for offline; headless tests on every change.">Один HTML-файл, ноль библиотек. Весь вид держится на двух десятках дизайн-токенов —
-          поэтому восемь стилей это подмена переменных, а не восемь вёрсток. Вместо скриншотов — шестнадцать работающих стендов,
-          service worker для офлайна, автотесты на каждое изменение.</p></div>
+        <p data-en="One HTML file, zero libraries. The look lives in two dozen tokens: eight themes are a swap of variables, not eight stylesheets. Sixteen working stands instead of screenshots.">Один HTML-файл, ноль библиотек. Вид держится на двух десятках токенов:
+          восемь стилей — подмена переменных, а не восемь вёрсток. Вместо скриншотов — шестнадцать работающих стендов.</p></div>
       <div class="qa"><span class="lb" data-en="RESULT">РЕЗУЛЬТАТ</span>
-        <p data-en="One request paints the first screen: no bundler, no framework, no CDN. The numbers below are measured by the page on itself, right now.">Первый экран рисуется одним запросом: ни сборщика, ни фреймворка, ни внешних CDN.
-          Числа ниже страница измеряет на себе прямо сейчас.</p></div>
+        <p data-en="One request paints the first screen: no bundler, no framework, no CDN. The numbers below the page measured on itself.">Первый экран — один запрос: ни сборщика, ни фреймворка, ни CDN.
+          Числа ниже страница измерила на себе.</p></div>
       <div class="nums" id="c1nums"></div>
     </div>
     <div><canvas id="c1cv" aria-label="состав файла страницы" data-en-al="composition of the page file"></canvas>
-      <div class="ccap" data-en="Composition of this very file: markup, styles, code. Measured live in the browser.">Состав вот этого самого файла: разметка, стили, код. Измерено живьём в браузере.</div></div>
+      <div class="ccap" data-en="What this file is made of. Measured in the browser.">Из чего состоит этот файл. Измерено в браузере.</div></div>
   </article>
 
   <article class="case" id="case2">
@@ -719,20 +718,18 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
       <div class="cno" data-en="CASE 02 · PIPELINE">КЕЙС 02 · КОНВЕЙЕР</div>
       <h3 data-en="BUILD AND PUBLISH IN ONE CLICK">СБОРКА И ПУБЛИКАЦИЯ В ОДИН ЩЕЛЧОК</h3>
       <div class="qa"><span class="lb" data-en="PROBLEM">ЗАДАЧА</span>
-        <p data-en="Manual release is a ritual: bump the stamp, remember the cache version, redraw the social card, upload the files. Four steps — four ways for a visitor to end up looking at <b>yesterday's page</b>.">Ручной релиз — это ритуал: поправь штамп, не забудь версию кэша, перерисуй карточку для соцсетей, залей файлы.
-          Четыре шага — четыре способа показать посетителю <b>вчерашнюю страницу</b>.</p></div>
+        <p data-en="A manual release is a ritual: the stamp, the cache version, the social card, the upload. Four steps, four ways to show <b>yesterday&#39;s page</b>.">Ручной релиз — ритуал: штамп, версия кэша, карточка для соцсетей, заливка.
+          Четыре шага — четыре способа показать <b>вчерашнюю страницу</b>.</p></div>
       <div class="qa"><span class="lb" data-en="DECISION">РЕШЕНИЕ</span>
-        <p data-en="One build script does it all: it stamps the build time into the header and into the service worker version, renders the 1200×630 card, runs 230 checks in a headless browser — desktop and phone, contrast, offline, print — and only then pushes to Pages.">Один скрипт сборки делает всё: проставляет время сборки в шапку и в версию service worker,
-          рисует карточку 1200×630, прогоняет 230 проверок в headless-браузере — десктоп и телефон,
-          контраст, офлайн, печать — и только потом публикует.</p></div>
+        <p data-en="One script: the stamp into the header and the cache version, the 1200×630 card, 230 checks in a headless browser — and only then the push.">Один скрипт: штамп в шапку и в версию кэша, карточка 1200×630,
+          230 проверок в headless-браузере — и только потом публикация.</p></div>
       <div class="qa"><span class="lb" data-en="RESULT">РЕЗУЛЬТАТ</span>
-        <p data-en="Publishing is a double click and about a minute, most of it spent on the regression. A red suite stops the release before it reaches the domain; the cache invalidates itself, and the stamp in the header is the honest proof that you see the newest version.">Публикация — двойной щелчок и около минуты, из которых большую часть занимает регресс.
-          Красный прогон останавливает релиз до того, как он доедет до домена; кэш инвалидируется сам,
-          а штамп в шапке — честное доказательство, что вы видите свежую версию.</p></div>
+        <p data-en="A double click and about a minute. A red suite stops the release, the cache invalidates itself, the stamp in the header shows the version you are looking at.">Двойной щелчок и около минуты. Красный прогон останавливает релиз,
+          кэш инвалидируется сам, а штамп в шапке показывает, какую версию вы видите.</p></div>
       <div class="nums" id="c2nums"></div>
     </div>
     <div><canvas id="c2cv" aria-label="конвейер сборки" data-en-al="build pipeline"></canvas>
-      <div class="ccap" data-en="The pipeline from the file on disk to the live domain, with the real seconds each stage takes.">Путь от файла на диске до живого домена — с реальными секундами на каждом этапе.</div></div>
+      <div class="ccap" data-en="From the file on disk to the live domain, with real seconds per stage.">От файла на диске до живого домена, с реальными секундами.</div></div>
   </article>
 
   <article class="case" id="case3">
@@ -740,14 +737,14 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
       <div class="cno" data-en="CASE 03 · GENERATIVE ART">КЕЙС 03 · ГЕНЕРАТИВНАЯ ГРАФИКА</div>
       <h3 data-en="PICTURES THAT DRAW THEMSELVES">КАРТИНКИ, КОТОРЫЕ РИСУЮТ СЕБЯ САМИ</h3>
       <div class="qa"><span class="lb" data-en="PROBLEM">ЗАДАЧА</span>
-        <p data-en="Stock images cost kilobytes, licences and honesty — and they stay the same colour while the page repaints itself into eight themes.">Стоковые картинки стоят килобайтов, лицензий и честности — и остаются одного цвета,
-          пока страница перекрашивается в восемь стилей.</p></div>
+        <p data-en="Stock images cost kilobytes and licences — and stay one colour while the page repaints into eight themes.">Стоковые картинки стоят килобайтов и лицензий — и остаются одного цвета,
+          пока страница меняет восемь стилей.</p></div>
       <div class="qa"><span class="lb" data-en="DECISION">РЕШЕНИЕ</span>
-        <p data-en="A deterministic generator (mulberry32, about sixty lines): a single 32-bit seed unfolds into a whole composition, and the colours are read from the active design tokens.">Детерминированный генератор (mulberry32, около шестидесяти строк): одно 32-битное число-сид
-          разворачивается в целую композицию, а цвета берутся из активных дизайн-токенов.</p></div>
+        <p data-en="A deterministic generator, mulberry32, about sixty lines: a 32-bit seed unfolds into a composition, the colours come from the active tokens.">Детерминированный генератор mulberry32, около шестидесяти строк: 32-битный сид
+          разворачивается в композицию, цвета берутся из активных токенов.</p></div>
       <div class="qa"><span class="lb" data-en="RESULT">РЕЗУЛЬТАТ</span>
-        <p data-en="Zero kilobytes of raster assets, four billion reproducible variants, and every picture repaints together with the theme. Press the button — the seed changes, the art changes with it.">Ноль килобайтов растровых ассетов, четыре миллиарда воспроизводимых вариантов,
-          и каждая картинка перекрашивается вместе со стилем. Нажмите кнопку — сменится сид, сменится и арт.</p></div>
+        <p data-en="Zero kilobytes of images, four billion reproducible variants, and every picture repaints with the theme. Press the button: new seed, new art.">Ноль килобайтов картинок, четыре миллиарда воспроизводимых вариантов,
+          и каждая картинка перекрашивается вместе со стилем. Нажмите кнопку: новый сид — новый арт.</p></div>
       <div class="nums" id="c3nums"></div>
     </div>
     <div><canvas id="c3cv" aria-label="генеративные артефакты" data-en-al="generative artefacts"></canvas>
@@ -759,9 +756,8 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
 <section id="weblab" class="rev">
   <div class="shead"><span class="tag" data-en="PLAYGROUND · WORKING PROTOTYPES">ПОЛИГОН · РАБОЧИЕ ПРОТОТИПЫ</span><span class="rule"></span></div>
   <h2 data-en="MINI VERSIONS OF REAL PRODUCTS">МИНИ-ВЕРСИИ НАСТОЯЩИХ САЙТОВ</h2>
-  <p class="slead" data-en="Sixteen working prototypes without a single library: a shop with a cart, a dashboard with charts, a kanban board, a planner, a synthesiser, generators — and the living source of this page. Open them and poke: every stand you try moves the exploration bar.">Шестнадцать работающих прототипов без единой библиотеки: магазин с корзиной,
-    дашборд с графиками, канбан, планировщик, синтезатор, генераторы и даже живой исходник
-    этого сайта. Открывайте и трогайте — за каждый испытанный стенд растёт прогресс исследования.</p>
+  <p class="slead" data-en="Sixteen prototypes without libraries: a shop, a dashboard, a kanban board, a planner, a synthesiser, generators and the living source of this page. Open them and poke.">Шестнадцать прототипов без библиотек: магазин, дашборд, канбан,
+    планировщик, синтезатор, генераторы и живой исходник этой страницы. Открывайте и трогайте.</p>
   <div id="wlgrid"></div>
 </section>
 
@@ -776,42 +772,41 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
 <section id="process" class="rev">
   <div class="shead"><span class="tag" data-en="PROCESS">ПРОЦЕСС</span><span class="rule"></span></div>
   <h2 data-en="HOW A PROJECT IS BORN">КАК РОЖДАЕТСЯ ПРОЕКТ</h2>
-  <p class="slead" data-en="The same route every time — from a napkin sketch to a product worth showing. Click a step to unfold the details.">Один и тот же путь — от салфетки с идеей до продукта, который не стыдно показать.
-    Нажмите на шаг, чтобы раскрыть детали.</p>
+  <p class="slead" data-en="From idea to release, the same route every time. Click a step for details.">От идеи до релиза — один и тот же путь. Нажмите на шаг, чтобы раскрыть детали.</p>
   <div id="steps">
     <div class="step" data-n="1">
       <h3 data-en="IDEA AND BOUNDARIES">ИДЕЯ И РАМКИ</h3>
       <div class="ss" data-en="What we build, for whom, and what counts as done.">Что делаем, для кого и что будет считаться «готово».</div>
-      <div class="sd" data-en="Three questions first: what problem we solve, who will use it, and how we will know it worked. The answers become a one-screen brief. Everything that did not fit goes to the ideas list.">Сначала — три вопроса: какую задачу решаем, кто этим будет пользоваться и как поймём,
-        что получилось. Из ответов рождается короткое ТЗ на один экран. Всё, что в него не попало, — в список идей на потом.</div>
+      <div class="sd" data-en="Three questions: what problem we solve, who will use it, how we will know it worked. The answers become a one-screen brief; the rest goes to the ideas list.">Три вопроса: какую задачу решаем, кто будет пользоваться и как поймём, что получилось.
+        Из ответов — ТЗ на один экран, остальное в список идей.</div>
       <div class="more" data-en="CLICK TO UNFOLD ▾">НАЖМИТЕ, ЧТОБЫ РАСКРЫТЬ ▾</div>
     </div>
     <div class="step" data-n="2">
       <h3 data-en="A PROTOTYPE IN ONE EVENING">ПРОТОТИП ЗА ВЕЧЕР</h3>
       <div class="ss" data-en="A skeleton you can already touch.">Скелет, который уже можно потрогать руками.</div>
-      <div class="sd" data-en="The first working version appears fast and ugly — but it shows immediately whether the idea is alive. Every stand in the playground started exactly like that: one evening, one file, zero decoration.">Первый рабочий вариант появляется быстро и некрасиво — зато по нему сразу видно,
-        живёт идея или нет. Каждый стенд полигона на этом сайте начинался именно так: один вечер, один файл, ноль украшений.</div>
+      <div class="sd" data-en="The first version is fast and ugly, but it shows whether the idea is alive. Every stand in the playground started like that: one evening, one file.">Первый вариант появляется быстро и некрасиво — зато сразу видно, живёт идея или нет.
+        Каждый стенд полигона начинался так: один вечер, один файл.</div>
       <div class="more" data-en="CLICK TO UNFOLD ▾">НАЖМИТЕ, ЧТОБЫ РАСКРЫТЬ ▾</div>
     </div>
     <div class="step" data-n="3">
       <h3 data-en="ASSEMBLY AND POLISH">СБОРКА И ПОЛИРОВКА</h3>
       <div class="ss" data-en="Design tokens, states, sound, motion, small things.">Дизайн-токены, состояния, звук, анимации, мелочи.</div>
-      <div class="sd" data-en="Colours and spacing collapse into tokens, every button gets hover and focus, the interface gains a voice. This is also where the eight themes appear: one layout, eight moods.">Цвета и отступы собираются в токены, у каждой кнопки появляются наведение и фокус,
-        интерфейс получает голос и характер. Здесь же — семь стилей этого сайта: одна вёрстка, семь настроений.</div>
+      <div class="sd" data-en="Colours and spacing collapse into tokens, buttons get hover and focus. Here the eight themes appear: one layout, eight moods.">Цвета и отступы собираются в токены, у кнопок появляются наведение и фокус.
+        Здесь же рождаются восемь стилей: одна вёрстка, восемь настроений.</div>
       <div class="more" data-en="CLICK TO UNFOLD ▾">НАЖМИТЕ, ЧТОБЫ РАСКРЫТЬ ▾</div>
     </div>
     <div class="step" data-n="4">
       <h3 data-en="TESTS AND RESILIENCE">ТЕСТЫ И УСТОЙЧИВОСТЬ</h3>
       <div class="ss" data-en="Automated browser checks, phones, slow networks.">Автопроверки в браузере, телефоны, медленная сеть.</div>
-      <div class="sd" data-en="Scenarios run in a headless browser: clicks, forms, reloads, phone screens. Separately — offline mode, keyboard access and respect for the reduced-motion setting.">Сценарии прогоняются headless-браузером: клики, формы, перезагрузки, телефонные экраны.
-        Отдельно — офлайн-режим, доступность с клавиатуры и уважение к настройке «меньше анимаций».</div>
+      <div class="sd" data-en="Scenarios run in a headless browser: clicks, forms, reloads, phone screens, offline, keyboard access, reduced motion.">Сценарии прогоняются headless-браузером: клики, формы, перезагрузки, телефонные экраны,
+        офлайн, клавиатура, «меньше анимаций».</div>
       <div class="more" data-en="CLICK TO UNFOLD ▾">НАЖМИТЕ, ЧТОБЫ РАСКРЫТЬ ▾</div>
     </div>
     <div class="step" data-n="5">
       <h3 data-en="RELEASE AND THE LIFE AFTER">РЕЛИЗ И ЖИЗНЬ ПОСЛЕ</h3>
       <div class="ss" data-en="One-click publishing, a build stamp, feedback.">Публикация в один клик, штамп сборки, обратная связь.</div>
-      <div class="sd" data-en="Deploy is one command; the build stamp is always visible so the cache cannot pass the old page for the new one. Then the project lives on: remarks become tasks, tasks become the next version.">Деплой — одна команда; на странице всегда виден штамп версии, чтобы кэш не выдавал старое за новое.
-        Дальше проект живёт: замечания превращаются в задачи, задачи — в следующие версии.</div>
+      <div class="sd" data-en="Deploy is one command, and the build stamp is always visible so the cache cannot pass the old page for the new one. Then remarks become the next version.">Деплой — одна команда, штамп версии всегда на виду, чтобы кэш не выдавал старое за новое.
+        Дальше замечания превращаются в следующую версию.</div>
       <div class="more" data-en="CLICK TO UNFOLD ▾">НАЖМИТЕ, ЧТОБЫ РАСКРЫТЬ ▾</div>
     </div>
   </div>
@@ -820,55 +815,54 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
 <section id="workshop" class="rev">
   <div class="shead"><span class="tag" data-en="WORKSHOP">МАСТЕРСКАЯ</span><span class="rule"></span></div>
   <h2 data-en="ONE PERSON — THE WHOLE CYCLE">ОДИН ЧЕЛОВЕК — ПОЛНЫЙ ЦИКЛ</h2>
-  <p class="slead" data-en="Inside it works like a studio with departments. It just happens that the same person staffs every department — and each one has its own hand-made tool.">Внутри это устроено как студия с отделами. Просто во всех отделах работает
-    один и тот же человек — и у каждого отдела есть свой инструмент, собранный вручную.</p>
+  <p class="slead" data-en="A studio with departments, where every department is the same person.">Студия с отделами, где во всех отделах один человек.</p>
   <div id="crew">
     <div class="dev">
       <div class="dico">🧱</div>
       <div class="dnm" data-en="LAYOUT AND INTERFACES">ВЁРСТКА И ИНТЕРФЕЙСЫ</div>
       <div class="drl" data-en="HTML · CSS · RESPONSIVE">HTML · CSS · АДАПТИВ</div>
-      <div class="dtx" data-en="Grids, states, dark and light themes on design tokens. This site repaints into eight themes by swapping a couple of dozen variables.">Сетки, состояния, тёмные и светлые темы на дизайн-токенах.
-        Этот сайт перекрашивается в семь стилей подменой пары десятков переменных.</div>
+      <div class="dtx" data-en="Grids, states, dark and light themes on tokens. Eight themes from two dozen variables.">Сетки, состояния, тёмные и светлые темы на токенах.
+        Восемь стилей из двух десятков переменных.</div>
       <div class="dst" data-en="FRAMEWORK-FREE: 100%">БЕЗ ФРЕЙМВОРКОВ: 100%</div>
     </div>
     <div class="dev">
       <div class="dico">🎨</div>
       <div class="dnm" data-en="GRAPHICS BY CODE">ГРАФИКА КОДОМ</div>
       <div class="drl" data-en="CANVAS · SVG · GENERATIVE">CANVAS · SVG · ГЕНЕРАТИВКА</div>
-      <div class="dtx" data-en="I do not draw pictures — I write formulas that draw themselves: charts, particles, generative artefacts in the playground gallery.">Не рисую картинки — пишу формулы, которые рисуют сами: диаграммы,
-        частицы, генеративные артефакты в галерее полигона.</div>
+      <div class="dtx" data-en="Not pictures but formulas that draw themselves: charts, particles, generative artefacts.">Не картинки, а формулы, которые рисуют сами: диаграммы, частицы,
+        генеративные артефакты.</div>
       <div class="dst" data-en="READY-MADE ASSETS: 0">ГОТОВЫХ АССЕТОВ: 0</div>
     </div>
     <div class="dev">
       <div class="dico">🎹</div>
       <div class="dnm" data-en="SOUND FROM FORMULAS">ЗВУК ФОРМУЛАМИ</div>
       <div class="drl" data-en="WEBAUDIO SYNTHESIS">WEBAUDIO-СИНТЕЗ</div>
-      <div class="dtx" data-en="Clicks, chords and melodies are oscillators and envelopes, not files. Switch SOUND on in the header and listen to the interface.">Щелчки, аккорды и мелодии — это осцилляторы и огибающие, а не файлы.
-        Включите ЗВУК в шапке и послушайте, как звучит интерфейс.</div>
+      <div class="dtx" data-en="Clicks, chords and melodies are oscillators and envelopes, not files. Switch SOUND on in the header.">Щелчки, аккорды и мелодии — осцилляторы и огибающие, а не файлы.
+        Включите ЗВУК в шапке.</div>
       <div class="dst" data-en="AUDIO FILES: 0 · FORMULAS: MANY">АУДИОФАЙЛОВ: 0 · ФОРМУЛ: МНОГО</div>
     </div>
     <div class="dev">
       <div class="dico">⚙️</div>
       <div class="dnm" data-en="LOGIC AND DATA">ЛОГИКА И ДАННЫЕ</div>
       <div class="drl" data-en="JS · PYTHON · POWERSHELL">JS · PYTHON · POWERSHELL</div>
-      <div class="dtx" data-en="Algorithms, generators, sorting, parsers — the filling of every stand. Plus the build and publish scripts that do the routine for me.">Алгоритмы, генераторы, сортировки, парсеры — вся начинка стендов.
-        Плюс скрипты сборки и публикации, которые делают рутину за меня.</div>
+      <div class="dtx" data-en="Algorithms, generators, sorting, parsers — the filling of every stand. Plus the build and publish scripts.">Алгоритмы, генераторы, сортировки, парсеры — начинка стендов.
+        Плюс скрипты сборки и публикации.</div>
       <div class="dst" data-en="LANGUAGES IN USE: 3">ЯЗЫКА В РАБОТЕ: 3</div>
     </div>
     <div class="dev">
       <div class="dico">🧪</div>
       <div class="dnm" data-en="QUALITY">КАЧЕСТВО</div>
       <div class="drl" data-en="HEADLESS TESTS · AUDITS">HEADLESS-ТЕСТЫ · АУДИТЫ</div>
-      <div class="dtx" data-en="Every release runs through browser scenarios: desktop, phone, reloads, forms, dead links. A bug is caught before a visitor sees it.">Каждый релиз прогоняется автосценариями в браузере: десктоп, телефон,
-        перезагрузки, формы, деп-линки. Ошибка ловится раньше зрителя.</div>
+      <div class="dtx" data-en="Every release runs through browser scenarios: desktop, phone, reloads, forms, dead links.">Каждый релиз прогоняется в браузере: десктоп, телефон, перезагрузки,
+        формы, битые ссылки.</div>
       <div class="dst" data-en="CHECKS IN THE LAST RUN: 80+">ПРОВЕРОК В ПОСЛЕДНЕМ ПРОГОНЕ: 80+</div>
     </div>
     <div class="dev">
       <div class="dico">🛠</div>
       <div class="dnm" data-en="INFRASTRUCTURE">ИНФРАСТРУКТУРА</div>
       <div class="drl" data-en="DEPLOY · PWA · OFFLINE">ДЕПЛОЙ · PWA · ОФЛАЙН</div>
-      <div class="dtx" data-en="Publishing with one command, a service worker for offline and instant repeat loads, a build stamp against the whims of the cache.">Публикация одной командой, service worker для офлайна и мгновенных
-        повторных загрузок, штамп сборки против капризов кэша.</div>
+      <div class="dtx" data-en="One command to publish, a service worker for offline, a build stamp against the cache.">Публикация одной командой, service worker для офлайна,
+        штамп сборки против кэша.</div>
       <div class="dst" data-en="DEPLOY: ONE CLICK">ДЕПЛОЙ: ОДИН КЛИК</div>
     </div>
   </div>
@@ -878,8 +872,8 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
 <section id="console" class="rev">
   <div class="shead"><span class="tag" data-en="CONSOLE">КОНСОЛЬ</span><span class="rule"></span></div>
   <h2 data-en="TALK TO THE SITE DIRECTLY">ПОГОВОРИТЕ С САЙТОМ НАПРЯМУЮ</h2>
-  <p class="slead" data-en="A real command line: it opens stands, switches themes and answers questions about me. Start with <b>help</b>.">Настоящая командная строка: умеет открывать стенды, менять стили и рассказывать
-    обо мне. Начните с <b>help</b>.</p>
+  <p class="slead" data-en="A real command line: opens stands, switches themes, answers questions. Start with <b>help</b>.">Настоящая командная строка: открывает стенды, меняет стили, отвечает на вопросы.
+    Начните с <b>help</b>.</p>
   <div id="term" aria-label="консоль сайта" data-en-al="site console">
     <div id="tout"></div>
     <div class="tline"><span class="tp">rustam@site:~$</span>
@@ -2168,8 +2162,8 @@ function dDash(el){
           [L("КОНВЕРСИЯ","CONVERSION"),conv+"%","+"+(Math.random()*9|0)+"%",true],
           [L("ДОХОД","REVENUE"),((Math.random()*900+100)*mult|0)+L("К ₽","K ₽"),(Math.random()>.5?"+":"−")+(Math.random()*12|0)+"%",Math.random()>.5],
           [L("АПТАЙМ","UPTIME"),"99."+(90+Math.random()*9|0)+"%","SLA OK",true]];
-    note.innerHTML=L("Период: <b>","Period: <b>")+P()[1]+L("</b>. Линия — доход за период, столбцы — каналы в разрезе периода. Всё нарисовано на чистом canvas без библиотек; цвета берутся из активного стиля, выбранный период запоминается.",
-      "</b>. The line is revenue over the period, the bars are channels inside it. Everything is drawn on plain canvas without libraries; the colours come from the active theme and the chosen period is remembered.");
+    note.innerHTML=L("Период: <b>","Period: <b>")+P()[1]+L("</b>. Линия — доход, столбцы — каналы. Чистый canvas без библиотек, цвета из активного стиля, период запоминается.",
+      "</b>. The line is revenue, the bars are channels. Plain canvas, colours from the active theme, the period is remembered.");
   }
   PERIODS.forEach(pp=>{
     const b=ce("button","wl-btn"+(pp[0]===per?" acc":""),pp[1]);
@@ -2310,8 +2304,8 @@ function dShop(el){
     right.appendChild(buy);
   }
   el.appendChild(ce("div","wl-note",L(
-    "Каталог, фильтры по категориям, <b>избранное</b> с памятью, сортировка по цене, корзина с пересчётом и промокод <b>RUSTAM</b> на скидку 20%.",
-    "A catalogue with category filters, <b>favourites</b> that persist, price sorting, a recalculating cart and the promo code <b>RUSTAM</b> for 20% off.")));
+    "Фильтры, <b>избранное</b> с памятью, сортировка по цене, корзина и промокод <b>RUSTAM</b> на 20%.",
+    "Filters, <b>favourites</b> that persist, price sorting, a cart and the promo code <b>RUSTAM</b> for 20% off.")));
   renderShop(); renderCart();
 }
 
@@ -2330,8 +2324,8 @@ function dKanban(el){
   const row=ce("div","wl-row");
   const reset=ce("button","wl-btn",L("СБРОСИТЬ ДОСКУ","RESET THE BOARD")); row.appendChild(reset); el.appendChild(row);
   el.appendChild(ce("div","wl-note",L(
-    "Карточки переносятся мышью (drag&drop) или стрелками ◀ ▶ на телефоне, <b>двойной щелчок переименовывает задачу</b>. Доска запоминается в браузере.",
-    "Cards move by drag&drop or with the ◀ ▶ arrows on a phone, and a <b>double click renames a task</b>. The board is remembered in the browser.")));
+    "Перетаскивание мышью или стрелки ◀ ▶ на телефоне, <b>двойной щелчок переименовывает</b>. Доска запоминается.",
+    "Drag with the mouse or the ◀ ▶ arrows on a phone, <b>double click renames</b>. The board is remembered.")));
   function save(){ store(KEY,cols); }
   function render(){
     kan.innerHTML="";
@@ -2398,38 +2392,38 @@ function dChat(el){
   const btn=ce("button","wl-btn acc","➤");
   row.appendChild(inp); row.appendChild(btn); el.appendChild(row);
   el.appendChild(ce("div","wl-note",L(
-    "Интерфейс мессенджера + гид на сотню строк: ключевые слова, «печатает…», автопрокрутка. Каркас любого чата поддержки. Эти же вопросы и ответы страница отдаёт поисковикам разметкой FAQPage.",
-    "A messenger interface plus a hundred-line guide: keywords, a typing indicator, auto-scroll. The skeleton of any support chat. The same questions and answers are exposed to search engines as FAQPage markup.")));
+    "Гид на сотню строк: ключевые слова, «печатает…», автопрокрутка. Эти же вопросы уходят в поиск разметкой FAQPage.",
+    "A hundred-line guide: keywords, a typing indicator, auto-scroll. The same questions go to search engines as FAQPage markup.")));
   const RULES=[
     [/привет|здравств|хай|hello|hi\b/i,[L("Привет! Я гид этого портфолио. Спросите про навыки, стенды, стили или контакты.",
       "Hello! I am the guide of this portfolio. Ask about skills, stands, themes or contacts.")]],
     [/навык|умее|умеешь|скилл|skill|can you do/i,[L(
-      "Загляните в раздел НАВЫКИ: вёрстка, графика на canvas, анимации, WebAudio, логика и автотесты. Каждый навык можно проверить прямо на этой странице.",
-      "Look at the SKILLS section: layout, canvas graphics, motion, WebAudio, logic and automated tests. Every skill can be checked right on this page.")]],
+      "Вёрстка, графика на canvas, анимации, WebAudio, логика, автотесты. Всё это можно проверить прямо здесь.",
+      "Layout, canvas graphics, motion, WebAudio, logic, automated tests. All of it can be checked right here.")]],
     [/стек|язык|техно|python|js|powershell|stack/i,[L(
       "Стек: JavaScript (весь этот сайт — один файл без библиотек), Python для инструментов и PowerShell для сборки и публикации.",
       "The stack: JavaScript (this whole site is one file without libraries), Python for tools and PowerShell for the build and publish pipeline.")]],
     [/сайт|полигон|демо|стенд|работ|stand|demo|playground/i,[L(
-      "Полигон — 16 работающих прототипов: магазин, дашборд, канбан, планировщик, синтезатор, генераторы… Каждый написан с нуля.",
-      "The playground holds 16 working prototypes: a shop, a dashboard, a kanban board, a planner, a synthesiser, generators… every one written from scratch.")]],
+      "В полигоне 16 прототипов: магазин, дашборд, канбан, планировщик, синтезатор, генераторы. Все написаны с нуля.",
+      "The playground holds 16 prototypes: shop, dashboard, kanban, planner, synthesiser, generators. All written from scratch.")]],
     [/кейс|избранн|case|featured/i,[L(
-      "В разделе ИЗБРАННОЕ три кейса: сам сайт, конвейер сборки и публикации и генеративная графика — каждый в формате задача, решение, результат с цифрами.",
-      "The FEATURED section holds three cases: the site itself, the build-and-publish pipeline and the generative graphics — each as problem, decision and result with numbers.")]],
+      "В ИЗБРАННОМ три кейса: сам сайт, конвейер публикации и генеративная графика. Задача, решение, результат с цифрами.",
+      "FEATURED holds three cases: the site itself, the publish pipeline and the generative graphics. Problem, decision, result with numbers.")]],
     [/контакт|связ|телеграм|почт|мейл|email|contact|reach/i,[L(
       "Телеграм: t.me/rust_a_m · Почта: rustamchuchuev111@gmail.com. Пишите!",
       "Telegram: t.me/rust_a_m · Email: rustamchuchuev111@gmail.com. Write to me!")]],
     [/консол|палитр|ctrl|console|palette/i,[L(
-      "Попробуйте консоль внизу страницы (команда help) и палитру команд по Ctrl+K — обе умеют открывать стенды и менять стили.",
-      "Try the console at the bottom of the page (the help command) and the command palette on Ctrl+K — both open stands and switch themes.")]],
+      "Консоль внизу страницы (команда help) и палитра по Ctrl+K: обе открывают стенды и меняют стили.",
+      "The console at the bottom (the help command) and the palette on Ctrl+K: both open stands and switch themes.")]],
     [/кто ты|рустам|автор|who are you|author/i,[L(
       "Рустам Чучуев — создатель этого места. Сайт целиком, включая меня, написан кодом без библиотек.",
       "Rustam Chuchuev built this place. The whole site, me included, is written in code without libraries.")]],
     [/стил|мир|тем|оформлен|theme|style/i,[L(
-      "Нажмите 🌌 в шапке — там семь готовых стилей: НЕОН, ТЬМА, ЗИМА, РЕТРО, ПУРПУР, ДЕНЬ и БУМАГА, плюс восьмой вы собираете сами в стенде ДИЗАЙН-СИСТЕМА.",
-      "Press 🌌 in the header — seven ready themes: NEON, DUSK, FROST, RETRO, VAPOR, DAY and PAPER, plus an eighth you assemble yourself in the DESIGN SYSTEM stand.")]],
+      "Нажмите 🌌 в шапке: семь готовых стилей, восьмой собирается в стенде ДИЗАЙН-СИСТЕМА.",
+      "Press 🌌 in the header: seven ready themes, the eighth you assemble in the DESIGN SYSTEM stand.")]],
     [/язык|english|русск|lang/i,[L(
-      "Сайт говорит на двух языках: переключатель RU/EN в шапке, или команда lang en в консоли. Выбор запоминается.",
-      "The site speaks two languages: the RU/EN switch in the header, or the command lang ru in the console. The choice is remembered.")]],
+      "Переключатель RU/EN в шапке или команда lang en в консоли. Выбор запоминается.",
+      "The RU/EN switch in the header or the lang ru command in the console. The choice is remembered.")]],
     [/шутк|анекдот|юмор|joke/i,[L(
       "Почему разработчик путает Хэллоуин и Рождество? Потому что OCT 31 == DEC 25. Проверено автотестами.",
       "Why does a developer confuse Halloween and Christmas? Because OCT 31 == DEC 25. Verified by the test suite.")]]
@@ -2464,8 +2458,8 @@ function dForm(el){
   const steps=ce("div","wl-steps"); el.appendChild(steps);
   const box=ce("div"); el.appendChild(box);
   el.appendChild(ce("div","wl-note",L(
-    "Живая валидация, шаги с прогрессом, карточки-варианты и итоговая сводка — скелет любой регистрации или заявки. Данные никуда не отправляются.",
-    "Live validation, steps with progress, option cards and a final summary — the skeleton of any sign-up or application form. Nothing is sent anywhere.")));
+    "Живая валидация, шаги, карточки-варианты, сводка. Данные никуда не отправляются.",
+    "Live validation, steps, option cards, a summary. Nothing is sent anywhere.")));
   function bar(){ steps.innerHTML=""; for(let i=0;i<3;i++) steps.appendChild(ce("div","wl-step"+(i<=st.step?" on":""))); }
   const emailOk=v=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
   function render(){
@@ -2555,8 +2549,8 @@ function dTable(el){
   const wrap=ce("div","wl-tblwrap"); wrap.style.marginTop="12px"; el.appendChild(wrap);
   const pag=ce("div","wl-row"); el.appendChild(pag);
   el.appendChild(ce("div","wl-note",L(
-    "120 записей: живой поиск, сортировка по клику на заголовок, страницы и экспорт в CSV, который открывается в Excel.",
-    "120 records: live search, sorting by clicking a header, pagination and CSV export that opens straight in Excel.")));
+    "120 записей: поиск, сортировка по заголовку, страницы, экспорт в CSV.",
+    "120 records: search, sorting by header, pagination, CSV export.")));
   const state={q:"",k:"n",dir:1,page:0};
   function view(){
     let v=rows.filter(r=>r.n.toLowerCase().includes(state.q));
@@ -2634,8 +2628,8 @@ function dCal(el){
   const grid=ce("div","wl-cal"); el.appendChild(grid);
   const edit=ce("div"); el.appendChild(edit);
   el.appendChild(ce("div","wl-note",L(
-    "Кликните по дню, чтобы добавить событие. <b>Событие переносится на другой день</b>: мышью — перетаскиванием, пальцем — нажмите на событие, затем на нужный день. Календарь помнит всё в браузере.",
-    "Click a day to add an event. <b>An event moves to another day</b>: drag it with the mouse, or tap the event and then the target day. The calendar remembers everything in the browser.")));
+    "Клик по дню добавляет событие. <b>Перенос на другой день</b>: мышью перетаскиванием, пальцем — тап по событию, затем по дню.",
+    "A click adds an event. <b>Move it to another day</b>: drag with the mouse, or tap the event and then the day.")));
   const MON=L("ЯНВАРЬ,ФЕВРАЛЬ,МАРТ,АПРЕЛЬ,МАЙ,ИЮНЬ,ИЮЛЬ,АВГУСТ,СЕНТЯБРЬ,ОКТЯБРЬ,НОЯБРЬ,ДЕКАБРЬ",
     "JANUARY,FEBRUARY,MARCH,APRIL,MAY,JUNE,JULY,AUGUST,SEPTEMBER,OCTOBER,NOVEMBER,DECEMBER").split(",");
   function key(d){ return cur.getFullYear()+"-"+(cur.getMonth()+1)+"-"+d; }
@@ -2727,8 +2721,8 @@ function dGal(el){
   const re=ce("button","wl-btn acc",L("⟳ НОВАЯ КОЛЛЕКЦИЯ","⟳ NEW COLLECTION"));
   row.appendChild(re); row.appendChild(cap); el.appendChild(row);
   el.appendChild(ce("div","wl-note",L(
-    "Каждый «артефакт» рождается из числа-сида: симметричный узор, палитра и звёздный фон. Так работает генеративная графика — ноль нарисованных картинок.",
-    "Every artefact is born from a seed number: a symmetric pattern, a palette and a starfield. That is how generative graphics work — zero drawn images.")));
+    "Каждый артефакт вырастает из числа-сида: узор, палитра, звёздный фон. Ноль нарисованных картинок.",
+    "Every artefact grows from a seed number: pattern, palette, starfield. Zero drawn images.")));
   function draw(){
     const seed=seeds[idx], r=mulberry(seed);
     const w=Math.max(280,cv.parentElement.clientWidth||560), h=240;
@@ -2780,8 +2774,8 @@ function dSynth(el){
     db=ce("button","wl-btn",L("♪ ДЕМО-МЕЛОДИЯ","♪ DEMO MELODY"));
   row.appendChild(rb); row.appendChild(pb); row.appendChild(db); el.appendChild(row);
   el.appendChild(ce("div","wl-note",L(
-    "Каждая нота — формула WebAudio, никаких аудиофайлов: чистый синтез. Если тишина — включите 🔇 ЗВУК в шапке сайта.",
-    "Every note is a WebAudio formula, no audio files at all: pure synthesis. If it is silent, switch the 🔇 sound toggle on in the header.")));
+    "Каждая нота — формула WebAudio, ни одного аудиофайла. Если тишина, включите 🔇 в шапке.",
+    "Every note is a WebAudio formula, not a single audio file. If it is silent, switch 🔇 on in the header.")));
   rb.addEventListener("click",()=>{ recOn=!recOn; if(recOn){ rec=[]; t0=performance.now(); rb.textContent=L("■ СТОП","■ STOP"); rb.classList.add("acc"); }
     else { rb.textContent=L("● ЗАПИСЬ","● RECORD"); rb.classList.remove("acc"); } });
   function play(seq){ seq.forEach(s=>setTimeout(()=>{ if(keys.isConnected) beep(s[0],.3,wave,.16); },s[1])); }
@@ -2800,8 +2794,8 @@ function dPhys(el){
     gb=ce("button","wl-btn",L("ГРАВИТАЦИЯ: ВКЛ","GRAVITY: ON")), clr=ce("button","wl-btn",L("ОЧИСТИТЬ","CLEAR"));
   row.appendChild(boom); row.appendChild(gb); row.appendChild(clr); el.appendChild(row);
   el.appendChild(ce("div","wl-note",L(
-    "Тапайте по полю — шарики рождаются под пальцем. Скорости, отскоки и трение считаются каждый кадр — та же математика, что в любой плавной анимации.",
-    "Tap the field — balls are born under your finger. Velocities, bounces and friction are computed every frame: the same maths as in any smooth animation.")));
+    "Тапайте по полю — шарики рождаются под пальцем. Скорости, отскоки и трение считаются каждый кадр.",
+    "Tap the field: balls appear under your finger. Velocities, bounces and friction are computed every frame.")));
   const [x,w,h]=fitCv(cv,250);
   let balls=[], grav=true;
   function add(px,py){ balls.push({x:px,y:py,vx:(Math.random()-.5)*7,vy:(Math.random()-.5)*5,
@@ -2838,8 +2832,8 @@ function dDS(el){
   const sw=ce("div","wl-swatches"); sw.style.marginTop="12px"; el.appendChild(sw);
   const ty=ce("div","wl-md"); ty.style.marginTop="12px"; el.appendChild(ty);
   el.appendChild(ce("div","wl-note",L(
-    "Весь сайт держится на дизайн-токенах (CSS-переменных): смена стиля — это подмена пары десятков значений, и каждая кнопка, карточка и график перекрашиваются сами.",
-    "The whole site rests on design tokens (CSS variables): switching a theme swaps a couple of dozen values, and every button, card and chart repaints itself.")));
+    "Сайт держится на CSS-переменных: смена стиля — подмена двух десятков значений, остальное перекрашивается само.",
+    "The site rests on CSS variables: a theme swap changes two dozen values, everything else repaints itself.")));
   function render(){
     if(!sw.isConnected){ document.removeEventListener("worldchange",render); return; }
     sw.innerHTML="";
@@ -2875,8 +2869,8 @@ function dDS(el){
   const rsb=ce("button","wl-btn",L("ВЕРНУТЬ НЕОН","BACK TO NEON"));
   brow.appendChild(ap); brow.appendChild(rsb); cw.appendChild(brow);
   cw.appendChild(ce("div","wl-note",L(
-    "Восьмой стиль — ваш: тон задаёт всю палитру по формулам цветового круга, выбор запоминается.",
-    "The eighth theme is yours: one hue drives the whole palette through colour-wheel formulas, and the choice is remembered.")));
+    "Восьмой стиль — ваш: один тон задаёт всю палитру, выбор запоминается.",
+    "The eighth theme is yours: one hue drives the palette, the choice is remembered.")));
   function pv(){ hl2.textContent=hr.value; prev.innerHTML="";
     const h=+hr.value, LT=lc.checked?38:62;
     L([[h,"акцент"],[(h+50)%360,"второй"],[(h+90)%360,"тёплый"],[(h+150)%360,"живой"]],
@@ -2902,8 +2896,8 @@ function dPal(el){
   const grid=ce("div","wl-swatches"); grid.style.marginTop="12px"; el.appendChild(grid);
   const msg=ce("div","wl-note",L("Кликните по цвету — HEX скопируется в буфер.","Click a colour — the HEX goes to the clipboard.")); el.appendChild(msg);
   el.appendChild(ce("div","wl-note",L(
-    "Гармонии считаются по цветовому кругу: моно, аналоговая, триада, комплементарная. Так подбираются палитры интерфейсов — включая восемь стилей этого сайта.",
-    "The harmonies are computed on the colour wheel: mono, analogous, triad, complementary. That is how interface palettes are picked — including the eight themes of this site.")));
+    "Гармонии по цветовому кругу: моно, аналоговая, триада, комплементарная.",
+    "Harmonies on the colour wheel: mono, analogous, triad, complementary.")));
   const MODEN={"моно":"MONO","аналог":"ANALOGOUS","триада":"TRIAD","комплемент":"COMPLEMENT"};
   let mode="аналог";
   ["моно","аналог","триада","комплемент"].forEach(m=>{
@@ -2949,8 +2943,8 @@ function dScope(el){
   const fr=ce("input"); fr.type="range"; fr.min=80; fr.max=880; fr.value=220; fr.style.width="100%";
   fwrap.appendChild(fr); el.appendChild(fwrap);
   el.appendChild(ce("div","wl-note",L(
-    "Сверху — осциллограмма, снизу — спектр через AnalyserNode. Меняйте частоту и форму волны — картинка и тембр меняются вместе. Громкость специально тихая.",
-    "The waveform on top, the spectrum below, both through an AnalyserNode. Change the frequency and the wave shape — picture and timbre move together. The volume is deliberately low.")));
+    "Сверху осциллограмма, снизу спектр через AnalyserNode. Частота и форма волны меняют и картинку, и тембр.",
+    "Waveform on top, spectrum below, through an AnalyserNode. Frequency and wave shape change both picture and timbre.")));
   let ctx=null,osc=null,an=null,data=null,fdata=null,wave="sine",run=false;
   ["sine","triangle","square","sawtooth"].forEach(wv=>{
     const b=ce("button","wl-btn"+(wv==="sine"?" acc":""),wv.toUpperCase());
@@ -3022,8 +3016,8 @@ function dCard(el){
   const dl=ce("button","wl-btn acc",L("⬇ СКАЧАТЬ PNG","⬇ DOWNLOAD PNG"));
   left.appendChild(f1); left.appendChild(f2); left.appendChild(dl);
   el.appendChild(ce("div","wl-note",L(
-    "Карточка рисуется на canvas в цветах активного стиля и скачивается настоящим PNG. Смените стиль — визитка перекрасится сама.",
-    "The card is drawn on canvas in the colours of the active theme and downloads as a real PNG. Change the theme and it repaints itself.")));
+    "Карточка рисуется на canvas в цветах активного стиля и скачивается настоящим PNG.",
+    "Drawn on canvas in the colours of the active theme and downloaded as a real PNG.")));
   function draw(){
     const W=960,H=540; cv.width=W; cv.height=H;
     const x=cv.getContext("2d");
@@ -3066,8 +3060,8 @@ function dSrc(el){
   const chips=ce("div","wl-row"); chips.style.marginTop="0"; el.appendChild(chips);
   const pre=ce("pre","wl-code"); el.appendChild(pre);
   el.appendChild(ce("div","wl-note",L(
-    "Это не картинка: стенд читает собственный <script> страницы, режет его по заголовкам модулей и подсвечивает синтаксис самописным токенизатором на регулярных выражениях.",
-    "This is not a picture: the stand reads the page's own <script>, splits it by module headings and highlights the syntax with a hand-written tokeniser built on regular expressions. Module names stay in Russian — that is the real source code.")));
+    "Стенд читает собственный <script> страницы, режет его по модулям и подсвечивает самописным токенизатором на регулярных выражениях.",
+    "The stand reads the page&#39;s own <script>, splits it by module and highlights it with a hand-written tokeniser on regular expressions.")));
   let src="";
   try{ const sc=[...document.querySelectorAll("script:not([type])")]; src=(sc[sc.length-1]||{}).textContent||""; }catch(e){}
   const parts=src.split(/\/\* ---------- (.+?) ---------- \*\//);
@@ -3100,8 +3094,8 @@ function dSrc(el){
 /* === 17. журнал (скрытый стенд) === */
 function dLog(el){
   el.appendChild(ce("div","wl-note",L(
-    "Скрытый стенд: сюда стекается всё, что страница сообщает о себе — <b>window.onerror</b>, необработанные промисы, <b>console.error</b> и не загрузившиеся ресурсы. Перехват ставится первым модулем скрипта, до всего остального. Записи фильтруются по типу и выгружаются в <b>.log</b>-файл. В сетке стенда нет: он открывается командой <b>log</b> в консоли сайта.",
-    "A hidden stand: everything the page reports about itself lands here — <b>window.onerror</b>, unhandled promise rejections, <b>console.error</b> and failed resources. The interception is the very first module of the script. Entries filter by type and export to a <b>.log</b> file. It is not in the grid: open it with the <b>log</b> command in the site console.")));
+    "Сюда стекается всё, что страница сообщает о себе: <b>window.onerror</b>, промисы, <b>console.error</b>, упавшие ресурсы. Перехват — первый модуль скрипта. Фильтры по типу и выгрузка в <b>.log</b>. В сетке стенда нет: команда <b>log</b> в консоли.",
+    "Everything the page reports about itself: <b>window.onerror</b>, promises, <b>console.error</b>, failed resources. The catcher is the script&#39;s first module. Filters by type and a <b>.log</b> export. Not in the grid: the <b>log</b> command in the console.")));
   const KINDS=[["all",L("ВСЁ","ALL")],["ошибка",L("ОШИБКИ","ERRORS")],["console","CONSOLE"],
     ["promise","PROMISE"],["ресурс",L("РЕСУРСЫ","RESOURCES")]];
   let filter="all";
