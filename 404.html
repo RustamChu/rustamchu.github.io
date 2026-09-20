@@ -1,9 +1,40 @@
-<!DOCTYPE html><html lang="ru"><meta charset="utf-8">
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>404 — страница не нашлась</title>
-<body style="margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:#0a0d1a;color:#e8ecf6;font-family:'Segoe UI',system-ui,sans-serif;text-align:center;padding:20px">
-<div style="font-family:'Arial Black',sans-serif;font-size:64px;color:#4de3e3">404</div>
-<div style="max-width:420px;line-height:1.6;color:#8f9ab8">Такой страницы в мастерской нет.
-Зато есть главная — с полигоном, консолью и семью стилями.</div>
-<a href="/" style="color:#0a0d1a;background:#4de3e3;text-decoration:none;padding:12px 26px;border-radius:12px;font-weight:700">ВЕРНУТЬСЯ НА ГЛАВНУЮ</a>
+<title>404 — страница не нашлась · RUSTAM.CHU</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a0d1a">
+<link rel="icon" href="/icon-192.png">
+<style>
+  :root{--bg:#0a0d1a;--panel:#12172b;--line:#232b4a;--cyan:#4de3e3;--magenta:#ff4d8d;--text:#e8ecf6;--dim:#8f9ab8}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:16px;background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;
+    text-align:center;padding:24px;
+    background-image:radial-gradient(900px 480px at 50% -10%,rgba(77,227,227,.10),transparent 60%)}
+  .lg{font-family:'Consolas',monospace;font-size:13px;letter-spacing:.24em;color:var(--dim)}
+  .lg b{color:var(--cyan);font-weight:400}
+  .n{font-family:'Arial Black',sans-serif;font-size:clamp(56px,16vw,96px);line-height:1;
+    background:linear-gradient(90deg,var(--cyan),var(--magenta));-webkit-background-clip:text;
+    background-clip:text;color:transparent}
+  p{max-width:440px;line-height:1.65;color:var(--dim);margin:0;font-size:15px}
+  .en{font-size:13px;color:var(--dim);opacity:.75;max-width:440px;line-height:1.6;margin:0}
+  .row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+  a.btn{color:#04222a;background:var(--cyan);text-decoration:none;padding:13px 24px;border-radius:12px;
+    font-weight:700;font-size:14px;letter-spacing:.04em;min-height:44px;display:inline-flex;align-items:center}
+  a.gh{color:var(--text);background:transparent;border:1px solid var(--line)}
+  a.btn:hover{filter:brightness(1.08)}
+  .fine{font-family:'Consolas',monospace;font-size:11px;color:var(--dim);opacity:.6;margin-top:10px}
+</style></head>
+<body>
+  <div class="lg">RUSTAM<b>.CHU</b></div>
+  <div class="n">404</div>
+  <p>Такой страницы в мастерской нет. Зато есть главная — шестнадцать демо-стендов,
+     консоль, палитра команд и восемь стилей оформления.</p>
+  <p class="en">This page does not exist. The main page does: sixteen demo stands, a console,
+     a command palette and eight themes.</p>
+  <div class="row">
+    <a class="btn" href="/">НА ГЛАВНУЮ</a>
+    <a class="btn gh" href="/en/">ENGLISH VERSION</a>
+  </div>
+  <div class="fine">rustamchu.ru · один файл · ноль библиотек</div>
 </body></html>

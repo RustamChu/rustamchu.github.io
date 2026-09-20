@@ -7,8 +7,13 @@
 <meta name="description" content="Живое портфолио: шестнадцать работающих демо-стендов — магазин, дашборд, канбан, планировщик, синтезатор — восемь стилей оформления, консоль и командная палитра, версия на двух языках. Один файл, ноль библиотек: вся графика и звук написаны кодом.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Rubik:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="canonical" href="https://rustamchu.ru/">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Russo+One&family=Rubik:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Russo+One&family=Rubik:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap"></noscript>
+<link rel="canonical" id="canon" href="https://rustamchu.ru/">
+<link rel="alternate" hreflang="ru" href="https://rustamchu.ru/">
+<link rel="alternate" hreflang="en" href="https://rustamchu.ru/en/">
+<link rel="alternate" hreflang="x-default" href="https://rustamchu.ru/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:url" content="https://rustamchu.ru/">
@@ -335,6 +340,18 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
   .tour-hl{outline:2px solid var(--cyan);outline-offset:8px;border-radius:14px}
   /* ---------- скролл-спай ---------- */
   #hud nav a.act{color:var(--cyan)}
+  /* ---------- a11y: размер целей нажатия ---------- */
+  .tgl,#burger{min-height:32px}
+  .xp{min-height:32px}
+  #tin{min-height:26px;padding:4px 0}
+  .wl-btn{min-height:30px}
+  .skip{min-height:40px;display:inline-flex;align-items:center}
+  @media(max-width:640px){
+    .tgl,#burger,.xp{min-height:34px}
+    .wl-btn{min-height:34px}
+    .wl-fav{min-width:30px;min-height:30px}
+    .wl-task button{min-width:28px;min-height:28px}
+  }
   /* ---------- a11y ---------- */
   .skip{position:fixed;left:10px;top:-70px;z-index:120;background:var(--cyan);color:var(--onaccent);
     padding:10px 16px;border-radius:10px;font-family:var(--mono);font-size:12px;transition:top .2s;text-decoration:none}
@@ -369,14 +386,33 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
     :root{--bg:#fff;--panel:#fff;--panel2:#fff;--line:#bbb;--cyan:#111;--magenta:#333;
       --gold:#333;--green:#222;--text:#000;--dim:#444;--onaccent:#fff;--starcol:#fff}
     #boot,#stars,#fx,#crt,#progress,#ticker,#toasts,#profile,#cmdp,#wlm,#mnav,#burger,
-    .tgl,.xp,#menu,.scrollhint,#pressbtn,#term,.step .more{display:none!important}
-    #hud{position:static;border:none}
-    body{background:#fff;color:#000}
-    #hero{min-height:auto;padding:10px}
-    section{padding:14px 0;page-break-inside:avoid}
-    .wlc,.dev,.stat,.step{box-shadow:none}
+    .tgl,.xp,#menu,.scrollhint,#pressbtn,#term,.step .more,.skip,#caret,#tourbox,
+    .wlc .go,#c3roll,#cases .ccap,.sub2{display:none!important}
+    /* секции появляются по прокрутке — на бумаге прокрутки нет */
+    .rev{opacity:1!important;transform:none!important}
+    *{transition:none!important;animation:none!important}
+    #hud{position:static;border:none;padding:0 0 6px}
+    body{background:#fff;color:#000;font-size:11.5pt}
+    #hero{min-height:auto;padding:4px 0 10px}
+    #hero h1{font-size:30pt;margin:0 0 6px}
+    #hero .sub{font-size:12pt;margin:0}
+    #hero .over{margin-bottom:4px}
+    section{padding:10px 0;break-inside:auto;page-break-inside:auto}
+    h2{break-after:avoid;page-break-after:avoid;font-size:15pt}
+    .shead{margin-bottom:4px}
+    .slead{font-size:10pt}
+    .wlc,.dev,.stat,.step,#cases .case,#cases .num{box-shadow:none;break-inside:avoid;page-break-inside:avoid}
+    #cases .case{grid-template-columns:1fr;gap:10px;padding:10px 0;border:none;border-top:1px solid #ccc;border-radius:0}
+    #cases canvas{max-height:150px;object-fit:contain}
+    #skgrid{grid-template-columns:1fr}
+    #radar{max-width:300px!important;margin:0 auto}
     a{color:#000;text-decoration:none}
+    /* шапка резюме: только на бумаге */
+    .printhead{display:block!important;border-bottom:2px solid #000;padding-bottom:8px;margin-bottom:10px}
+    .printhead b{font-size:15pt;letter-spacing:.02em}
+    .printhead span{display:block;font-family:var(--mono);font-size:9.5pt;color:#333;margin-top:4px}
   }
+  .printhead{display:none}
   /* ---------- уважение к reduced motion ---------- */
   @media (prefers-reduced-motion:reduce){
     *{animation-duration:.01s!important;animation-iteration-count:1!important;transition-duration:.01s!important}
@@ -548,7 +584,7 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
 
 <header id="hud">
   <div class="lg">RUSTAM<span>.CHU</span></div>
-  <span class="chip" id="bstamp" title="штамп сборки: если после публикации не сменился — у вас кэш" data-en-t="build stamp: if it did not change after publishing, you are looking at a cached page">v20.09 01:38 МСК</span>
+  <span class="chip" id="bstamp" title="штамп сборки: если после публикации не сменился — у вас кэш" data-en-t="build stamp: if it did not change after publishing, you are looking at a cached page">v20.09 10:09 МСК</span>
   <nav>
     <a href="#skills" data-en="SKILLS">НАВЫКИ</a>
     <a href="#cases" data-en="CASES">ИЗБРАННОЕ</a>
@@ -595,6 +631,10 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
   <button class="preset" id="preset" type="button" data-en="RESET PROGRESS">СБРОСИТЬ ПРОГРЕСС</button>
 </div>
 
+<div class="printhead">
+  <b data-en="RUSTAM CHUCHUEV — sites, interfaces, tools">РУСТАМ ЧУЧУЕВ — сайты, интерфейсы, инструменты</b>
+  <span>rustamchu.ru · rustamchuchuev111@gmail.com · t.me/rust_a_m · github.com/RustamChu</span>
+</div>
 <div id="hero">
   <div class="over" data-en="— PORTFOLIO —">— ПОРТФОЛИО —</div>
   <h1 id="title" data-en="RUSTAM CHUCHUEV">ЧУЧУЕВ РУСТАМ</h1>
@@ -669,10 +709,12 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
         <p data-en="Manual release is a ritual: bump the stamp, remember the cache version, redraw the social card, upload the files. Four steps — four ways for a visitor to end up looking at <b>yesterday's page</b>.">Ручной релиз — это ритуал: поправь штамп, не забудь версию кэша, перерисуй карточку для соцсетей, залей файлы.
           Четыре шага — четыре способа показать посетителю <b>вчерашнюю страницу</b>.</p></div>
       <div class="qa"><span class="lb" data-en="DECISION">РЕШЕНИЕ</span>
-        <p data-en="One build script does it all: it stamps the build time into the header and into the service worker version, renders the 1200×630 card, runs the regression suite in a headless browser and only then pushes to Pages.">Один скрипт сборки делает всё: проставляет время сборки в шапку и в версию service worker,
-          рисует карточку 1200×630, прогоняет регресс в headless-браузере — и только потом публикует.</p></div>
+        <p data-en="One build script does it all: it stamps the build time into the header and into the service worker version, renders the 1200×630 card, runs 213 checks in a headless browser — desktop and phone, contrast, offline, print — and only then pushes to Pages.">Один скрипт сборки делает всё: проставляет время сборки в шапку и в версию service worker,
+          рисует карточку 1200×630, прогоняет 213 проверок в headless-браузере — десктоп и телефон,
+          контраст, офлайн, печать — и только потом публикует.</p></div>
       <div class="qa"><span class="lb" data-en="RESULT">РЕЗУЛЬТАТ</span>
-        <p data-en="Publishing is a double click and about forty seconds. The cache invalidates itself, and the stamp in the header is the honest proof that you see the newest version.">Публикация — двойной щелчок и около сорока секунд. Кэш инвалидируется сам,
+        <p data-en="Publishing is a double click and about a minute, most of it spent on the regression. A red suite stops the release before it reaches the domain; the cache invalidates itself, and the stamp in the header is the honest proof that you see the newest version.">Публикация — двойной щелчок и около минуты, из которых большую часть занимает регресс.
+          Красный прогон останавливает релиз до того, как он доедет до домена; кэш инвалидируется сам,
           а штамп в шапке — честное доказательство, что вы видите свежую версию.</p></div>
       <div class="nums" id="c2nums"></div>
     </div>
@@ -871,8 +913,8 @@ var PERF={t0:(performance&&performance.now)?performance.now():0,marks:[],
   since:function(n){ var m=this.marks.filter(function(x){return x[0]===n;}); return m.length?m[0][1]:null; }};
 var LOGBUF=[];
 (function(){
-  function push(kind,msg,src){
-    LOGBUF.push({t:Date.now(),k:kind,m:String(msg).slice(0,500),s:src||""});
+  function push(kind,msg,src,key){
+    LOGBUF.push({t:Date.now(),k:kind,m:String(msg).slice(0,500),s:src||"",key:key||""});
     if(LOGBUF.length>120) LOGBUF.shift();
     try{ document.dispatchEvent(new CustomEvent("logpush")); }catch(e){}
   }
@@ -886,7 +928,7 @@ var LOGBUF=[];
   });
   addEventListener("error",function(e){
     if(e.target&&e.target!==window&&(e.target.src||e.target.href))
-      push("ресурс","не загрузился "+(e.target.src||e.target.href),e.target.tagName);
+      push("ресурс",(e.target.src||e.target.href),e.target.tagName,"res");
   },true);
   var ce=console.error.bind(console);
   console.error=function(){
@@ -954,6 +996,11 @@ try{ FIRST_VISIT=!localStorage.getItem("rustamchu_profile"); }catch(e){}
 /* ---------- язык интерфейса: RU / EN ---------- */
 let LANG=(PROFILE.lang==="en")?"en":"ru";
 try{ if(FIRST_VISIT&&!PROFILE.lang&&!/^ru|^be|^uk|^kk/i.test(navigator.language||"ru")) LANG="en"; }catch(e){}
+/* адрес важнее памяти: /en/ и ?lang=en открывают английскую версию сразу */
+try{
+  const q=new URLSearchParams(location.search).get("lang");
+  if(q==="en"||q==="ru") LANG=q;
+}catch(e){}
 function L(ru,en){ return (LANG==="en"&&en!=null)?en:ru; }
 function applyLang(l,quiet){
   LANG=(l==="en")?"en":"ru";
@@ -970,6 +1017,8 @@ function applyLang(l,quiet){
       el.setAttribute(a[1],(LANG==="en")?el.dataset[a[0]]:el.dataset[a[2]]);
     });
   });
+  const cn=document.getElementById("canon");
+  if(cn) cn.href=(LANG==="en")?"https://rustamchu.ru/en/":"https://rustamchu.ru/";
   ["bstamp","bstamp2"].forEach(function(id){
     const el=document.getElementById(id); if(!el) return;
     if(el.dataset.stampRu===undefined) el.dataset.stampRu=el.textContent;
@@ -1254,6 +1303,7 @@ lazy("fx",function(){
   const EN=["sites and web apps","interfaces and motion","graphics that draw themselves",
     "sound from pure formulas","tools and automation","eight moods of one page"];
   let PH=(LANG==="en")?EN:RU;
+  window.TYPER_FULL=()=>PH[i]||PH[0];
   document.addEventListener("langchange",()=>{ PH=(LANG==="en")?EN:RU; i=i%PH.length; c=0; del=false; });
   let i=0,c=0,del=false;
   (function tick(){
@@ -1398,6 +1448,7 @@ function drawRadar(k){
     x.arc(C+Math.cos(a)*R*v,C+Math.sin(a)*R*v,3.4,0,7); x.fill();
   });
 }
+window.drawRadar=drawRadar;
 let radDone=false;
 function animSkills(){
   $$("#sklist .sb i").forEach(el=>{ el.style.width=el.dataset.v+"%"; });
@@ -1415,7 +1466,7 @@ document.addEventListener("langchange",()=>{ RAX=(LANG==="en")?RAX_EN:RAX_RU; if
 /* ---------- избранное: три кейса ---------- */
 (function(){
   const sec=document.getElementById("cases"); if(!sec) return;
-  const REGRESS=148;          /* проверок в последнем зелёном прогоне регресса */
+  const REGRESS=213;          /* проверок в последнем зелёном прогоне регресса */
   let seed=Math.random()*1e9|0, inited=false;
   function fit(cv,hh){
     const w=Math.max(220,cv.parentElement.clientWidth||520);
@@ -1485,14 +1536,13 @@ document.addEventListener("langchange",()=>{ RAX=(LANG==="en")?RAX_EN:RAX_RU; if
     })();
   }
   /* --- 2. конвейер --- */
-  const PIPE=[[L("ШТАМП","STAMP"),0.4],[L("КАРТОЧКА","OG CARD"),1.3],[L("РЕГРЕСС","REGRESSION"),26],
-              [L("GIT PUSH","GIT PUSH"),3.4],[L("PAGES","PAGES"),8]];
+
   function draw2(){
     const cv=document.getElementById("c2cv"); if(!cv) return;
     const [x,w,h]=fit(cv,268);
     const steps=[[L("ШТАМП И ВЕРСИЯ КЭША","STAMP & CACHE VERSION"),0.4],
                  [L("КАРТОЧКА 1200×630","1200×630 CARD"),1.3],
-                 [L("РЕГРЕСС В БРАУЗЕРЕ","BROWSER REGRESSION"),26],
+                 [L("РЕГРЕСС В БРАУЗЕРЕ","BROWSER REGRESSION"),55],
                  [L("КОММИТ И PUSH","COMMIT & PUSH"),3.4],
                  [L("СБОРКА PAGES","PAGES BUILD"),8]];
     const total=steps.reduce((a,b)=>a+b[1],0);
@@ -1580,7 +1630,7 @@ document.addEventListener("langchange",()=>{ RAX=(LANG==="en")?RAX_EN:RAX_RU; if
     const m=weigh();
     nums("c1nums",[["1",L("ФАЙЛ","FILE")],["0",L("БИБЛИОТЕК","LIBRARIES")],
       [Math.round(m.total/1024),L("КИЛОБАЙТ","KILOBYTES")],["16",L("СТЕНДОВ","STANDS")],["8",L("СТИЛЕЙ","THEMES")]]);
-    nums("c2nums",[["≈40 "+L("с","s"),L("ПУБЛИКАЦИЯ","PUBLISH")],["1",L("ЩЕЛЧОК","CLICK")],
+    nums("c2nums",[["≈70 "+L("с","s"),L("ПУБЛИКАЦИЯ","PUBLISH")],["1",L("ЩЕЛЧОК","CLICK")],
       [REGRESS,L("ПРОВЕРОК РЕГРЕССА","REGRESSION CHECKS")],["0",L("РУЧНЫХ ШАГОВ","MANUAL STEPS")]]);
     nums("c3nums",[["0 "+L("КБ","KB"),L("РАСТРОВЫХ АССЕТОВ","RASTER ASSETS")],["2³²",L("ВАРИАНТОВ","VARIANTS")],
       ["≈60",L("СТРОК ГЕНЕРАТОРА","GENERATOR LINES")],["8",L("ПАЛИТР","PALETTES")]]);
@@ -1790,9 +1840,11 @@ $$("#menu .mi[data-go]").forEach(b=>b.addEventListener("click",()=>{
     });
     const s=list.querySelector(".ci.sel"); s&&s.scrollIntoView({block:"nearest"});
   }
-  function openP(){ open=true; build(); sel=0; inp.value=""; p.classList.add("on"); render();
+  let lastFocus=null;
+  function openP(){ open=true; lastFocus=document.activeElement; build(); sel=0; inp.value=""; p.classList.add("on"); render();
     setTimeout(()=>inp.focus(),40); mark("palette"); beep(700,.05,"triangle",.1); }
-  function closeP(){ open=false; p.classList.remove("on"); }
+  function closeP(){ open=false; p.classList.remove("on");
+    try{ lastFocus&&lastFocus.focus&&lastFocus.focus(); }catch(e){} }
   function exec(i){ if(!i) return; closeP(); try{ i.fn(); }catch(e){} }
   $("#cmdk")&&$("#cmdk").addEventListener("click",openP);
   p.addEventListener("click",e=>{ if(e.target===p) closeP(); });
@@ -1805,6 +1857,48 @@ $$("#menu .mi[data-go]").forEach(b=>b.addEventListener("click",()=>{
     else if(e.key==="Enter"){ e.preventDefault(); exec(curF[sel]); }
   });
   inp.addEventListener("input",()=>{ sel=0; render(); });
+})();
+
+/* ---------- подготовка к печати: ни одной недорисованной анимации ---------- */
+(function(){
+  function finish(){
+    try{
+      const t=$("#typer");
+      if(t&&window.TYPER_FULL) t.textContent=window.TYPER_FULL();
+      $$(".rev").forEach(e=>e.classList.add("on"));
+      $$("#sklist .sb i").forEach(el=>{ el.style.width=el.dataset.v+"%"; });
+      $$("[data-count]").forEach(el=>{ if(el.dataset.count) el.textContent=el.dataset.count; });
+      if(window.drawRadar) drawRadar(1);
+      if(window.CASESAPI){ CASESAPI.init(); CASESAPI.draw(); }
+      $$(".step").forEach(st=>st.classList.add("open"));
+    }catch(e){}
+  }
+  addEventListener("beforeprint",finish);
+  window.PRINTREADY=finish;
+  const pb=$("#printbtn");
+  if(pb) pb.addEventListener("click",()=>{ finish(); });
+})();
+
+/* ---------- ловушка фокуса в диалогах ---------- */
+(function(){
+  const SEL="a[href],button:not([disabled]),input:not([disabled]),textarea,select,[tabindex]:not([tabindex='-1'])";
+  function visible(el){ const r=el.getBoundingClientRect(); return r.width>0&&r.height>0; }
+  function activeDialog(){
+    const wlm=$("#wlm"), cmd=$("#cmdp");
+    if(cmd&&cmd.classList.contains("on")) return cmd;
+    if(wlm&&wlm.classList.contains("on")) return wlm;
+    return null;
+  }
+  addEventListener("keydown",function(e){
+    if(e.key!=="Tab") return;
+    const d=activeDialog(); if(!d) return;
+    const items=[...d.querySelectorAll(SEL)].filter(visible);
+    if(!items.length){ e.preventDefault(); return; }
+    const first=items[0], last=items[items.length-1];
+    if(!d.contains(document.activeElement)){ e.preventDefault(); first.focus(); return; }
+    if(e.shiftKey&&document.activeElement===first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey&&document.activeElement===last){ e.preventDefault(); first.focus(); }
+  },true);
 })();
 
 /* ---------- секретное слово ---------- */
@@ -2993,30 +3087,59 @@ function dSrc(el){
 /* === 17. журнал (скрытый стенд) === */
 function dLog(el){
   el.appendChild(ce("div","wl-note",L(
-    "Скрытый стенд: сюда стекается всё, что страница сообщает о себе — <b>window.onerror</b>, необработанные промисы, <b>console.error</b> и не загрузившиеся ресурсы. Перехват ставится первым модулем скрипта, до всего остального. В сетке стенда нет: он открывается командой <b>log</b> в консоли сайта.",
-    "A hidden stand: everything the page reports about itself lands here — <b>window.onerror</b>, unhandled promise rejections, <b>console.error</b> and failed resources. The interception is the very first module of the script. It is not in the grid: open it with the <b>log</b> command in the site console.")));
-  const row=ce("div","wl-row"); row.style.marginTop="0";
+    "Скрытый стенд: сюда стекается всё, что страница сообщает о себе — <b>window.onerror</b>, необработанные промисы, <b>console.error</b> и не загрузившиеся ресурсы. Перехват ставится первым модулем скрипта, до всего остального. Записи фильтруются по типу и выгружаются в <b>.log</b>-файл. В сетке стенда нет: он открывается командой <b>log</b> в консоли сайта.",
+    "A hidden stand: everything the page reports about itself lands here — <b>window.onerror</b>, unhandled promise rejections, <b>console.error</b> and failed resources. The interception is the very first module of the script. Entries filter by type and export to a <b>.log</b> file. It is not in the grid: open it with the <b>log</b> command in the site console.")));
+  const KINDS=[["all",L("ВСЁ","ALL")],["ошибка",L("ОШИБКИ","ERRORS")],["console","CONSOLE"],
+    ["promise","PROMISE"],["ресурс",L("РЕСУРСЫ","RESOURCES")]];
+  let filter="all";
+  const frow=ce("div","wl-row"); frow.style.marginTop="0"; el.appendChild(frow);
+  KINDS.forEach(k=>{
+    const b=ce("button","wl-btn"+(k[0]===filter?" acc":""),k[1]);
+    b.dataset.kind=k[0];
+    b.addEventListener("click",()=>{ filter=k[0];
+      frow.querySelectorAll(".wl-btn").forEach(x=>x.classList.remove("acc")); b.classList.add("acc");
+      render(); beep(660,.04,"triangle",.07); });
+    frow.appendChild(b);
+  });
+  const row=ce("div","wl-row");
   const bTest=ce("button","wl-btn",L("ПРОВЕРИТЬ ПЕРЕХВАТ","TEST THE CATCHER"));
   const bClr=ce("button","wl-btn",L("ОЧИСТИТЬ","CLEAR"));
   const bCopy=ce("button","wl-btn",L("СКОПИРОВАТЬ","COPY"));
-  row.appendChild(bTest); row.appendChild(bClr); row.appendChild(bCopy); el.appendChild(row);
+  const bSave=ce("button","wl-btn",L("⬇ СКАЧАТЬ .LOG","⬇ DOWNLOAD .LOG"));
+  row.appendChild(bTest); row.appendChild(bClr); row.appendChild(bCopy); row.appendChild(bSave); el.appendChild(row);
   const box=ce("div","wl-log"); box.style.marginTop="12px"; el.appendChild(box);
   const foot=ce("div","wl-note",""); el.appendChild(foot);
   function fmt(t){ const d=new Date(t); const z=n=>(n<10?"0":"")+n;
     return z(d.getHours())+":"+z(d.getMinutes())+":"+z(d.getSeconds()); }
+  const KINDN={"ошибка":L("ошибка","error"),"ресурс":L("ресурс","resource"),
+    "promise":"promise","console":"console"};
+  const kname=k=>KINDN[k]||k;
+  const mtext=e=>(e.key==="res"?L("не загрузился ","failed to load "):"")+e.m;
+  function rows(){ return (filter==="all")?LOGBUF:LOGBUF.filter(e=>e.k===filter); }
   function render(){
-    if(!LOGBUF.length){
-      box.innerHTML='<div class="empty">'+L("Пусто — за эту сессию сайт не уронил ни одной ошибки.",
-        "Empty — the site has not dropped a single error this session.")+"</div>";
+    const list=rows();
+    if(!list.length){
+      box.innerHTML='<div class="empty">'+(LOGBUF.length
+        ? L("В этой категории пусто.","Nothing in this category.")
+        : L("Пусто — за эту сессию сайт не уронил ни одной ошибки.","Empty — the site has not dropped a single error this session."))+"</div>";
     } else {
-      box.innerHTML=LOGBUF.slice().reverse().map(function(e){
+      box.innerHTML=list.slice().reverse().map(function(e){
         const cls=e.k==="console"?"info":(e.k==="ресурс"?"":"");
-        return '<div class="lr"><span class="lt">'+fmt(e.t)+'</span><span class="lk '+cls+'">'+esc(e.k)+
-          '</span><span class="lm">'+esc(e.m)+(e.s?"<i>"+esc(e.s)+"</i>":"")+"</span></div>";
+        return '<div class="lr"><span class="lt">'+fmt(e.t)+'</span><span class="lk '+cls+'">'+esc(kname(e.k))+
+          '</span><span class="lm">'+esc(mtext(e))+(e.s?"<i>"+esc(e.s)+"</i>":"")+"</span></div>";
       }).join("");
     }
-    foot.innerHTML=L("Записей в буфере: <b>","Entries in the buffer: <b>")+LOGBUF.length+
-      L("</b> из 120 · буфер кольцевой, память не растёт.","</b> of 120 · the buffer is circular, memory does not grow.");
+    frow.querySelectorAll(".wl-btn").forEach(b=>{
+      const k=b.dataset.kind;
+      const n=(k==="all")?LOGBUF.length:LOGBUF.filter(e=>e.k===k).length;
+      const base=(KINDS.find(x=>x[0]===k)||["",""])[1];
+      b.textContent=n?base+" "+n:base;
+    });
+    foot.innerHTML=L("Показано: <b>","Shown: <b>")+list.length+L("</b> из <b>","</b> of <b>")+LOGBUF.length+
+      L("</b> · буфер кольцевой на 120 записей, память не растёт.","</b> · a circular buffer of 120 entries, memory does not grow.");
+  }
+  function plain(){
+    return rows().map(function(e){ return fmt(e.t)+" ["+kname(e.k)+"] "+mtext(e)+(e.s?" ("+e.s+")":""); }).join("\n");
   }
   bTest.addEventListener("click",function(){
     setTimeout(function(){ null.x; },0);
@@ -3024,8 +3147,19 @@ function dLog(el){
     beep(320,.08,"triangle",.1);
   });
   bClr.addEventListener("click",function(){ LOGBUF.length=0; render(); });
+  bSave.addEventListener("click",function(){
+    const head="rustamchu.ru · "+L("журнал страницы","page log")+" · "+new Date().toISOString()+
+      "\n"+navigator.userAgent+"\n"+"-".repeat(60)+"\n";
+    try{
+      const A=document.createElement("a");
+      A.href=URL.createObjectURL(new Blob([head+(plain()||"—")],{type:"text/plain;charset=utf-8"}));
+      A.download="rustamchu-"+new Date().toISOString().slice(0,19).replace(/[:T]/g,"-")+".log";
+      A.click(); setTimeout(function(){ URL.revokeObjectURL(A.href); },2000);
+      beep(820,.06,"triangle",.1);
+    }catch(e){}
+  });
   bCopy.addEventListener("click",function(){
-    const t=LOGBUF.map(function(e){ return fmt(e.t)+" ["+e.k+"] "+e.m+(e.s?" ("+e.s+")":""); }).join("\n");
+    const t=plain();
     try{ navigator.clipboard.writeText(t||"—"); }catch(e){}
     bCopy.textContent=L("СКОПИРОВАНО ✓","COPIED ✓");
     setTimeout(function(){ bCopy.textContent=L("СКОПИРОВАТЬ","COPY"); },1400);
@@ -3088,11 +3222,17 @@ function wlOpen(id,viaPop){
 }
 function wlClose(viaPop){
   if(!wlOpenId) return;
+  const id=wlOpenId;
   wlOpenId=null;
   wlm.classList.remove("on"); wbody.innerHTML="";
   document.body.classList.remove("wl-open"); document.body.style.top="";
   scrollTo(0,wlSaved);
-  try{ wlLastFocus&&wlLastFocus.focus&&wlLastFocus.focus(); }catch(e){}
+  try{
+    let back=wlLastFocus;
+    if(!back||back===document.body||!back.isConnected)
+      back=grid.querySelector('.wlc[data-id="'+(id||"")+'"]')||grid.querySelector(".wlc");
+    back&&back.focus&&back.focus({preventScroll:true});
+  }catch(e){}
   beep(330,.05,"triangle",.08);
   if(!viaPop&&history.state&&history.state.wl){ try{ history.back(); }catch(e){} }
 }

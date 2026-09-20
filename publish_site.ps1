@@ -37,6 +37,36 @@ if (Test-Path $build) {
     Write-Host "build_site.ps1 рядом не найден - публикую как есть." -ForegroundColor Yellow
 }
 
+# ---------- РЕГРЕСС: 213 проверок в headless-браузере ----------
+$root  = Split-Path $PSScriptRoot -Parent
+$qa    = Join-Path $root "qa\suite.js"
+$serve = Join-Path $root "qa\serve.js"
+$pw    = Join-Path $root "qa\node_modules\playwright"
+$node  = Get-Command node -ErrorAction SilentlyContinue
+
+if ((Test-Path $qa) -and (Test-Path $serve) -and $node -and (Test-Path $pw)) {
+    Write-Host "Прогоняю регресс..." -ForegroundColor Cyan
+    $srv = Start-Process -FilePath $node.Source -ArgumentList @("`"$serve`"", "`"$PSScriptRoot`"", "8899") -PassThru -WindowStyle Hidden
+    Start-Sleep -Seconds 2
+    & $node.Source "$qa"
+    $testCode = $LASTEXITCODE
+    if ($srv -and -not $srv.HasExited) { Stop-Process -Id $srv.Id -Force -ErrorAction SilentlyContinue }
+    if ($testCode -ne 0) {
+        Write-Host ""
+        Write-Host "РЕГРЕСС КРАСНЫЙ - сайт лучше не публиковать." -ForegroundColor Red
+        $ans = Read-Host "Публиковать всё равно? (y - да, Enter - отменить)"
+        if ($ans -notmatch '^[yYдД]') { Write-Host "Публикация отменена." -ForegroundColor Yellow; Read-Host "Enter - закрыть"; exit 1 }
+    } else {
+        Write-Host "Регресс зелёный." -ForegroundColor Green
+    }
+} elseif ((Test-Path $qa) -and (-not $node)) {
+    Write-Host "Регресс пропущен: не найден Node.js (это не ошибка, публикую как есть)." -ForegroundColor DarkYellow
+    Write-Host "  Хотите, чтобы тесты шли перед каждой публикацией - запустите 3_УСТАНОВИТЬ_ТЕСТЫ.bat" -ForegroundColor DarkGray
+} elseif ((Test-Path $qa) -and (-not (Test-Path $pw))) {
+    Write-Host "Регресс пропущен: в папке qa не установлен Playwright." -ForegroundColor DarkYellow
+    Write-Host "  Один раз запустите 3_УСТАНОВИТЬ_ТЕСТЫ.bat в папке проекта - он всё поставит сам." -ForegroundColor DarkGray
+}
+
 $repo = "rustamchu.github.io"
 $url  = "https://github.com/RustamChu/$repo.git"
 
@@ -50,6 +80,8 @@ $null = & git checkout -B main 2>&1
 $null = & git remote remove origin 2>&1
 $null = & git remote add origin $url 2>&1
 $null = & git rm -r --cached _websrc 2>&1
+# страницы прежней тематики не публикуются: файлы остаются на диске, с домена уходят
+$null = & git rm -r --cached play 2>&1
 $null = & git add -A 2>&1
 $null = & git commit -m ("site " + (Get-Date -Format "yyyy-MM-dd HH:mm")) 2>&1
 
