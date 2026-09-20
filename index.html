@@ -584,7 +584,7 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
 
 <header id="hud">
   <div class="lg">RUSTAM<span>.CHU</span></div>
-  <span class="chip" id="bstamp" title="штамп сборки: если после публикации не сменился — у вас кэш" data-en-t="build stamp: if it did not change after publishing, you are looking at a cached page">v20.09 10:09 МСК</span>
+  <span class="chip" id="bstamp" title="штамп сборки: если после публикации не сменился — у вас кэш" data-en-t="build stamp: if it did not change after publishing, you are looking at a cached page">v20.09 10:14 МСК</span>
   <nav>
     <a href="#skills" data-en="SKILLS">НАВЫКИ</a>
     <a href="#cases" data-en="CASES">ИЗБРАННОЕ</a>
@@ -709,8 +709,8 @@ else if(!_p&&matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)doc
         <p data-en="Manual release is a ritual: bump the stamp, remember the cache version, redraw the social card, upload the files. Four steps — four ways for a visitor to end up looking at <b>yesterday's page</b>.">Ручной релиз — это ритуал: поправь штамп, не забудь версию кэша, перерисуй карточку для соцсетей, залей файлы.
           Четыре шага — четыре способа показать посетителю <b>вчерашнюю страницу</b>.</p></div>
       <div class="qa"><span class="lb" data-en="DECISION">РЕШЕНИЕ</span>
-        <p data-en="One build script does it all: it stamps the build time into the header and into the service worker version, renders the 1200×630 card, runs 213 checks in a headless browser — desktop and phone, contrast, offline, print — and only then pushes to Pages.">Один скрипт сборки делает всё: проставляет время сборки в шапку и в версию service worker,
-          рисует карточку 1200×630, прогоняет 213 проверок в headless-браузере — десктоп и телефон,
+        <p data-en="One build script does it all: it stamps the build time into the header and into the service worker version, renders the 1200×630 card, runs 217 checks in a headless browser — desktop and phone, contrast, offline, print — and only then pushes to Pages.">Один скрипт сборки делает всё: проставляет время сборки в шапку и в версию service worker,
+          рисует карточку 1200×630, прогоняет 217 проверок в headless-браузере — десктоп и телефон,
           контраст, офлайн, печать — и только потом публикует.</p></div>
       <div class="qa"><span class="lb" data-en="RESULT">РЕЗУЛЬТАТ</span>
         <p data-en="Publishing is a double click and about a minute, most of it spent on the regression. A red suite stops the release before it reaches the domain; the cache invalidates itself, and the stamp in the header is the honest proof that you see the newest version.">Публикация — двойной щелчок и около минуты, из которых большую часть занимает регресс.
@@ -1466,7 +1466,7 @@ document.addEventListener("langchange",()=>{ RAX=(LANG==="en")?RAX_EN:RAX_RU; if
 /* ---------- избранное: три кейса ---------- */
 (function(){
   const sec=document.getElementById("cases"); if(!sec) return;
-  const REGRESS=213;          /* проверок в последнем зелёном прогоне регресса */
+  const REGRESS=217;          /* проверок в последнем зелёном прогоне регресса */
   let seed=Math.random()*1e9|0, inited=false;
   function fit(cv,hh){
     const w=Math.max(220,cv.parentElement.clientWidth||520);

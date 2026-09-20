@@ -37,7 +37,7 @@ if (Test-Path $build) {
     Write-Host "build_site.ps1 рядом не найден - публикую как есть." -ForegroundColor Yellow
 }
 
-# ---------- РЕГРЕСС: 213 проверок в headless-браузере ----------
+# ---------- РЕГРЕСС: 217 проверок в headless-браузере ----------
 $root  = Split-Path $PSScriptRoot -Parent
 $qa    = Join-Path $root "qa\suite.js"
 $serve = Join-Path $root "qa\serve.js"
