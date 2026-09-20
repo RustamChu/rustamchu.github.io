@@ -3,7 +3,7 @@
    - навигация (index): network-first — публикации видны сразу, офлайн отдаём кэш;
    - статика с этого origin: stale-while-revalidate — повторные заходы
      мгновенны и тихо обновляются в фоне. Версия кэша = штамп сборки. */
-const VERSION = "20.09-1019";
+const VERSION = "20.09-1026";
 const CACHE = "rustamchu-" + VERSION;
 
 self.addEventListener("install", e => {
